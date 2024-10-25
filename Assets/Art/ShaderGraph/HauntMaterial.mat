@@ -23,13 +23,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HauntMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: a29fce4cdf6054f4c97ae5f348dc52f5,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a29fce4cdf6054f4c97ae5f348dc52f5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   - _ENABLE_FOG_ON_TRANSPARENT
+  - _MATERIAL_FEATURE_TRANSMISSION
   - _REFRACTION_PLANE
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
@@ -41,11 +41,10 @@ Material:
     MotionVector: User
     RenderType: Transparent
   disabledShaderPasses:
-  - TransparentDepthPrepass
+  - MOTIONVECTORS
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
-  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -83,10 +82,14 @@ Material:
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 10
+    - _DstBlend2: 10
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
+    - _MaterialID: 5
+    - _MaterialTypeMask: 32
     - _OpaqueCullMode: 2
+    - _PerPixelSorting: 0
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
@@ -96,17 +99,18 @@ Material:
     - _ScrollSpeed: 5.2
     - _SrcBlend: 1
     - _StencilRef: 0
-    - _StencilRefDepth: 0
+    - _StencilRefDepth: 16
     - _StencilRefDistortionVec: 4
     - _StencilRefGBuffer: 2
     - _StencilRefMV: 32
     - _StencilWriteMask: 6
-    - _StencilWriteMaskDepth: 9
+    - _StencilWriteMaskDepth: 25
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 15
     - _StencilWriteMaskMV: 41
     - _SupportDecals: 1
     - _SurfaceType: 1
+    - _TransmissionEnable: 1
     - _Transparancy: 0.08
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -122,12 +126,12 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 0.18579565, g: 0.1929616, b: 0.3207547, a: 0}
-    - _DiffusionProfileAsset: {r: 5.854717e+36, g: -1.7652788e+22, b: 3.4321559e+31,
-        a: -8.797952e+17}
+    - _DiffusionProfileAsset: {r: 5.854717e+36, g: -1.7652788e+22, b: 3.4321559e+31, a: -8.797952e+17}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _ScrollOffsetSpeed: {r: 0, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &739510170714965316
 MonoBehaviour:
   m_ObjectHideFlags: 11
