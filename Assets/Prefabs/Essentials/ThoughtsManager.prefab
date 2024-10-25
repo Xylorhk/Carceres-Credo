@@ -1,0 +1,2327 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4009664035319758663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5861348101111939073}
+  m_Layer: 0
+  m_Name: ThoughtsTriggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5861348101111939073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009664035319758663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4275027263504262259}
+  - {fileID: 2867360232600657556}
+  - {fileID: 7610299320580282433}
+  - {fileID: 8521475055664680602}
+  - {fileID: 5563419175777188645}
+  - {fileID: 3243670434799775263}
+  - {fileID: 6488055307831030227}
+  - {fileID: 4354284604754715625}
+  - {fileID: 1205856042176185329}
+  m_Father: {fileID: 6575437764625809124}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7288208583400742092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6575437764625809124}
+  - component: {fileID: 6560620722459933195}
+  m_Layer: 0
+  m_Name: ThoughtsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6575437764625809124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7288208583400742092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5861348101111939073}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6560620722459933195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7288208583400742092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: FSM
+    startState: Init
+    states:
+    - name: Init
+      description: Assign ThoughtsContainer which is inside the player Canvas HUD
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 56.328125
+        y: 134.3125
+        width: 234.8
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    - name: Set Thoughts Text
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 329.60156
+        y: 111.078125
+        width: 140.4
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Init
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetFsmString
+        - HutongGames.PlayMaker.Actions.SendEvent
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 52221a025e69bb04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: PlayerUI
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams:
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 1
+              name: PlayerUI
+              tooltip: 
+              showInInspector: 1
+              networkSync: 0
+              value: {fileID: 0}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: NewThoughts
+        - useVariable: 1
+          name: CurrentThoughts
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Thoughts / New
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000120000001200000012000000010000001f000000170000000f00000001000000
+        paramName:
+        - gameObject
+        - fsmName
+        - variableName
+        - setValue
+        - everyFrame
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 000000000000000001000000020000000000000000000000000000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000001000000
+    - name: Set New Thoughts
+      description: '"CurrentThoughts" are set by Thoughts Triggers'
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 604.78125
+        y: 108.546875
+        width: 229.2
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Set Thoughts Text
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
+    events:
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: Thoughts / Exit
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Thoughts / Foyer
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Thoughts / Hall
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Thoughts / Kitchen
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Thoughts / New
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: Thoughts / Exterior
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Thoughts / Final
+      isSystemEvent: 0
+      isGlobal: 0
+    globalTransitions:
+    - fsmEvent:
+        name: Thoughts / New
+        isSystemEvent: 0
+        isGlobal: 1
+      toState: Set New Thoughts
+      linkStyle: 0
+      linkConstraint: 0
+      linkTarget: 0
+      colorIndex: 0
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: CurrentThoughts
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: PlayerUI
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 0000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    outVariableIndices: 
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    OutputEvents: []
+    RestartOnEnable: 1
+    ResetVariablesOnEnable: 0
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 225
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 0
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 0}
+  eventHandlerComponentsAdded: 1
+--- !u!1001 &112625584221011190
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.91218
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25.108349
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -150.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.259999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.stringVariables.Array.data[0].value
+      value: My life feels like a cage...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.gameObjectVariables.Array.data[0].value
+      value: 
+      objectReference: {fileID: 7288208583400742092}
+    - target: {fileID: 2373326188551021985, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_Name
+      value: Exit Trigger (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81ddc3d45aa75e94ba4ca4721dcc3086, type: 3}
+--- !u!4 &1205856042176185329 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+    type: 3}
+  m_PrefabInstance: {fileID: 112625584221011190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1104932173806449985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1008945234292808828}
+    - target: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_Name
+      value: Hall Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.984
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839836205345894444, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: fsm.name
+      value: VanishOnPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977218358204097721, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6763668910650741402, guid: 93e0f743a24381647a916b8ad1d29a26, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008945234292808828}
+  m_SourcePrefab: {fileID: 100100000, guid: 93e0f743a24381647a916b8ad1d29a26, type: 3}
+--- !u!4 &4275027263504262259 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+    type: 3}
+  m_PrefabInstance: {fileID: 1104932173806449985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4450661624111234670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+    type: 3}
+  m_PrefabInstance: {fileID: 1104932173806449985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1008945234292808828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4450661624111234670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: ThoughtsTrigger
+    startState: Listen
+    states:
+    - name: Listen
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 124.4
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Thoughts / New
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Send Thoughts
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.TriggerEvent
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 9c512400
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Thoughts / New
+        byteData: 00000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000007000000120000001700000013000000
+        paramName:
+        - gameObject
+        - trigger
+        - collideTag
+        - sendEvent
+        - storeCollider
+        paramDataPos: 0000000000000000000000000000000000000000
+        paramByteDataSize: 0000000004000000000000000000000000000000
+    - name: Send Thoughts
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 270
+        y: 109.796875
+        width: 120.4
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetFsmString
+        - HutongGames.PlayMaker.Actions.SendEvent
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 52221a025e69bb04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: ThoughtsManager
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 7288208583400742092}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams:
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 1
+              name: ThoughtsManager
+              tooltip: 
+              showInInspector: 1
+              networkSync: 0
+              value: {fileID: 7288208583400742092}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: CurrentThoughts
+        - useVariable: 1
+          name: Thoughts
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: I have to get going....I'm gonna to be late again...
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Thoughts / New
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000120000001200000012000000010000001f000000170000000f00000001000000
+        paramName:
+        - gameObject
+        - fsmName
+        - variableName
+        - setValue
+        - everyFrame
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 000000000000000001000000020000000000000000000000000000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000001000000
+    events:
+    - name: Thoughts / New
+      isSystemEvent: 0
+      isGlobal: 1
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: Thoughts
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: I have to get going....I'm gonna to be late again...
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: ThoughtsManager
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 7288208583400742092}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 0000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    outVariableIndices: 
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    OutputEvents: []
+    RestartOnEnable: 1
+    ResetVariablesOnEnable: 0
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 225
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 1
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 1235589f8330a4f4397eae54bde9411d, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!1001 &1426686297054138278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[1]
+      value: 
+      objectReference: {fileID: 3980769394249431221}
+    - target: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_Name
+      value: Kitchen Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839836205345894444, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: fsm.name
+      value: VanishOnPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977218358204097721, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6763668910650741402, guid: 93e0f743a24381647a916b8ad1d29a26, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3980769394249431221}
+  m_SourcePrefab: {fileID: 100100000, guid: 93e0f743a24381647a916b8ad1d29a26, type: 3}
+--- !u!1 &2403505477295703177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+    type: 3}
+  m_PrefabInstance: {fileID: 1426686297054138278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3980769394249431221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2403505477295703177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: ThoughtsTrigger
+    startState: Listen
+    states:
+    - name: Listen
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 124.4
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Thoughts / New
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Send Thoughts
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.TriggerEvent
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 9c512400
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Thoughts / New
+        byteData: 00000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000007000000120000001700000013000000
+        paramName:
+        - gameObject
+        - trigger
+        - collideTag
+        - sendEvent
+        - storeCollider
+        paramDataPos: 0000000000000000000000000000000000000000
+        paramByteDataSize: 0000000004000000000000000000000000000000
+    - name: Send Thoughts
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 270
+        y: 109.796875
+        width: 120.4
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetFsmString
+        - HutongGames.PlayMaker.Actions.SendEvent
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 52221a025e69bb04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: ThoughtsManager
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 7288208583400742092}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams:
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 1
+              name: ThoughtsManager
+              tooltip: 
+              showInInspector: 1
+              networkSync: 0
+              value: {fileID: 7288208583400742092}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: CurrentThoughts
+        - useVariable: 1
+          name: Thoughts
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: I have to get going....I'm gonna to be late again...
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Thoughts / New
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000120000001200000012000000010000001f000000170000000f00000001000000
+        paramName:
+        - gameObject
+        - fsmName
+        - variableName
+        - setValue
+        - everyFrame
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 000000000000000001000000020000000000000000000000000000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000001000000
+    events:
+    - name: Thoughts / New
+      isSystemEvent: 0
+      isGlobal: 1
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: Thoughts
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: No time to eat now. Maybe I'll get something on the way...
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: ThoughtsManager
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 7288208583400742092}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 0000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    outVariableIndices: 
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    OutputEvents: []
+    RestartOnEnable: 1
+    ResetVariablesOnEnable: 0
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 225
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 1
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 1235589f8330a4f4397eae54bde9411d, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!4 &2867360232600657556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+    type: 3}
+  m_PrefabInstance: {fileID: 1426686297054138278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3261073655080017134
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10.757269
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25.108349
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -102.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.stringVariables.Array.data[0].value
+      value: I feel so stuck....I'm going nowhere...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.gameObjectVariables.Array.data[0].value
+      value: 
+      objectReference: {fileID: 7288208583400742092}
+    - target: {fileID: 2373326188551021985, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_Name
+      value: Exit Trigger (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090642837972435761, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.preprocessed
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81ddc3d45aa75e94ba4ca4721dcc3086, type: 3}
+--- !u!4 &4354284604754715625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+    type: 3}
+  m_PrefabInstance: {fileID: 3261073655080017134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4336960815062831384
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.stringVariables.Array.data[0].value
+      value: I've done this a thousand times...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.gameObjectVariables.Array.data[0].value
+      value: 
+      objectReference: {fileID: 7288208583400742092}
+    - target: {fileID: 2373326188551021985, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_Name
+      value: Exit Trigger (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81ddc3d45aa75e94ba4ca4721dcc3086, type: 3}
+--- !u!4 &3243670434799775263 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+    type: 3}
+  m_PrefabInstance: {fileID: 4336960815062831384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5415046509927173844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -85.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.stringVariables.Array.data[0].value
+      value: I'm just not good enough.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.gameObjectVariables.Array.data[0].value
+      value: 
+      objectReference: {fileID: 7288208583400742092}
+    - target: {fileID: 2373326188551021985, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_Name
+      value: Exit Trigger (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81ddc3d45aa75e94ba4ca4721dcc3086, type: 3}
+--- !u!4 &6488055307831030227 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+    type: 3}
+  m_PrefabInstance: {fileID: 5415046509927173844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6636357184034505762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.088
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.stringVariables.Array.data[0].value
+      value: Here we go again...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.gameObjectVariables.Array.data[0].value
+      value: 
+      objectReference: {fileID: 7288208583400742092}
+    - target: {fileID: 2373326188551021985, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_Name
+      value: Exit Trigger (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81ddc3d45aa75e94ba4ca4721dcc3086, type: 3}
+--- !u!4 &5563419175777188645 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+    type: 3}
+  m_PrefabInstance: {fileID: 6636357184034505762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6745061529592236403
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 238026572918608204, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8322178662418273287}
+    - target: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_Name
+      value: Stairs Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839836205345894444, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: fsm.name
+      value: VanishOnPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8839836205345894444, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: fsm.preprocessed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977218358204097721, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      propertyPath: TargetFSMs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6763668910650741402, guid: 93e0f743a24381647a916b8ad1d29a26, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8322178662418273287}
+  m_SourcePrefab: {fileID: 100100000, guid: 93e0f743a24381647a916b8ad1d29a26, type: 3}
+--- !u!4 &7610299320580282433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3748810528859492658, guid: 93e0f743a24381647a916b8ad1d29a26,
+    type: 3}
+  m_PrefabInstance: {fileID: 6745061529592236403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8002097635051782748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3645220655990754095, guid: 93e0f743a24381647a916b8ad1d29a26,
+    type: 3}
+  m_PrefabInstance: {fileID: 6745061529592236403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8322178662418273287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002097635051782748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsm:
+    dataVersion: 2
+    usedInTemplate: {fileID: 0}
+    name: ThoughtsTrigger
+    startState: Listen
+    states:
+    - name: Listen
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 124.4
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Thoughts / New
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Send Thoughts
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.TriggerEvent
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 9c512400
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Thoughts / New
+        byteData: 00000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000007000000120000001700000013000000
+        paramName:
+        - gameObject
+        - trigger
+        - collideTag
+        - sendEvent
+        - storeCollider
+        paramDataPos: 0000000000000000000000000000000000000000
+        paramByteDataSize: 0000000004000000000000000000000000000000
+    - name: Send Thoughts
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 270
+        y: 109.796875
+        width: 120.4
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetFsmString
+        - HutongGames.PlayMaker.Actions.SendEvent
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 52221a025e69bb04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: ThoughtsManager
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 7288208583400742092}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams:
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 1
+              name: ThoughtsManager
+              tooltip: 
+              showInInspector: 1
+              networkSync: 0
+              value: {fileID: 7288208583400742092}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: CurrentThoughts
+        - useVariable: 1
+          name: Thoughts
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: I have to get going....I'm gonna to be late again...
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Thoughts / New
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000120000001200000012000000010000001f000000170000000f00000001000000
+        paramName:
+        - gameObject
+        - fsmName
+        - variableName
+        - setValue
+        - everyFrame
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 000000000000000001000000020000000000000000000000000000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000001000000
+    events:
+    - name: Thoughts / New
+      isSystemEvent: 0
+      isGlobal: 1
+    globalTransitions: []
+    variables:
+      floatVariables: []
+      intVariables: []
+      boolVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: Thoughts
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 'I''m so tired. '
+      vector2Variables: []
+      vector3Variables: []
+      colorVariables: []
+      rectVariables: []
+      quaternionVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: ThoughtsManager
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 7288208583400742092}
+      objectVariables: []
+      materialVariables: []
+      textureVariables: []
+      arrayVariables: []
+      enumVariables: []
+      categories:
+      - 
+      variableCategoryIDs: 0000000000000000
+    description: 
+    docUrl: 
+    showStateLabel: 0
+    maxLoopCount: 0
+    watermark: 
+    password: 
+    locked: 0
+    manualUpdate: 0
+    outVariableIndices: 
+    keepDelayedEventsOnStateExit: 0
+    preprocessed: 1
+    ExposedEvents: []
+    OutputEvents: []
+    RestartOnEnable: 1
+    ResetVariablesOnEnable: 0
+    EnableDebugFlow: 0
+    EnableBreakpoints: 1
+    editorFlags: 225
+    activeStateName: 
+    mouseEvents: 0
+    handleLevelLoaded: 0
+    handleTriggerEnter2D: 0
+    handleTriggerExit2D: 0
+    handleTriggerStay2D: 0
+    handleCollisionEnter2D: 0
+    handleCollisionExit2D: 0
+    handleCollisionStay2D: 0
+    handleTriggerEnter: 1
+    handleTriggerExit: 0
+    handleTriggerStay: 0
+    handleCollisionEnter: 0
+    handleCollisionExit: 0
+    handleCollisionStay: 0
+    handleParticleCollision: 0
+    handleControllerColliderHit: 0
+    handleJointBreak: 0
+    handleJointBreak2D: 0
+    handleOnGUI: 0
+    handleFixedUpdate: 0
+    handleLateUpdate: 0
+    handleApplicationEvents: 0
+    handleUiEvents: 0
+    handleLegacyNetworking: 0
+    handleAnimatorMove: 0
+    handleAnimatorIK: 0
+  fsmTemplate: {fileID: 11400000, guid: 1235589f8330a4f4397eae54bde9411d, type: 2}
+  eventHandlerComponentsAdded: 1
+--- !u!1001 &7453021543556739485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5861348101111939073}
+    m_Modifications:
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.stringVariables.Array.data[0].value
+      value: Why am I always so late?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590680544352156109, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: fsm.variables.gameObjectVariables.Array.data[0].value
+      value: 
+      objectReference: {fileID: 7288208583400742092}
+    - target: {fileID: 2373326188551021985, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+        type: 3}
+      propertyPath: m_Name
+      value: Exit Trigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81ddc3d45aa75e94ba4ca4721dcc3086, type: 3}
+--- !u!4 &8521475055664680602 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1237416710562561799, guid: 81ddc3d45aa75e94ba4ca4721dcc3086,
+    type: 3}
+  m_PrefabInstance: {fileID: 7453021543556739485}
+  m_PrefabAsset: {fileID: 0}
