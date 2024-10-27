@@ -101,7 +101,7 @@ namespace FIMSpace.FProceduralAnimation
                 return;
             }
 
-            EditorGUILayout.HelpBox("Using animation curve parameters to controll gluing timing. It requires extra curves inside animation clips but can provide better controll for gluing feature.", MessageType.Info);
+            EditorGUILayout.HelpBox("Using animation curve parameters to controll gluing timing. It requires extra curves inside animation clips but can provide better controll for gluing feature.", UnityEditor.MessageType.Info);
             GUILayout.Space(5);
 
             var floorValV = FloorValueBelowVar;

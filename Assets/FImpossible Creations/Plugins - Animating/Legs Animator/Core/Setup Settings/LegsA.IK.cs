@@ -46,7 +46,7 @@ namespace FIMSpace.FProceduralAnimation
             }
         }
 
-        void IK_TriggerReglue(bool onlyIfFar = true)
+        public void IK_TriggerReglue(bool onlyIfFar = true)
         {
             var leg = Legs[0];
             while (leg != null)

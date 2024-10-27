@@ -28,7 +28,7 @@ namespace FIMSpace.FLook
 
 
         //private Animator animator;
-        protected bool initialized;
+        public bool initialized { get; protected set; }
 
         #endregion
 

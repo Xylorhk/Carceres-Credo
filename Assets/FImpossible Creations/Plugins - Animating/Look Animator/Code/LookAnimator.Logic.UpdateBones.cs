@@ -12,6 +12,7 @@ namespace FIMSpace.FLook
 
         void PreCalibrateBones()
         {
+            if (!Calibration) return;
             //for (int i = 0; i < CompensationBones.Count; i++)
             //{
             //    if (CompensationBones[i].Transform == null) continue;
@@ -243,7 +244,10 @@ namespace FIMSpace.FLook
             }
             else
             {
-                if (LookBones.Count > 1) LookBones.RemoveRange(1, LookBones.Count);
+                while (LookBones.Count > 1)
+                {
+                    LookBones.RemoveAt(LookBones.Count - 1);
+                }
             }
 
         }

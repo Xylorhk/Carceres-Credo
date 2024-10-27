@@ -9,25 +9,34 @@ namespace FIMSpace.FProceduralAnimation
             public bool RaycastHitted { get; private set; }
             public RaycastHit LastGroundHit { get { return legGroundHit; } }
             public RaycastHit legGroundHit;
+            public RaycastHit lastGroundHitWithTarget;
 
             public Vector3 groundHitRootSpacePos { get; private set; }
 
-            Vector3 lastRaycastingOrigin;
+            public Vector3 lastRaycastingOrigin { get; private set; }
+            public Vector3 lastRaycastingEndPoint { get; private set; }
             Vector3 previousAnkleAlignedOnGroundHitWorldPos;
             public Vector3 ankleAlignedOnGroundHitWorldPos { get; private set; }
             Vector3 ankleAlignedOnGroundHitRootLocal;
             Quaternion ankleAlignedOnGroundHitRotation;
 
+            RaycastHit replacementHit;
+
             #region Custom Raycast
+
+            /// <summary> If source raycast hitted ground - before custom raycast override </summary>
+            public bool User_RaycastHittedSource { get; private set; }
+
 
             bool _UsingEmptyRaycast = false;
             bool _UsingCustomRaycast = false;
+            bool _disableSourceRaycast = false;
             float _CustomRaycastBlendIn = 0f;
             RaycastHit _CustomRaycastHit;
             Vector3 _PreviousCustomRaycastingStartIKPos;
             Vector3 _PreviousCustomRaycastingIKPos;
 
-            public void User_OverrideRaycastHit(Transform tr)
+            public void User_OverrideRaycastHit(Transform tr, bool disableSourceRaycast = true)
             {
                 if (!_UsingCustomRaycast)
                 {
@@ -35,6 +44,7 @@ namespace FIMSpace.FProceduralAnimation
                     _PreviousCustomRaycastingStartIKPos = C_LastHeelWorldPos;
                 }
 
+                _disableSourceRaycast = disableSourceRaycast;
                 _UsingCustomRaycast = true;
                 RaycastHit hit = new RaycastHit();
                 hit.point = tr.position;
@@ -42,7 +52,7 @@ namespace FIMSpace.FProceduralAnimation
                 _CustomRaycastOnBlendIn(hit);
             }
 
-            public void User_OverrideRaycastHit(RaycastHit hit)
+            public void User_OverrideRaycastHit(RaycastHit hit, bool disableSourceRaycast = true)
             {
                 if (!_UsingCustomRaycast)
                 {
@@ -50,6 +60,7 @@ namespace FIMSpace.FProceduralAnimation
                     _PreviousCustomRaycastingStartIKPos = C_LastHeelWorldPos;
                 }
 
+                _disableSourceRaycast = disableSourceRaycast;
                 _UsingCustomRaycast = true;
                 _CustomRaycastOnBlendIn(hit);
             }
@@ -58,6 +69,7 @@ namespace FIMSpace.FProceduralAnimation
             {
                 if (_UsingCustomRaycast) _CustomRaycastBlendIn = 1f;
                 _UsingCustomRaycast = false;
+                _disableSourceRaycast = false;
             }
 
             void _CustomRaycastOnBlendIn(RaycastHit hit)
@@ -78,7 +90,11 @@ namespace FIMSpace.FProceduralAnimation
                 _CustomRaycastBlendIn -= Owner.DeltaTime * 8f;
                 if (_CustomRaycastBlendIn < 0f) _CustomRaycastBlendIn = 0f;
 
-                if (RaycastHitted == false) return;
+                if (RaycastHitted == false)
+                {
+                    legGroundHit = _CustomRaycastHit;
+                    return;
+                }
 
                 RaycastHit hit = legGroundHit;
                 hit.point = Vector3.LerpUnclamped(hit.point, _PreviousCustomRaycastingIKPos, _CustomRaycastBlendIn);
@@ -118,17 +134,7 @@ namespace FIMSpace.FProceduralAnimation
                 RaycastHitted = false;
                 _noRaycast_skipFeetCalcs = false;
 
-                if (_UsingCustomRaycast)
-                {
-                    RaycastHitted = true;
-                    legGroundHit = _CustomRaycastHit;
-                    groundHitRootSpacePos = ToRootLocalSpace(legGroundHit.point);
-                    _UsingEmptyRaycast = true;
-                    _noRaycast_skipFeetCalcs = true;
-                    _Raycasting_CalculateBasis();
-                    ankleAlignedOnGroundHitRotation = GetAlignedOnGroundHitRot(_SourceIKRot, legGroundHit.normal);
-                }
-                else
+                if (!_disableSourceRaycast)
                 {
                     if (Owner.RaycastStyle == ERaycastStyle.NoRaycasting)
                     {
@@ -163,19 +169,24 @@ namespace FIMSpace.FProceduralAnimation
 
                         if (!RaycastHitted)
                         {
-                            if (Owner.ZeroStepsOnNoRaycast)
-                            {
-                                _noRaycast_skipFeetCalcs = true;
-                                _UsingEmptyRaycast = true;
-                                GenerateZeroFloorRaycastHit();
-                                ankleAlignedOnGroundHitRotation = _SourceIKRot;
-                            }
+                            NoRaycastBehaviour();
                         }
                     }
 
+                    User_RaycastHittedSource = RaycastHitted;
                     _CustomRaycastOnBlendOut();
                 }
 
+                if (_UsingCustomRaycast)
+                {
+                    RaycastHitted = true;
+                    legGroundHit = _CustomRaycastHit;
+                    groundHitRootSpacePos = ToRootLocalSpace(legGroundHit.point);
+                    _UsingEmptyRaycast = true;
+                    _noRaycast_skipFeetCalcs = true;
+                    _Raycasting_CalculateBasis();
+                    ankleAlignedOnGroundHitRotation = GetAlignedOnGroundHitRot(_SourceIKRot, legGroundHit.normal);
+                }
 
                 if (_noRaycast_skipFeetCalcs)
                 {
@@ -185,11 +196,50 @@ namespace FIMSpace.FProceduralAnimation
                 // Foot rotation on raycast hit
                 if (RaycastHitted)
                 {
+                    lastGroundHitWithTarget = legGroundHit;
                     ankleAlignedOnGroundHitRotation = GetAlignedOnGroundHitRot(_SourceIKRot, legGroundHit.normal);
                 }
                 else
                     ankleAlignedOnGroundHitRotation = _SourceIKRot;
 
+            }
+
+
+
+            void NoRaycastBehaviour()
+            {
+                if (Owner.NoRaycastGroundBehaviour == ENoRaycastBehviour.Detach) return;
+
+                if (Owner.NoRaycastGroundBehaviour == ENoRaycastBehviour.ZeroFloorSteps)
+                {
+                    _noRaycast_skipFeetCalcs = true;
+                    _UsingEmptyRaycast = true;
+                    GenerateZeroFloorRaycastHit();
+                    ankleAlignedOnGroundHitRotation = _SourceIKRot;
+                }
+                else if (Owner.NoRaycastGroundBehaviour == ENoRaycastBehviour.KeepAttached)
+                {
+                    if (IKProcessor.GetStretchValue(_PreviousFinalIKPos) > Owner.NoRaycast_KeepAttachedUntilStretch)
+                    {
+                        lastGroundHitWithTarget = new RaycastHit();
+                        return;
+                    }
+
+                    if (lastGroundHitWithTarget.transform)
+                    {
+                        _noRaycast_skipFeetCalcs = true;
+
+                        legGroundHit = lastGroundHitWithTarget;
+                        RaycastHitted = true;
+
+                        _Raycasting_CalculateBasis();
+
+                        Vector3 fakehitRootSpace = ToRootLocalSpace(lastGroundHitWithTarget.point);
+                        //ankleAlignedOnGroundHitRootLocal = fakehitRootSpace;
+                        fakehitRootSpace.y = 0f;
+                        groundHitRootSpacePos = fakehitRootSpace;
+                    }
+                }
             }
 
 
@@ -294,7 +344,7 @@ namespace FIMSpace.FProceduralAnimation
                     origin = BoneStart.position;
                     toGround = IKProcessor.fullLength;
                 }
-                else 
+                else
                 {
                     origin.x = castStartPointLocal.x;
                     //origin.x = Ankle.LastKeyframeRootPos.x;
@@ -309,13 +359,13 @@ namespace FIMSpace.FProceduralAnimation
                 }
 
                 lastRaycastingOrigin = origin;
-
                 Vector3 direction = -Owner.Up;
 
                 Vector3 rayGroundPos = origin + direction * toGround;
                 float extraRaycastingDistance = ScaleRef * Owner.CastDistance;
 
                 Vector3 rayEnd = rayGroundPos + direction * extraRaycastingDistance;
+                lastRaycastingEndPoint = rayEnd;
 
                 //UnityEngine.Debug.DrawLine(origin, rayEnd, Color.green, 0.11f);
 
@@ -339,7 +389,7 @@ namespace FIMSpace.FProceduralAnimation
                 }
                 else
                 {
-                    float radius = Owner.ScaleReference * 0.065f;
+                    float radius = Owner.ScaleReference * 0.065f * Owner.SpherecastResize;
                     Vector3 castDir = rayEnd - origin;
                     float castDistance = castDir.magnitude - radius;
                     hitted = Physics.SphereCast(origin, radius, castDir.normalized, out legGroundHit, castDistance - radius, Owner.GroundMask, Owner.RaycastHitTrigger);

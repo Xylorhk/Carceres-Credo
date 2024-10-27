@@ -82,7 +82,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Extra calculations to keep character hips in the center. It's similar to the stability settings but providing extra correction.", MessageType.Info);
+            EditorGUILayout.HelpBox("Extra calculations to keep character hips in the center. It's similar to the stability settings but providing extra correction.", UnityEditor.MessageType.Info);
             GUILayout.Space(3);
 
             var blendVar = helper.RequestVariable("Blend", 1f);

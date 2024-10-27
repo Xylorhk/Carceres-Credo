@@ -17,10 +17,12 @@ namespace FIMSpace.FProceduralAnimation
             IsMovingBlend = 0f;
             IsGroundedBlend = 1f;
             RagdolledDisablerBlend = 1f;
+            _MainBlendNoRagdolling = 1f;
             DeltaTime = 0.05f;
 
             RagdolledDisablerBlend = 1f;
             RagdolledTime = -100f;
+            DoBackCompatibilityChecks();
 
             Initialize_BaseTransform();
             RefreshMatrices();
@@ -31,11 +33,20 @@ namespace FIMSpace.FProceduralAnimation
             Controll_DefineHashes();
             Initialize_Stability();
 
+
             finalScaleReferenceSqrt = ScaleReference * ScaleReference;
 
             HipsSetup.Initialize(this, Hips, BaseTransform);
             _LastAppliedHipsFinalPosition = Hips.position;
             HipsHubs_Init();
+
+            if (CheckIfSomeOfTheLegsHasNullBone())
+            {
+                Debug.LogError("[Legs Animator] One of the legs has unassigned bone! (" + name + ")");
+                AllowUpdate = false;
+                LegsInitialized = false;
+                return;
+            }
 
             for (int i = 0; i < Legs.Count; i++) Legs[i].InitLegBasics(this, i, (i + 1) < Legs.Count ? Legs[i + 1] : null);
             IK_Initialize();
@@ -57,7 +68,11 @@ namespace FIMSpace.FProceduralAnimation
 
         public void InitializeGetStepInfoReceiver()
         {
-            if (StepInfoReceiver != null) _StepReceiver = StepInfoReceiver.GetComponent<ILegStepReceiver>();
+            if( StepInfoReceiver != null )
+            {
+                _StepReceiver = StepInfoReceiver.GetComponent<ILegStepReceiver>();
+                _RaiseReceiver = StepInfoReceiver.GetComponent<ILegRaiseReceiver>();
+            }
         }
 
         public void Initialize_BaseTransform()
@@ -69,6 +84,12 @@ namespace FIMSpace.FProceduralAnimation
 
             User_RefreshHelperVariablesOnParametersChange();
             MotionInfluence_Init();
+        }
+
+        public void Initialize_BaseTransform( Transform newTransform )
+        {
+            baseTransform = newTransform;
+            Initialize_BaseTransform();
         }
 
         public bool IsSetupValid()
@@ -107,6 +128,7 @@ namespace FIMSpace.FProceduralAnimation
             //_Hips_sd_PushOffset = Vector3.zero;
 
             HipsSetup.Reset();
+            //_Hips_StepHeightAdjustOffset = 0f;
 
             _glueModeExecuted = EGlueMode.Moving;
 

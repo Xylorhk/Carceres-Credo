@@ -102,26 +102,34 @@ namespace FIMSpace.FProceduralAnimation
             usingCustomDesiredMovementDirection = false;
         }
 
-        protected virtual void Controll_DefineHashes()
+        /// <summary>
+        /// Requires assigned 'Mecanim' parameter to calculate mecanim properties hashes
+        /// </summary>
+        public virtual void Controll_DefineHashes()
         {
             if (Mecanim == null) return;
-            if (string.IsNullOrWhiteSpace(GroundedParameter) == false) _hash_Grounded = Animator.StringToHash(GroundedParameter);
 
-            if (string.IsNullOrWhiteSpace(MovingParameter) == false)
+            if( string.IsNullOrWhiteSpace( GroundedParameter ) == false ) _hash_Grounded = Animator.StringToHash( GroundedParameter ); else _hash_Grounded = -1;
+
+            if( string.IsNullOrWhiteSpace( MovingParameter ) == false )
             {
-                _hash_Moving = Animator.StringToHash(MovingParameter);
+                _hash_Moving = Animator.StringToHash( MovingParameter );
 
-                for (int i = 0; i < Mecanim.parameterCount; i++)
-                    if (Mecanim.GetParameter(i).nameHash == _hash_Moving)
-                        if (Mecanim.GetParameter(i).type == AnimatorControllerParameterType.Float)
-                        {
-                            _hash_MovingIsFloat = true;
-                            break;
-                        }
+                if( Mecanim.runtimeAnimatorController != null )
+                {
+                    for( int i = 0; i < Mecanim.parameterCount; i++ )
+                        if( Mecanim.GetParameter( i ).nameHash == _hash_Moving )
+                            if( Mecanim.GetParameter( i ).type == AnimatorControllerParameterType.Float )
+                            {
+                                _hash_MovingIsFloat = true;
+                                break;
+                            }
+                }
             }
+            else _hash_Moving = -1;
 
-            if (string.IsNullOrWhiteSpace(SlidingParameter) == false) _hash_Sliding = Animator.StringToHash(SlidingParameter);
-            if (string.IsNullOrWhiteSpace(RagdolledParameter) == false) _hash_Ragdolled = Animator.StringToHash(RagdolledParameter);
+            if( string.IsNullOrWhiteSpace( SlidingParameter ) == false ) _hash_Sliding = Animator.StringToHash( SlidingParameter ); else _hash_Sliding = -1;
+            if( string.IsNullOrWhiteSpace( RagdolledParameter ) == false ) _hash_Ragdolled = Animator.StringToHash( RagdolledParameter ); else _hash_Ragdolled = -1;
         }
 
         public bool Helper_WasMoving { get; private set; }

@@ -224,7 +224,7 @@ namespace FIMSpace.FProceduralAnimation
         {
             if (legsAnimator.Mecanim == null)
             {
-                EditorGUILayout.HelpBox("Unity Animator Reference (Mecanim) is required by this module. Go to Extra/Control category and assign Mecanim reference there!", MessageType.Warning);
+                EditorGUILayout.HelpBox("Unity Animator Reference (Mecanim) is required by this module. Go to Extra/Control category and assign Mecanim reference there!", UnityEditor.MessageType.Warning);
                 if (GUILayout.Button("Go to Extra/Control")) { legsAnimator._EditorCategory = LegsAnimator.EEditorCategory.Extra; legsAnimator._EditorExtraCategory = LegsAnimator.EEditorExtraCategory.Control; }
             }
 
@@ -277,7 +277,7 @@ namespace FIMSpace.FProceduralAnimation
                 EditorGUILayout.EndHorizontal();
                 EditorGUIUtility.labelWidth = 0;
 
-                if (selMode == ELayerSelectMode.Auto) EditorGUILayout.HelpBox("Automatic Layer: " + lastAutoWeightIndex, MessageType.None);
+                if (selMode == ELayerSelectMode.Auto) EditorGUILayout.HelpBox("Automatic Layer: " + lastAutoWeightIndex, UnityEditor.MessageType.None);
             }
 
             GUI_MiddleBody(legsAnimator, helper);

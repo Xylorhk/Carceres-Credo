@@ -45,7 +45,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Pushing hips up when adjusting body down to avoid ground overlaps. Can occur on the insect creatures.", MessageType.Info);
+            EditorGUILayout.HelpBox("Pushing hips up when adjusting body down to avoid ground overlaps. Can occur on the insect creatures.", UnityEditor.MessageType.Info);
             GUILayout.Space(3);
 
             var adjPowerV = helper.RequestVariable("Adjust Power", 1f);

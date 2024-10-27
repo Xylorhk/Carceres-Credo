@@ -47,8 +47,17 @@ namespace FIMSpace.FEyes
 
             if (SyncRanges)
             {
-                MaxTargetDistance = LookAnimator.MaximumDistance;
+                if( LookAnimator.LookState == FLookAnimator.EFHeadLookState.OutOfMaxDistance || LookAnimator.LookState == FLookAnimator.EFHeadLookState.OutOfMaxRotation )
+                {
+                    forceOutOfMaxDistance = true;
+                }
+                else forceOutOfMaxDistance = false;
+
                 StopLookAbove = LookAnimator.StopLookingAbove;
+            }
+            else
+            {
+                forceOutOfMaxDistance = null;
             }
 
             if (SyncUseAmount)

@@ -7,7 +7,7 @@ namespace FIMSpace.FProceduralAnimation
     /// <summary>
     /// Example class for assigning custom inherited IK processor to the legs animator
     /// </summary>
-    [CreateAssetMenu]
+    //[CreateAssetMenu]
     public class LAM_IKAlgorithmSwitch : LegsAnimatorControlModuleBase
     {
         public bool lockX = true;

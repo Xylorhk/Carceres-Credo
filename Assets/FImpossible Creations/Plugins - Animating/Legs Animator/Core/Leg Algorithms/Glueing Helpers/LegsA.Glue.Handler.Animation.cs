@@ -47,16 +47,17 @@ namespace FIMSpace.FProceduralAnimation
                     Quaternion previousRotationWorld;
 
                     Vector3 lastAppliedGluePosition;
+                    Vector3 lastAppliedGluePositionLocal;
                     Quaternion lastAppliedGlueRotation;
                     float lastSpeedup = 0f;
 
                     enum EMoveType { FromAnimation, FromLastAttachement }
                     EMoveType animationMoveType;
 
-                    public EGlueMode LastAnimationGlueMode { get { return (animationMoveType == EMoveType.FromAnimation) ? EGlueMode.Moving : EGlueMode.Idle; } }
+                    public EGlueMode LastAnimationGlueMode { get { return ( animationMoveType == EMoveType.FromAnimation ) ? EGlueMode.Moving : EGlueMode.Idle; } }
 
 
-                    public LegTransitionAnimation(GlueAttachementHandler glueTransitionHelper)
+                    public LegTransitionAnimation( GlueAttachementHandler glueTransitionHelper )
                     {
                         handler = glueTransitionHelper;
 
@@ -85,7 +86,7 @@ namespace FIMSpace.FProceduralAnimation
 
                         previousPositionWorld = leg._SourceIKPos;
                         previousRotationWorld = leg._SourceIKRot;
-                        previousPositionLocal = leg.ToRootLocalSpace(leg._SourceIKPos);
+                        previousPositionLocal = leg.ToRootLocalSpace( leg._SourceIKPos );
                     }
 
 
@@ -100,26 +101,26 @@ namespace FIMSpace.FProceduralAnimation
                     #endregion
 
 
-                    internal void DoAttaching(bool canAttach)
+                    internal void DoAttaching( bool canAttach )
                     {
-                        if (canAttach != wasAttaching)
+                        if( canAttach != wasAttaching )
                         {
                             wasAttaching = canAttach;
 
-                            if (canAttach)
+                            if( canAttach )
                             {
                                 OnChangeTargetPosition();
                             }
                             else
                             {
                                 attached = false;
-                                if (transitionProgress != 0f) OnChangeTargetPosition();
+                                if( transitionProgress != 0f ) OnChangeTargetPosition();
                             }
                         }
 
-                        if (duringLegAdjustMovement)
+                        if( duringLegAdjustMovement )
                         {
-                            if (transitionProgress >= 1f)
+                            if( transitionProgress >= 1f )
                             {
                                 duringLegAdjustMovement = false;
                             }
@@ -132,24 +133,24 @@ namespace FIMSpace.FProceduralAnimation
                     /// <summary>
                     /// Ensure that current leg height is above ground level (preventing floor clipping on animation transition)
                     /// </summary>
-                    internal Vector3 EnsureAnkleNotOverlappingGroundLevel(Vector3 legAnimPos)
+                    internal Vector3 EnsureAnkleNotOverlappingGroundLevel( Vector3 legAnimPos )
                     {
-                        if (leg.A_PreWasAligning && leg.A_WasAligningFrameBack)
+                        if( leg.A_PreWasAligning && leg.A_WasAligningFrameBack )
                         {
-                            Vector3 animPosLocal = Owner.ToRootLocalSpace(legAnimPos);
+                            Vector3 animPosLocal = Owner.ToRootLocalSpace( legAnimPos );
 
                             Vector3 refLocal;
-                            if (Owner.SmoothSuddenSteps < 0.0001f) 
+                            if( Owner.SmoothSuddenSteps < 0.0001f )
                                 refLocal = leg.ankleAlignedOnGroundHitRootLocal;
                             else
-                                refLocal = (leg.A_WasSmoothing) ? leg.A_LastSmoothTargetedPosLocal : leg.ankleAlignedOnGroundHitRootLocal;
+                                refLocal = ( leg.A_WasSmoothing ) ? leg.A_LastSmoothTargetedPosLocal : leg.ankleAlignedOnGroundHitRootLocal;
 
-                            if (animPosLocal.y < refLocal.y)
+                            if( animPosLocal.y < refLocal.y )
                             {
                                 animPosLocal.y = refLocal.y;
                                 //UnityEngine.Debug.Log("Old Pos = " + legAnimPos + " new Pos = " + (Owner.RootToWorldSpace(animPosLocal)));
                                 //UnityEngine.Debug.DrawLine(legAnimPos, (Owner.RootToWorldSpace(animPosLocal)), Color.green, 1.01f);
-                                legAnimPos = Owner.RootToWorldSpace(animPosLocal);
+                                legAnimPos = Owner.RootToWorldSpace( animPosLocal );
                             }
                         }
 
@@ -157,33 +158,33 @@ namespace FIMSpace.FProceduralAnimation
                     }
 
                     /// <summary> Idle Gluing Leg Animation </summary>
-                    public Vector3 CalculateAnimatedLegPosition(Vector3 a, Vector3 b)
+                    public Vector3 CalculateAnimatedLegPosition( Vector3 a, Vector3 b )
                     {
                         var sett = leg.LegAnimatingSettings;
-                        Vector3 legAnimPos = Vector3.LerpUnclamped(a, b, sett.MoveToGoalCurve.Evaluate(transitionProgress));
+                        Vector3 legAnimPos = Vector3.LerpUnclamped( a, b, sett.MoveToGoalCurve.Evaluate( transitionProgress ) );
 
                         // Spherize side offset animation compute
-                        if (sett.SpherizeTrack.length > 1)
+                        if( sett.SpherizeTrack.length > 1 )
                         {
-                            float transitEval = sett.SpherizeTrack.Evaluate(transitionProgress) * sett.SpherizePower * Owner.BaseTransform.lossyScale.x;
+                            float transitEval = sett.SpherizeTrack.Evaluate( transitionProgress ) * sett.SpherizePower * Owner.BaseTransform.lossyScale.x;
 
                             // Limit spherize offset
-                            legAnimPos += leg.RootSpaceToWorldVec(_legSpherizeLocalVector * (transitEval * 12f));
+                            legAnimPos += leg.RootSpaceToWorldVec( _legSpherizeLocalVector * ( transitEval * 12f ) );
                         }
 
                         // Feet animation info value compute
-                        if (Owner.AnimateFeet)
+                        if( Owner.AnimateFeet )
                         {
-                            LegAdjustementFootAngleOffset = sett.FootRotationCurve.Evaluate(transitionProgress) * 90f * Mathf.Min(0.5f, legMoveDistanceFactor * 1.1f);
+                            LegAdjustementFootAngleOffset = sett.FootRotationCurve.Evaluate( transitionProgress ) * 90f * Mathf.Min( 0.5f, legMoveDistanceFactor * 1.1f );
                             LegAdjustementFootAngleOffset /= lastSpeedup;
                         }
 
                         // Prepare foot height offset value
                         float scaleRef = Owner.ScaleReferenceNoScale * 0.75f;
-                        float height = Mathf.Lerp(sett.MinFootRaise, sett.MaxFootRaise, legMoveDistanceFactor);
+                        float height = Mathf.Lerp( sett.MinFootRaise, sett.MaxFootRaise, legMoveDistanceFactor );
                         height *= scaleRef;
 
-                        LegAdjustementYOffset = height * sett.RaiseYAxisCurve.Evaluate(transitionProgress);
+                        LegAdjustementYOffset = height * sett.RaiseYAxisCurve.Evaluate( transitionProgress );
                         _wasAnimatingLeg = true;
 
                         return legAnimPos;
@@ -194,51 +195,66 @@ namespace FIMSpace.FProceduralAnimation
                     {
                         float attachBlend = handler.glueAnimationBlend;
 
-                        if (animationMoveType == EMoveType.FromAnimation) // From animation to attachement
+                        if( animationMoveType == EMoveType.FromAnimation ) // From animation to attachement
                         {
+                            if( attachBlend < 0.0001f ) return Owner.RootToWorldSpace( previousPositionLocal );
 
-                            if (attachBlend < 0.0001f) return Owner.RootToWorldSpace(previousPositionLocal);
-
-                            Vector3 a = Owner.RootToWorldSpace(previousPositionLocal);
-                            if (transitionProgress < 0.0001f) return a;
+                            Vector3 a = Owner.RootToWorldSpace( previousPositionLocal );
+                            if( transitionProgress < 0.0001f ) return a;
 
                             Vector3 b;
-                            if (attached) // fading from last glue
+                            if( attached ) // fading from last glue
                             {
-                                if (attachBlend > 0.9995f)
+                                if( attachBlend > 0.9995f )
                                     b = leg._GlueLastAttachPosition;
                                 else
-                                    // Helping animation flow with world-local space manipulation 
-                                    b = Vector3.LerpUnclamped(leg.RootSpaceToWorld(leg._GlueLastAttachPositionRootLocal), leg._GlueLastAttachPosition, attachBlend);
+                                {
+                                    if( leg.Owner.OnlyLocalAnimation )
+                                    { b = leg.RootSpaceToWorld( leg._GlueLastAttachPositionRootLocal ); }
+                                    else
+                                    {
+                                        // Helping animation flow with world-local space manipulation 
+                                        b = Vector3.LerpUnclamped( leg.RootSpaceToWorld( leg._GlueLastAttachPositionRootLocal ), leg._GlueLastAttachPosition, attachBlend );
+                                    }
+                                }
                             }
                             else // Pinning towards grounded position
                             {
                                 b = leg.ankleAlignedOnGroundHitWorldPos;
                             }
 
-                            if (transitionProgress > .9995f) return b;
-                            else return Vector3.LerpUnclamped(a, b, transitionProgress);
+                            if( transitionProgress > .9995f ) return b;
+                            else return Vector3.LerpUnclamped( a, b, transitionProgress );
                         }
                         else // From attachement to attachement
                         {
-                            Vector3 a = previousPositionWorld;
-                            if (transitionProgress < 0.0001f) return a;
+                            Vector3 a;
+                            if( leg.Owner.OnlyLocalAnimation )
+                            {
+                                a = Owner.RootToWorldSpace( previousPositionLocal );
+                                if( transitionProgress < 0.0001f ) return a;
+                            }
+                            else
+                            {
+                                a = previousPositionWorld;
+                                if( transitionProgress < 0.0001f ) return a;
 
-                            // From world to local initial point to compensate dynamic character aligning
-                            a = Vector3.LerpUnclamped(previousPositionWorld, Owner.RootToWorldSpace(previousPositionLocal), transitionProgress);
+                                // From world to local initial point to compensate dynamic character aligning
+                                a = Vector3.LerpUnclamped( previousPositionWorld, Owner.RootToWorldSpace( previousPositionLocal ), transitionProgress );
+                            }
 
                             Vector3 b;
-                            if (transitionProgress > 0.9995f) b = leg._GlueLastAttachPosition;
-                            else b = CalculateAnimatedLegPosition(a, leg.ankleAlignedOnGroundHitWorldPos);
+                            if( transitionProgress > 0.9995f ) b = leg._GlueLastAttachPosition;
+                            else b = CalculateAnimatedLegPosition( a, leg.ankleAlignedOnGroundHitWorldPos );
 
-                            if (transitionProgress >= 1f)
+                            if( transitionProgress >= 1f )
                             {
                                 return b;
                             }
                             else
                             {
                                 float om = 1f - transitionProgress;
-                                b = Vector3.LerpUnclamped(a, b, 1f - (om*om));
+                                b = Vector3.LerpUnclamped( a, b, 1f - ( om * om ) );
                                 return b;
                             }
                         }
@@ -246,7 +262,7 @@ namespace FIMSpace.FProceduralAnimation
 
                     internal void RequireRepose()
                     {
-                        if (attached)
+                        if( attached )
                         {
                             attached = false;
                             OnChangeTargetPosition();
@@ -258,7 +274,7 @@ namespace FIMSpace.FProceduralAnimation
                         Quaternion a = previousRotationWorld;
                         Quaternion finRot;
 
-                        if (transitionProgress < 0.001f)
+                        if( transitionProgress < 0.001f )
                         {
                             finRot = a;
                             return finRot;
@@ -266,7 +282,7 @@ namespace FIMSpace.FProceduralAnimation
 
                         Quaternion b;
 
-                        if (attached) // fading from last glue
+                        if( attached ) // fading from last glue
                         {
                             b = leg._GlueLastAttachRotation;
                         }
@@ -274,10 +290,10 @@ namespace FIMSpace.FProceduralAnimation
                             b = leg.ankleAlignedOnGroundHitRotation; // IMPORTANT
 
 
-                        if (transitionProgress > .9995f)
+                        if( transitionProgress > .9995f )
                             finRot = b;
                         else
-                            finRot = Quaternion.LerpUnclamped(a, b, transitionProgress);
+                            finRot = Quaternion.LerpUnclamped( a, b, transitionProgress );
 
                         return finRot;
                     }
@@ -290,27 +306,27 @@ namespace FIMSpace.FProceduralAnimation
 
                         #region Determinate type of gluing animation to execute on change
 
-                        if (handler.glueAnimationBlend < 0.2f)
+                        if( handler.glueAnimationBlend < 0.2f )
                         {
                             animationMoveType = EMoveType.FromAnimation;
                         }
                         else
                         {
-                            if (handler.lasGlueModeOnAttaching == EGlueMode.Moving)
+                            if( handler.lasGlueModeOnAttaching == EGlueMode.Moving )
                             {
                                 animationMoveType = EMoveType.FromAnimation;
                             }
                             else
                             {
-                                if (animationMoveType == EMoveType.FromLastAttachement)
+                                if( animationMoveType == EMoveType.FromLastAttachement )
                                 {
                                     animationMoveType = EMoveType.FromLastAttachement;
                                 }
                                 else
                                 {
-                                    if (handler.glueAnimationBlend > 0.75f)
+                                    if( handler.glueAnimationBlend > 0.75f )
                                     {
-                                        if (transitionProgress < 0.1f || transitionProgress > 0.9f)
+                                        if( transitionProgress < 0.1f || transitionProgress > 0.9f )
                                         {
                                             animationMoveType = EMoveType.FromLastAttachement;
                                         }
@@ -329,15 +345,19 @@ namespace FIMSpace.FProceduralAnimation
 
                         #endregion
 
-                        previousPositionWorld = lastAppliedGluePosition;
+                        if( leg.Owner.OnlyLocalAnimation )
+                            previousPositionWorld = leg.RootSpaceToWorld( lastAppliedGluePositionLocal );
+                        else
+                            previousPositionWorld = lastAppliedGluePosition;
+
                         previousRotationWorld = lastAppliedGlueRotation;
-                        previousPositionLocal = Owner.ToRootLocalSpace(previousPositionWorld);
+                        previousPositionLocal = Owner.ToRootLocalSpace( previousPositionWorld );
 
                         #region Computing idle gluing leg animation parameters
 
-                        if (animationMoveType == EMoveType.FromLastAttachement)
+                        if( animationMoveType == EMoveType.FromLastAttachement )
                         {
-                            if (transitionProgress > 0.1f && transitionProgress < 0.9f) // Break currently executed transitioning
+                            if( transitionProgress > 0.1f && transitionProgress < 0.9f ) // Break currently executed transitioning
                             {
                                 //UnityEngine.Debug.Log("break");
                                 //breakIdleGlueTime = Time.time;
@@ -354,21 +374,23 @@ namespace FIMSpace.FProceduralAnimation
                             Vector3 diff = to - from;
 
                             float fromToDistance = diff.magnitude;
-                            legMoveDistanceFactor = (fromToDistance) / (Owner.ScaleReference * 0.6f);
-                            legMoveDistanceFactor = Mathf.Clamp(legMoveDistanceFactor, 0.05f, 1f);
+                            legMoveDistanceFactor = ( fromToDistance ) / ( Owner.ScaleReference * 0.6f );
+                            legMoveDistanceFactor = Mathf.Clamp( legMoveDistanceFactor, 0.05f, 1f );
 
                             Vector3 towards = diff.normalized;
-                            towards = Vector3.ProjectOnPlane(towards, Owner.Up);
+                            towards = Vector3.ProjectOnPlane( towards, Owner.Up );
                             towards.Normalize();
 
-                            if (legMoveDistanceFactor > 0.0401f)
-                            {
-                                _legMoveDurMul = Mathf.Lerp(1.55f, .85f, legMoveDistanceFactor * 2f);
+                            leg.SendRaiseEvent( fromToDistance );
 
-                                Vector3 cross = Vector3.Cross(towards, Owner.Up);
+                            if( legMoveDistanceFactor > 0.0401f )
+                            {
+                                _legMoveDurMul = Mathf.Lerp( 1.55f, .85f, legMoveDistanceFactor * 2f );
+
+                                Vector3 cross = Vector3.Cross( towards, Owner.Up );
                                 cross.Normalize();
 
-                                _legSpherizeLocalVector = leg.ToRootLocalSpaceDir(cross) * Owner.ScaleReferenceNoScale * -0.03f;
+                                _legSpherizeLocalVector = leg.ToRootLocalSpaceDir( cross ) * Owner.ScaleReferenceNoScale * -0.03f;
 
                                 duringLegAdjustMovement = true;
                             }
@@ -391,12 +413,12 @@ namespace FIMSpace.FProceduralAnimation
 
                     public void UpdateAnimation()
                     {
-                        float boostSD = (Owner.JustGrounded) ? 0.2f : 1f;
-                        float boostLrp = (Owner.JustGrounded) ? 5f : 1f;
+                        float boostSD = ( Owner.JustGrounded ) ? 0.2f : 1f;
+                        float boostLrp = ( Owner.JustGrounded ) ? 5f : 1f;
 
                         transitionProgressLastFrame = transitionProgress;
 
-                        if (_instantTransition)
+                        if( _instantTransition )
                         {
                             _instantTransition = false;
                             transitionProgress = 1f;
@@ -412,68 +434,71 @@ namespace FIMSpace.FProceduralAnimation
                         //}
                         //}
 
-                        if (!Owner.IsGrounded) return;
+                        if( !Owner.IsGrounded ) return;
 
-                        if (animationMoveType == EMoveType.FromLastAttachement)
+                        if( animationMoveType == EMoveType.FromLastAttachement )
                         {
-                            float animTime = 1f / (leg.LegAnimatingSettings.StepMoveDuration * 0.8f);
+                            float animTime = 1f / ( leg.LegAnimatingSettings.StepMoveDuration * 0.8f );
 
                             #region Speedups
 
                             float speedup = 1f;
                             lastSpeedup = 1f;
 
-                            if (leg.LegAnimatingSettings.AllowSpeedups > 0f)
+                            if( leg.LegAnimatingSettings.AllowSpeedups > 0f )
                             {
 
-                                if (leg.hasOppositeleg)
+                                if( leg.hasOppositeleg )
                                 {
                                     var oppositeleg = leg.GetOppositeLeg();
 
-                                    float stretch = oppositeleg.IKProcessor.GetStretchValue(oppositeleg._PreviousFinalIKPos);
-                                    if (stretch > leg.LegStretchLimit * 0.95f)
+                                    Vector3 prePos = oppositeleg._PreviousFinalIKPos;
+                                    if( leg.Owner.OnlyLocalAnimation ) prePos = leg.RootSpaceToWorld( oppositeleg._PreviousFinalIKPosRootLocal );
+
+                                    float stretch = oppositeleg.IKProcessor.GetStretchValue( prePos );
+                                    if( stretch > leg.LegStretchLimit * 0.95f )
                                     {
-                                        float diff = (stretch - leg.LegStretchLimit * 0.95f) * 2.0f;
-                                        if (diff < 0f) diff = 0f;
+                                        float diff = ( stretch - leg.LegStretchLimit * 0.95f ) * 2.0f;
+                                        if( diff < 0f ) diff = 0f;
                                         speedup += diff;
                                     }
 
-                                    if (oppositeleg._UsingCustomRaycast == false)
-                                        if (oppositeleg.G_AttachementHandler.legMoveAnimation.attached)
+                                    if( oppositeleg._UsingCustomRaycast == false )
+                                        if( oppositeleg.G_AttachementHandler.legMoveAnimation.attached )
                                         {
-                                            float distToAttach = (leg.RootSpaceToWorld(oppositeleg.AnkleH.LastKeyframeRootPos) - oppositeleg.G_Attachement.AttachHit.point).magnitude;
+                                            float distToAttach = ( leg.RootSpaceToWorld( oppositeleg.AnkleH.LastKeyframeRootPos ) - oppositeleg.G_Attachement.GetRelevantHitPoint() ).magnitude;
                                             float scaleRef = Owner.ScaleReference * 0.4f;
-                                            if (distToAttach > scaleRef)
+                                            if( distToAttach > scaleRef )
                                             {
                                                 float diff = distToAttach - scaleRef;
-                                                speedup += (diff / scaleRef) * 2f;
+                                                speedup += ( diff / scaleRef ) * 2f;
                                             }
                                         }
                                 }
 
-                                if (leg.LegAnimatingSettings.AllowSpeedups > 0.25f)
+                                if( leg.LegAnimatingSettings.AllowSpeedups > 0.25f )
                                 {
-                                    float diff = Quaternion.Angle(baseRotationOnStepUp, Owner.BaseTransform.rotation);
-                                    if (diff > 12f)
+                                    float diff = Quaternion.Angle( baseRotationOnStepUp, Owner.BaseTransform.rotation );
+                                    if( diff > 12f )
                                     {
-                                        float angularFactor = Mathf.InverseLerp(30f, 135f, diff);
-                                        angularFactor = Mathf.LerpUnclamped(0.5f, 2f, angularFactor) * (0.4f + leg.LegAnimatingSettings.AllowSpeedups * 0.6f);
+                                        float angularFactor = Mathf.InverseLerp( 30f, 135f, diff );
+                                        angularFactor = Mathf.LerpUnclamped( 0.5f, 2f, angularFactor ) * ( 0.4f + leg.LegAnimatingSettings.AllowSpeedups * 0.6f );
                                         transitionProgress += Owner.DeltaTime * angularFactor * boostLrp;
                                     }
                                 }
 
-                                speedup = Mathf.LerpUnclamped(1f, speedup, leg.LegAnimatingSettings.AllowSpeedups);
+                                speedup = Mathf.LerpUnclamped( 1f, speedup, leg.LegAnimatingSettings.AllowSpeedups );
                             }
 
                             lastSpeedup = speedup;
 
                             #endregion
 
-                            transitionProgress = Mathf.MoveTowards(transitionProgress, 1f, animTime * speedup * _legMoveDurMul * leg.LegMoveSpeedMultiplier * Owner.DeltaTime * boostLrp);
+                            transitionProgress = Mathf.MoveTowards( transitionProgress, 1f, animTime * speedup * _legMoveDurMul * leg.LegMoveSpeedMultiplier * Owner.DeltaTime * boostLrp );
 
-                            if (transitionProgress > .9995f)
+                            if( transitionProgress > .9995f )
                             {
-                                if (duringLegAdjustMovement)
+                                if( duringLegAdjustMovement )
                                 {
                                     TriggerAttach();
                                 }
@@ -482,17 +507,17 @@ namespace FIMSpace.FProceduralAnimation
                             return;
                         }
 
-                        if (transitionProgress > .9995f && handler.glueAnimationBlend > 0.95f)
+                        if( transitionProgress > .9995f && handler.glueAnimationBlend > 0.95f )
                         {
                             TriggerAttach();
                         }
                         else
-                            transitionProgress = Mathf.SmoothDamp(transitionProgress, 1.001f, ref sd_trProgress, (0.01f + Mathf.LerpUnclamped(0.225f, 0.01f, wasAttaching ? Owner.GlueFadeInSpeed : Owner.GlueFadeOutSpeed)) * boostSD, 10000000f, Owner.DeltaTime);
+                            transitionProgress = Mathf.SmoothDamp( transitionProgress, 1.001f, ref sd_trProgress, ( 0.01f + Mathf.LerpUnclamped( 0.225f, 0.01f, wasAttaching ? Owner.GlueFadeInSpeed : Owner.GlueFadeOutSpeed ) ) * boostSD, 10000000f, Owner.DeltaTime );
                     }
 
                     void TriggerAttach()
                     {
-                        if (!attached)
+                        if( !attached )
                         {
                             transitionProgress = 1f;
                             lastAttachCompleteTime = Time.time;
@@ -504,12 +529,13 @@ namespace FIMSpace.FProceduralAnimation
                     public void PostUpdate()
                     {
                         lastAppliedGluePosition = leg._GluePosition;
+                        lastAppliedGluePositionLocal = leg.ToRootLocalSpace( lastAppliedGluePosition );
                         lastAppliedGlueRotation = leg._GlueRotation;
 
-                        if (_wasAnimatingLeg == false) // Fade off in case of broken transition animation
+                        if( _wasAnimatingLeg == false ) // Fade off in case of broken transition animation
                         {
-                            LegAdjustementFootAngleOffset = Mathf.MoveTowards(LegAdjustementFootAngleOffset, 0f, leg.DeltaTime * 20f);
-                            LegAdjustementYOffset = Mathf.MoveTowards(LegAdjustementYOffset, 0f, leg.DeltaTime * 20f);
+                            LegAdjustementFootAngleOffset = Mathf.MoveTowards( LegAdjustementFootAngleOffset, 0f, leg.DeltaTime * 20f );
+                            LegAdjustementYOffset = Mathf.MoveTowards( LegAdjustementYOffset, 0f, leg.DeltaTime * 20f );
                         }
                         else
                         {

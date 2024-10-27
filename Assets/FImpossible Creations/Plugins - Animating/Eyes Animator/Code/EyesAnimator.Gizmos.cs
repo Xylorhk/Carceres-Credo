@@ -40,8 +40,17 @@ namespace FIMSpace.FEyes
             if (EyesTarget != null && HeadReference != null)
             {
                 Vector3 lookStartPositionBase;
-                lookStartPositionBase = BaseTransform.position;
-                lookStartPositionBase.y = HeadReference.position.y;
+
+                if ( StaticLookStartPosition)
+                {
+                    lookStartPositionBase = BaseTransform.position;
+                    lookStartPositionBase.y = HeadReference.position.y;
+                }
+                else
+                {
+                    lookStartPositionBase = HeadReference.position;
+                }
+
                 lookStartPositionBase += HeadReference.TransformVector(StartLookOffset);
 
                 Gizmos.color = new Color(0.3f, 1f, 0.3f, 0.7f);

@@ -29,7 +29,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Changing direction of raycasting, can be useful for humanoid climbing mechanics.", MessageType.Info);
+            EditorGUILayout.HelpBox("Changing direction of raycasting, can be useful for humanoid climbing mechanics.", UnityEditor.MessageType.Info);
             GUILayout.Space(5);
             _LocalDirection = helper.RequestVariable("Rotate Raycast", new Vector3(75f, 0f, 0f));
             _LocalDirection.Editor_DisplayVariableGUI();

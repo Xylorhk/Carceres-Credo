@@ -34,7 +34,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Fade off Legs Animator gluing when animator bool parameter is true.", MessageType.Info);
+            EditorGUILayout.HelpBox("Fade off Legs Animator gluing when animator bool parameter is true.", UnityEditor.MessageType.Info);
             GUILayout.Space(3);
 
             var  boolParamName = helper.RequestVariable("Disable Gluing On Bool Param", "Animator Param Name");
@@ -42,7 +42,7 @@ namespace FIMSpace.FProceduralAnimation
 
             if (helper.Parent.Mecanim == null)
             {
-                EditorGUILayout.HelpBox("This module requires animator to be assigned under Legs Animator 'Extra -> Control' bookmark!", MessageType.Warning);
+                EditorGUILayout.HelpBox("This module requires animator to be assigned under Legs Animator 'Extra -> Control' bookmark!", UnityEditor.MessageType.Warning);
             }
 
             if ( Initialized)

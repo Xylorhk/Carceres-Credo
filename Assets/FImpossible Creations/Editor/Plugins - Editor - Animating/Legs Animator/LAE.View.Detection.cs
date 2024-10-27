@@ -62,20 +62,37 @@ namespace FIMSpace.FProceduralAnimation
             {
                 EditorGUI.indentLevel++;
                 EditorGUILayout.PropertyField(sp_cast);
+                sp_cast.Next(false);
+                if (sp_cast.floatValue > 2.99999f) EditorGUILayout.PropertyField(sp_cast); else EditorGUILayout.Slider(sp_cast, 0f, 3f);
                 EditorGUI.indentLevel--;
             }
+            else
+                sp_cast.Next(false);
+
 
             if (Get.RaycastStyle == LegsAnimator.ERaycastStyle.NoRaycasting)
             {
                 GUILayout.Space(4);
-                EditorGUILayout.HelpBox("No raycasting means that the algorithm will simulate floor on zero level of the character. Gluing and modules will work, but aligning/legs elevate/smooth step/hips height adjusting will not be used.", MessageType.Info);
+                EditorGUILayout.HelpBox("No raycasting means that the algorithm will simulate floor on zero level of the character. Gluing and modules will work, but aligning/legs elevate/smooth step/hips height adjusting will not be used.", UnityEditor.MessageType.Info);
             }
             else
             {
                 GUILayout.Space(4);
+
+                EditorGUI.BeginChangeCheck();
+
                 sp_cast.Next(false);
                 EditorGUIUtility.labelWidth = 180;
                 EditorGUILayout.PropertyField(sp_cast); // No hit behaviour
+                sp_cast.Next(false);
+
+                if (Get.NoRaycastGroundBehaviour == LegsAnimator.ENoRaycastBehviour.KeepAttached)
+                {
+                    EditorGUI.indentLevel++;
+                    sp_cast.Next(false);
+                    EditorGUILayout.PropertyField(sp_cast, new GUIContent("Keep Until Stretch:", sp_cast.tooltip)); // Keep Attached until
+                    EditorGUI.indentLevel--;
+                }
             }
 
             //GUILayout.Space(4);
@@ -245,19 +262,19 @@ namespace FIMSpace.FProceduralAnimation
             GUILayout.Space(4);
 
             EditorGUILayout.PropertyField(sp_DisableIfInvisible);
-            if (Application.isPlaying) if (Get.DisableIfInvisible) EditorGUILayout.HelpBox("The Renderer is " + (Get.DisableIfInvisible.isVisible ? "Visible" : "Invisible!"), MessageType.None);
+            if (Application.isPlaying) if (Get.DisableIfInvisible) EditorGUILayout.HelpBox("The Renderer is " + (Get.DisableIfInvisible.isVisible ? "Visible" : "Invisible!"), UnityEditor.MessageType.None);
 
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.PropertyField(sp_FadeOffAtDistance);
             if (sp_FadeOffAtDistance.floatValue < 0f) sp_FadeOffAtDistance.floatValue = 0f;
-            if (sp_FadeOffAtDistance.floatValue == 0f) EditorGUILayout.HelpBox("Zero = not using", MessageType.None);
+            if (sp_FadeOffAtDistance.floatValue == 0f) EditorGUILayout.HelpBox("Zero = not using", UnityEditor.MessageType.None);
             EditorGUILayout.EndHorizontal();
             if (Application.isPlaying) if (sp_FadeOffAtDistance.floatValue > 0f) EditorGUILayout.LabelField("Camera Distance = " + Get.FadeOff_lastCameraDistance + "   Fade = " + System.Math.Round(Get.GetCurrentCullingBlend(), 2), EditorStyles.centeredGreyMiniLabel);
 
             FGUI_Inspector.DrawUILineCommon(16);
 
             GUILayout.Space(4);
-            EditorGUILayout.HelpBox("LODS ARE NOT YET IMPLEMENTED", MessageType.Info);
+            EditorGUILayout.HelpBox("LODS ARE NOT YET IMPLEMENTED", UnityEditor.MessageType.Info);
             GUILayout.Space(4);
 
             GUI.enabled = false;

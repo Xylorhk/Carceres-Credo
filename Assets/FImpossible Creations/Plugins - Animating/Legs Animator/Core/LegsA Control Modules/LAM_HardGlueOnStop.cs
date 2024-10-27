@@ -48,7 +48,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Trying to quickly glue foot on ground when LegsAnimator IsMoving changes from true to false.", MessageType.Info);
+            EditorGUILayout.HelpBox("Trying to quickly glue foot on ground when LegsAnimator IsMoving changes from true to false.", UnityEditor.MessageType.Info);
 
             GUILayout.Space(5);
             EditorGUILayout.BeginHorizontal();

@@ -62,5 +62,9 @@ namespace FIMSpace.FProceduralAnimation
         /// <summary> Change only when overriding automatic value! </summary>
         public EGlueMode _glueModeExecuted { get; set; }
 
+        [Tooltip("Making Gluing animations only local space, which can be helpful when character is standing on the moving platform.")]
+        public bool OnlyLocalAnimation = false;
+
+
     }
 }

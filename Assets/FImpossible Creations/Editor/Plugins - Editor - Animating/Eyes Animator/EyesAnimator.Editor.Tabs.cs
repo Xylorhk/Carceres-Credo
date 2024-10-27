@@ -1,4 +1,5 @@
 ﻿using FIMSpace.FEditor;
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -181,6 +182,8 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
     static bool drawSetup = true;
     void Tab_Setup()
     {
+        EditorGUI.BeginChangeCheck();
+
         FGUI_Inspector.VSpace(-2, -4);
         GUILayout.BeginVertical(FGUI_Resources.ViewBoxStyle);
         EditorGUILayout.BeginVertical(FGUI_Resources.BGInBoxBlankStyle);
@@ -191,7 +194,7 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
         {
             GUILayout.BeginHorizontal();
             GUI.color = new Color(1f, 1f, 1f, 0.65f);
-            EditorGUILayout.PropertyField(sp_Base); 
+            EditorGUILayout.PropertyField(sp_Base);
             EditorGUILayout.LabelField("(Optional)", GUILayout.Width(60));
             GUI.color = c;
             GUILayout.EndHorizontal();
@@ -297,19 +300,72 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
             for (int i = 0; i < Get.Eyes.Count; i++)
             {
                 GUILayout.BeginHorizontal();
+                FIMSpace.FEyes.FEyesAnimator.EyeSetup eyeSetup = null;
+                if (i < Get.EyeSetups.Count) eyeSetup = Get.EyeSetups[i];
+
+                if (eyeSetup != null && eyeSetup.ControlType == FIMSpace.FEyes.FEyesAnimator.EyeSetup.EEyeControlType.Blendshape)
+                {
+                    if (GUILayout.Button(FGUI_Resources.GetFoldSimbolTex(eyeSetup._BlendFoldout, true), EditorStyles.label, GUILayout.Width(21), GUILayout.Height(16))) { eyeSetup._BlendFoldout = !eyeSetup._BlendFoldout; }
+                }
 
                 Get.Eyes[i] = (Transform)EditorGUILayout.ObjectField("", Get.Eyes[i], typeof(Transform), true);
 
-                if (GUILayout.Button("X", new GUILayoutOption[2] { GUILayout.Width(20), GUILayout.Height(18) }))
+                if (eyeSetup != null)
                 {
-                    Get.Eyes.RemoveAt(i);
-                    Get.UpdateLists();
-                    EditorUtility.SetDirty(target);
+                    eyeSetup.ControlType = (FIMSpace.FEyes.FEyesAnimator.EyeSetup.EEyeControlType)EditorGUILayout.EnumPopup(eyeSetup.ControlType, GUILayout.MaxWidth(96));
                 }
+
+                int toRemove = -1;
+                GUI.backgroundColor = new Color(1f, 0.5f, 0.5f, 1f);
+                if (GUILayout.Button(FGUI_Resources.GUIC_Remove, FGUI_Resources.ButtonStyle, new GUILayoutOption[2] { GUILayout.Width(22), GUILayout.Height(18) }))
+                {
+                    toRemove = i;
+                }
+                GUI.backgroundColor = Color.white;
 
                 GUI.color = c;
 
                 GUILayout.EndHorizontal();
+
+                if (eyeSetup != null && eyeSetup.ControlType == FIMSpace.FEyes.FEyesAnimator.EyeSetup.EEyeControlType.Blendshape && eyeSetup._BlendFoldout)
+                {
+                    if (eyeSetup.BlendshapeMesh == null)
+                    {
+                        eyeSetup.BlendshapeMesh = Get.Eyes[i].GetComponent<SkinnedMeshRenderer>();
+                    }
+                    else
+                    {
+                        if (eyeSetup.BlendshapeMesh.transform != Get.Eyes[i])
+                        {
+                            eyeSetup.BlendshapeMesh = Get.Eyes[i].GetComponent<SkinnedMeshRenderer>();
+                        }
+                    }
+
+                    if (eyeSetup.BlendshapeMesh == null)
+                    {
+                        EditorGUILayout.HelpBox("Could not detect blendshape mesh! Change eye object to be transform of blendshape mesh!", MessageType.None);
+                        //eyeSetup.BlendshapeMesh = (SkinnedMeshRenderer)EditorGUILayout.ObjectField("Blendshape Mesh:", eyeSetup.BlendshapeMesh, typeof(SkinnedMeshRenderer), true);
+                    }
+
+                    if (eyeSetup.BlendshapeMesh)
+                    {
+                        //int wdth = 70;
+
+                        EditorGUIUtility.labelWidth = 190; eyeSetup.MinMaxValue= EditorGUILayout.Vector2Field("Blendshapes Min-Max:", eyeSetup.MinMaxValue); EditorGUIUtility.labelWidth = 0;
+                        DisplayBlendshapeField("Eye-Left:", ref eyeSetup.EyeLeftShape, eyeSetup.BlendshapeMesh, (int v) => { eyeSetup.EyeLeftShape = v; });
+                        DisplayBlendshapeField("Eye-Right:", ref eyeSetup.EyeRightShape, eyeSetup.BlendshapeMesh, (int v) => { eyeSetup.EyeRightShape = v; });
+                        DisplayBlendshapeField("Eye-Up:", ref eyeSetup.EyeUpShape, eyeSetup.BlendshapeMesh, (int v) => { eyeSetup.EyeUpShape = v; });
+                        DisplayBlendshapeField("Eye-Down:", ref eyeSetup.EyeDownShape, eyeSetup.BlendshapeMesh, (int v) => { eyeSetup.EyeDownShape = v; });
+                    }
+
+                }
+
+                if ( toRemove > -1)
+                {
+                    Get.Eyes.RemoveAt( toRemove );
+                    Get.UpdateLists();
+                    EditorUtility.SetDirty( target );
+                }
             }
 
             GUILayout.Space(3);
@@ -319,8 +375,49 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
         EditorGUILayout.EndVertical();
         GUILayout.Space(-4);
         EditorGUILayout.EndVertical();
+
+        if (EditorGUI.EndChangeCheck()) EditorUtility.SetDirty(Get);
     }
 
+
+    public static void DisplayBlendshapeField(string label, ref int val, SkinnedMeshRenderer skin, Action<int> apply)
+    {
+        if (skin == null)
+        {
+            EditorGUILayout.LabelField("No Mesh to read blenshapes!");
+        }
+        else
+        {
+            string valueName = "None";
+            if (val > -1) if (val < skin.sharedMesh.blendShapeCount)
+                {
+                    valueName = skin.sharedMesh.GetBlendShapeName(val);
+                }
+
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.Label(label);
+
+            if (GUILayout.Button(valueName, EditorStyles.layerMaskField))
+            {
+                GenericMenu menu = new GenericMenu();
+
+                int targetVal = -1;
+
+                menu.AddItem(new GUIContent("None"), val == -1, () => { apply.Invoke(-1); });
+                for (int i = skin.sharedMesh.blendShapeCount - 1; i >= 0; i--)
+                {
+                    int shapeVal = i;
+                    menu.AddItem(new GUIContent(skin.sharedMesh.GetBlendShapeName(i)), val == i, () => { apply.Invoke(shapeVal); });
+                }
+
+                menu.ShowAsContext();
+
+                val = targetVal;
+            }
+
+            EditorGUILayout.EndHorizontal();
+        }
+    }
 
 
     static bool drawCorrections = false;
@@ -345,8 +442,10 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
         }
 
         GUILayout.Space(6);
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("WorldUpIsBaseTransformUp"));
-
+        var sp = serializedObject.FindProperty( "WorldUpIsBaseTransformUp" );
+        EditorGUILayout.PropertyField(sp);
+        sp.Next( false );
+        EditorGUILayout.PropertyField( sp );
 
         EditorGUILayout.EndVertical();
         EditorGUILayout.EndVertical();

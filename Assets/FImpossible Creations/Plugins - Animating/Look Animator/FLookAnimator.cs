@@ -12,6 +12,7 @@ namespace FIMSpace.FLook
     /// </summary>
     [AddComponentMenu("FImpossible Creations/Look Animator 2")]
     [DefaultExecutionOrder(-10)]
+    [HelpURL( "https://assetstore.unity.com/packages/tools/animation/look-animator-122249" )]
     public partial class FLookAnimator : MonoBehaviour, UnityEngine.EventSystems.IDropHandler, IFHierarchyIcon
     {
         // THIS IS PARTIAL CLASS: REST OF THE CODE INSIDE "Scripts" directory
@@ -54,7 +55,7 @@ namespace FIMSpace.FLook
 
         [Header("If you don't want arms to be rotated when spine", order = 1)]
         [Header("bone is rotated by script (drag & drop here)", order = 3)]
-        public List<CompensationBone> CompensationBones;
+        public List<CompensationBone> CompensationBones = new List<CompensationBone>();
 
         [Range(0f, 1f)]
         public float CompensationWeight = 0.5f;
@@ -245,6 +246,9 @@ namespace FIMSpace.FLook
         [Range(0f, 1f)]
         public float OverrideHeadForPerfectLookDirection = 0f;
 
+        [Tooltip("Resetting bones before animators update to avoid bones twisting if bones are not animated using unity animator")]
+        public bool Calibration = true;
+
         [Tooltip("With crazy flipped axes from models done in different modelling softwares, sometimes you have to change axes order for Quaternion.LookRotation to work correctly")]
         public EFAxisFixOrder FixingPreset = EFAxisFixOrder.Parental;
 
@@ -300,14 +304,14 @@ namespace FIMSpace.FLook
         public bool AnimateWithSource { get { return SyncWithAnimator; } set { SyncWithAnimator = value; } }
 
         [Tooltip("Updating reference axis for parental look rotation mode every frame")]
-        public bool ConstantParentalAxisUpdate = false;
+        public bool ConstantParentalAxisUpdate = true;
 
         #endregion
 
 
         // THIS IS PARTIAL CLASS: REST OF THE CODE INSIDE "Scripts" directory
 
-
+        
         private void Reset() { FindBaseTransform(); }
 
         private void Awake() { _LOG_NoRefs(); }

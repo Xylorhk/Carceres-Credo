@@ -947,8 +947,11 @@ namespace FIMSpace.FLook
                 EditorGUILayout.PropertyField(sp_SimulationSpeed);
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("OverrideRotations"));
                 EditorGUIUtility.labelWidth = 262;
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("OverrideHeadForPerfectLookDirection"));
+                var sp = serializedObject.FindProperty("OverrideHeadForPerfectLookDirection");
+                EditorGUILayout.PropertyField(sp);
                 EditorGUIUtility.labelWidth = 0;
+                sp.Next(false);
+                EditorGUILayout.PropertyField(sp);
 
                 GUILayout.Space(4f);
             }

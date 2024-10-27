@@ -157,6 +157,12 @@ namespace FIMSpace
             GUI.color = preC;
         }
 
+        public void Editor_SwitchFoldout( bool? display = null )
+        {
+            if( display == null ) _foldout = !_foldout;
+            else _foldout = display.Value;
+        }
+
         public void Editor_Display(string prefix = "", bool onlyPlaymode = true, bool drawAverages = true, float buttonYOffset = -20f, float buttonXOffset = 4f, float displayRate = 10f)
         {
             if (onlyPlaymode) if (!Application.isPlaying) return;

@@ -45,7 +45,7 @@ namespace FIMSpace.FProceduralAnimation
             //_cont.image = Tex_HipsMotion;
             //EditorGUILayout.LabelField(_cont, FGUI_Resources.HeaderStyle);
 
-            EditorGUILayout.HelpBox("You can trigger hips push impulses with coding or using Legs Animator events.", MessageType.None);
+            EditorGUILayout.HelpBox("You can trigger hips push impulses with coding or using Legs Animator events.", UnityEditor.MessageType.None);
 
             GUILayout.Space(4);
 
@@ -92,32 +92,71 @@ namespace FIMSpace.FProceduralAnimation
         float _testImpulseDuration = 0.35f;
         float _testImpulseElastic = 0.75f;
 
-
         protected void View_Extra_Events()
         {
-            EditorGUILayout.BeginVertical(FGUI_Resources.BGInBoxBlankStyle);
+            EditorGUILayout.BeginVertical( FGUI_Resources.BGInBoxBlankStyle );
 
-            EditorGUILayout.PropertyField(sp_Event_OnStep);
-            GUILayout.Space(4);
+            // Step Event Trigger
+            EditorGUILayout.PropertyField( sp_Event_OnStep );
+            GUILayout.Space( 4 );
 
             EditorGUIUtility.labelWidth = 170;
             var sp = sp_Event_OnStep.Copy();
 
-            //EditorGUILayout.LabelField("Pelvis Impulses Settings", FGUI_Resources.HeaderStyle);
-            //GUILayout.Space(2);
-            //EditorGUILayout.PropertyField(sp); // Impulses Power
-            //EditorGUILayout.PropertyField(sp); // Impulses Dur
-
-            GUILayout.Space(6);
+            GUILayout.Space( 6 );
             EditorGUIUtility.labelWidth = 150;
-            sp.Next(false); EditorGUILayout.PropertyField(sp); // Step Delay
-            sp.Next(false); EditorGUILayout.PropertyField(sp); // Step Send on land
-            sp.Next(false); EditorGUILayout.PropertyField(sp); // Step Events On Moving
 
-            sp.Next(false); EditorGUILayout.PropertyField(sp); // Step Info Receiver
-            EditorGUILayout.HelpBox("Receiver needs to implement 'IStepInfoReceiver' interface", MessageType.None);
+            sp.Next( false );
+            EditorGUILayout.PropertyField( sp ); // Step Delay
+
+            EditorGUILayout.BeginHorizontal();
+            sp.Next( false );
+
+            EditorGUILayout.PropertyField( sp ); // Step Send on land
+            EditorGUIUtility.labelWidth = 120;
+            GUILayout.FlexibleSpace();
+            sp.Next( false );
+
+            EditorGUILayout.PropertyField( sp ); // Step Prevent
+            EditorGUILayout.EndHorizontal();
             EditorGUIUtility.labelWidth = 0;
 
+            sp.Next( false );
+            EditorGUILayout.PropertyField( sp ); // Step Events On Moving
+
+            bool receiverDetected = false;
+            if( Get.StepInfoReceiver )
+            {
+                if( Get.StepInfoReceiver.gameObject.GetComponent<LegsAnimator.ILegStepReceiver>() == null ) receiverDetected = false; else receiverDetected = true;
+            }
+
+            sp.Next( false );
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PropertyField( sp ); // Step Info Receiver
+
+            if( receiverDetected )
+            {
+                GUILayout.Space( 4 );
+                EditorGUILayout.LabelField( new GUIContent( FGUI_Resources.Tex_FCorrect, "ILegStepReceiver found" ), GUILayout.Width( 20 ), GUILayout.Height( 18 ) );
+            }
+
+            EditorGUILayout.EndHorizontal();
+
+            if( receiverDetected == false && Get.StepInfoReceiver != null )
+            {
+                EditorGUILayout.BeginHorizontal( EditorStyles.helpBox );
+                EditorGUILayout.LabelField( new GUIContent( FGUI_Resources.Tex_Warning ), GUILayout.Width( 20 ) );
+                GUILayout.Space( 6 );
+                EditorGUILayout.LabelField( "ILegStepReceiver not found in " + Get.StepInfoReceiver.name );
+                EditorGUILayout.EndHorizontal();
+
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.HelpBox( "Receiver needs to implement 'ILegStepReceiver' interface", UnityEditor.MessageType.None );
+                if( GUILayout.Button( new GUIContent( EditorGUIUtility.IconContent( "Clipboard" ).image, "Copy full interface name to the clipboard" ), FGUI_Resources.ButtonStyle, GUILayout.Width( 20 ) ) ) { GUIUtility.systemCopyBuffer = "FIMSpace.FProceduralAnimation.LegsAnimator.ILegStepReceiver"; }
+                EditorGUILayout.EndHorizontal();
+            }
+
+            EditorGUIUtility.labelWidth = 0;
             EditorGUILayout.EndVertical();
         }
 
@@ -135,21 +174,24 @@ namespace FIMSpace.FProceduralAnimation
                 menu.AddItem(new GUIContent("None"), prop.stringValue == "", () => { prop.stringValue = ""; prop.serializedObject.ApplyModifiedProperties(); });
                 var sp = prop.Copy();
 
-                for (int i = 0; i < Get.Mecanim.parameterCount; i++)
+                if (Get.Mecanim.runtimeAnimatorController != null)
                 {
-                    var param = Get.Mecanim.parameters[i];
-
-                    if (param.type == type)
+                    for (int i = 0; i < Get.Mecanim.parameterCount; i++)
                     {
-                        menu.AddItem(new GUIContent(param.name + " (" + param.type.ToString() + ")"), sp.stringValue == param.name, () => { sp.stringValue = param.name; sp.serializedObject.ApplyModifiedProperties(); });
-                        continue;
-                    }
+                        var param = Get.Mecanim.parameters[i];
 
-                    if (floatOrBoolParam)
-                        if (param.type == AnimatorControllerParameterType.Bool || param.type == AnimatorControllerParameterType.Float)
+                        if (param.type == type)
                         {
                             menu.AddItem(new GUIContent(param.name + " (" + param.type.ToString() + ")"), sp.stringValue == param.name, () => { sp.stringValue = param.name; sp.serializedObject.ApplyModifiedProperties(); });
+                            continue;
                         }
+
+                        if (floatOrBoolParam)
+                            if (param.type == AnimatorControllerParameterType.Bool || param.type == AnimatorControllerParameterType.Float)
+                            {
+                                menu.AddItem(new GUIContent(param.name + " (" + param.type.ToString() + ")"), sp.stringValue == param.name, () => { sp.stringValue = param.name; sp.serializedObject.ApplyModifiedProperties(); });
+                            }
+                    }
                 }
 
                 menu.ShowAsContext();
@@ -177,10 +219,11 @@ namespace FIMSpace.FProceduralAnimation
                 sp.Next(false);
 
                 if (string.IsNullOrWhiteSpace(Get.MovingParameter) == false)
-                    if (Get.Mecanim)
+                    if (Get.Mecanim && Get.Mecanim.runtimeAnimatorController != null)
                     {
                         bool movIsFloat = false;
                         int hash = Animator.StringToHash(Get.MovingParameter);
+
                         for (int i = 0; i < Get.Mecanim.parameterCount; i++)
                         {
                             if (Get.Mecanim.GetParameter(i).nameHash == hash)
@@ -223,7 +266,7 @@ namespace FIMSpace.FProceduralAnimation
             }
 
 
-            sp.Next(false); if ( Get.Mecanim) GUI_PropertyWithAnimatorVariableSelector(sp, AnimatorControllerParameterType.Bool); // Sliding
+            sp.Next(false); if (Get.Mecanim) GUI_PropertyWithAnimatorVariableSelector(sp, AnimatorControllerParameterType.Bool); // Sliding
             if (Get.Mecanim) GUI_PropertyWithAnimatorVariableSelector(sp_RagdolledParameter, AnimatorControllerParameterType.Bool); // Ragdolled
 
             sp.Next(false);
@@ -270,7 +313,7 @@ namespace FIMSpace.FProceduralAnimation
             else
             {
                 GUILayout.Space(8);
-                EditorGUILayout.HelpBox("During playmode there will be displayed debug parameters.", MessageType.None);
+                EditorGUILayout.HelpBox("During playmode there will be displayed debug parameters.", UnityEditor.MessageType.None);
             }
 
             EditorGUILayout.EndVertical();

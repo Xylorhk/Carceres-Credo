@@ -83,7 +83,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Using Stability calculated data to rotate hips and spine bone, in order to add extra motion to the animation.", MessageType.Info);
+            EditorGUILayout.HelpBox("Using Stability calculated data to rotate hips and spine bone, in order to add extra motion to the animation.", UnityEditor.MessageType.Info);
             GUILayout.Space(5);
 
             var rotateVar = helper.RequestVariable("Rotation Power", 0.4f);

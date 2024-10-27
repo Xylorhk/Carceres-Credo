@@ -127,37 +127,125 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
         GUILayout.EndHorizontal();
         GUI.color = c;
 
-        #region Clamping angles
+        EditorGUILayout.PropertyField(sp_IndClamp);
+        GUILayout.Space(4f);
 
-        if (!wrongLimit) GUI.color = new Color(0.55f, 0.9f, 0.75f, 0.8f); else GUI.color = new Color(0.9f, 0.55f, 0.55f, 0.8f);
-        GUILayout.EndVertical(); ///
+
+        if (!sp_IndClamp.boolValue)
+        {
+
+            #region Clamping angles
+
+            if (!wrongLimit) GUI.color = new Color(0.55f, 0.9f, 0.75f, 0.8f); else GUI.color = new Color(0.9f, 0.55f, 0.55f, 0.8f);
+            GUILayout.EndVertical(); ///
+
+            GUILayout.BeginVertical(FGUI_Resources.BGInBoxLightStyle); ////
+            GUILayout.Space(3f);
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("  Clamp Angle Horizontal (X)", GUILayout.MaxWidth(170f));
+            GUILayout.FlexibleSpace();
+            GUILayout.Label(Mathf.Round(Get.EyesClampHorizontal.x) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
+            FEditor_CustomInspectorHelpers.DrawMinMaxSphere(Get.EyesClampHorizontal.x, Get.EyesClampHorizontal.y, 14, 0f);
+            GUILayout.Label(Mathf.Round(Get.EyesClampHorizontal.y) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+
+            EditorGUILayout.MinMaxSlider(ref Get.EyesClampHorizontal.x, ref Get.EyesClampHorizontal.y, -180f, 180f);
+            bothX = EditorGUILayout.Slider("Adjust symmetrical", bothX, 1f, 180f);
+
+            if (lastBothX != bothX)
+            {
+                Get.EyesClampHorizontal.x = -bothX;
+                Get.EyesClampHorizontal.y = bothX;
+                lastBothX = bothX;
+                serializedObject.ApplyModifiedProperties();
+                EditorUtility.SetDirty(target);
+            }
+
+            GUI.color = c;
+            GUILayout.Space(3f);
+            GUILayout.EndVertical(); ///
+
+
+            GUI.color = new Color(0.6f, 0.75f, 0.9f, 0.8f);
+
+            GUILayout.BeginVertical(FGUI_Resources.BGInBoxStyle); ////
+            GUILayout.Space(3f);
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("  Clamp Angle Vertical (Y)", GUILayout.MaxWidth(170f));
+            GUILayout.FlexibleSpace();
+            GUILayout.Label(Mathf.Round(Get.EyesClampVertical.x) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
+            FEditor_CustomInspectorHelpers.DrawMinMaxVertSphere(-Get.EyesClampVertical.y, -Get.EyesClampVertical.x, 14, 0f);
+            GUILayout.Label(Mathf.Round(Get.EyesClampVertical.y) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+
+            EditorGUILayout.MinMaxSlider(ref Get.EyesClampVertical.x, ref Get.EyesClampVertical.y, -90f, 90f);
+            bothY = EditorGUILayout.Slider("Adjust symmetrical", bothY, 1f, 90f);
+
+            if (lastBothY != bothY)
+            {
+                Get.EyesClampVertical.x = -bothY;
+                Get.EyesClampVertical.y = bothY;
+                lastBothY = bothY;
+                serializedObject.ApplyModifiedProperties();
+                EditorUtility.SetDirty(target);
+            }
+
+            GUI.color = c;
+
+            #endregion
+
+
+        }
+        else
+        {
+            string selEye = "No Eye Selected";
+            if (_indivClampEye > -1) selEye = "Eye [" + _indivClampEye + "]";
+            if (GUILayout.Button(selEye, EditorStyles.layerMaskField))
+            {
+                GenericMenu menu = new GenericMenu();
+                menu.AddItem(new GUIContent("None"), _indivClampEye == -1, () => { _indivClampEye = -1; });
+                for (int i = 0; i < Get.EyeSetups.Count; i++)
+                {
+                    int eIndex = i;
+                    menu.AddItem(new GUIContent("Eye [" + i + "]"), _indivClampEye == eIndex, () => { _indivClampEye = eIndex; });
+                }
+                menu.ShowAsContext();
+            }
+
+            if ( _indivClampEye > -1)
+            if ( _indivClampEye < Get.EyeSetups.Count)
+                {
+                    DrawIndividualClampingForEye(Get.EyeSetups[_indivClampEye]);
+                }
+            else
+                {
+                    _indivClampEye = -1;
+                }
+
+        }
+
+        GUILayout.Space(4f);
+    }
+
+    int _indivClampEye = -1;
+    void DrawIndividualClampingForEye(FIMSpace.FEyes.FEyesAnimator.EyeSetup eye)
+    {
+        EditorGUI.BeginChangeCheck();
 
         GUILayout.BeginVertical(FGUI_Resources.BGInBoxLightStyle); ////
         GUILayout.Space(3f);
         GUILayout.BeginHorizontal();
         GUILayout.Label("  Clamp Angle Horizontal (X)", GUILayout.MaxWidth(170f));
         GUILayout.FlexibleSpace();
-        GUILayout.Label(Mathf.Round(Get.EyesClampHorizontal.x) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
-        FEditor_CustomInspectorHelpers.DrawMinMaxSphere(Get.EyesClampHorizontal.x, Get.EyesClampHorizontal.y, 14, 0f);
-        GUILayout.Label(Mathf.Round(Get.EyesClampHorizontal.y) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
+        GUILayout.Label(Mathf.Round(eye.IndividualClampingHorizontal.x) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
+        FEditor_CustomInspectorHelpers.DrawMinMaxSphere(eye.IndividualClampingHorizontal.x, eye.IndividualClampingHorizontal.y, 14, 0f);
+        GUILayout.Label(Mathf.Round(eye.IndividualClampingHorizontal.y) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
-
-        EditorGUILayout.MinMaxSlider(ref Get.EyesClampHorizontal.x, ref Get.EyesClampHorizontal.y, -180f, 180f);
-        bothX = EditorGUILayout.Slider("Adjust symmetrical", bothX, 1f, 180f);
-
-        if (lastBothX != bothX)
-        {
-            Get.EyesClampHorizontal.x = -bothX;
-            Get.EyesClampHorizontal.y = bothX;
-            lastBothX = bothX;
-            serializedObject.ApplyModifiedProperties();
-            EditorUtility.SetDirty(target);
-        }
-
-        GUI.color = c;
-        GUILayout.Space(3f);
         GUILayout.EndVertical(); ///
+        EditorGUILayout.MinMaxSlider(ref eye.IndividualClampingHorizontal.x, ref eye.IndividualClampingHorizontal.y, -180f, 180f);
 
 
         GUI.color = new Color(0.6f, 0.75f, 0.9f, 0.8f);
@@ -167,29 +255,20 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
         GUILayout.BeginHorizontal();
         GUILayout.Label("  Clamp Angle Vertical (Y)", GUILayout.MaxWidth(170f));
         GUILayout.FlexibleSpace();
-        GUILayout.Label(Mathf.Round(Get.EyesClampVertical.x) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
-        FEditor_CustomInspectorHelpers.DrawMinMaxVertSphere(-Get.EyesClampVertical.y, -Get.EyesClampVertical.x, 14, 0f);
-        GUILayout.Label(Mathf.Round(Get.EyesClampVertical.y) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
+        GUILayout.Label(Mathf.Round(eye.IndividualClampingVertical.x) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
+        FEditor_CustomInspectorHelpers.DrawMinMaxVertSphere(-eye.IndividualClampingVertical.y, -eye.IndividualClampingVertical.x, 14, 0f);
+        GUILayout.Label(Mathf.Round(eye.IndividualClampingVertical.y) + "°", FGUI_Inspector.Style(grayStyle), GUILayout.MaxWidth(40f));
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
-
-        EditorGUILayout.MinMaxSlider(ref Get.EyesClampVertical.x, ref Get.EyesClampVertical.y, -90f, 90f);
-        bothY = EditorGUILayout.Slider("Adjust symmetrical", bothY, 1f, 90f);
-
-        if (lastBothY != bothY)
-        {
-            Get.EyesClampVertical.x = -bothY;
-            Get.EyesClampVertical.y = bothY;
-            lastBothY = bothY;
-            serializedObject.ApplyModifiedProperties();
-            EditorUtility.SetDirty(target);
-        }
+        GUILayout.EndVertical(); ///
+        EditorGUILayout.MinMaxSlider(ref eye.IndividualClampingVertical.x, ref eye.IndividualClampingVertical.y, -180f, 180f);
 
         GUI.color = c;
 
-        #endregion
-
-        GUILayout.Space(4f);
+        if ( EditorGUI.EndChangeCheck())
+        {
+            EditorUtility.SetDirty(Get);
+        }
     }
 
 }

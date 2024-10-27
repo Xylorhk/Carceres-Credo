@@ -125,7 +125,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Adjusting body raycasting matrix on the raycasted slope + offers hips rotation. Mostly useful for spider creatures but it can also help humanoids slopes movement.", MessageType.Info);
+            EditorGUILayout.HelpBox("Adjusting body raycasting matrix on the raycasted slope + offers hips rotation. Mostly useful for spider creatures but it can also help humanoids slopes movement.", UnityEditor.MessageType.Info);
 
             var mxVar = helper.RequestVariable("Matrix Blend", 1f);
             mxVar.SetMinMaxSlider(0f, 1f);

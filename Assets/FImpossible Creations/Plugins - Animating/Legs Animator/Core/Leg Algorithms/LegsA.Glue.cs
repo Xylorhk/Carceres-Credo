@@ -18,6 +18,9 @@ namespace FIMSpace.FProceduralAnimation
 
             protected bool G_JustLanded = false;
 
+            /// <summary> Can be used by custom modules </summary>
+            [NonSerialized] public float ExtraGluingBlend = 1f;
+
             Vector3 _GlueLastAttachPosition;
             Vector3 _GlueLastAttachPositionRootLocal;
             Quaternion _GlueLastAttachRotation;
@@ -90,7 +93,7 @@ namespace FIMSpace.FProceduralAnimation
             {
                 #region Gluing blending switch, deactivation, reactivation etc.
 
-                _glueTargetBlend = Owner.GlueBlend * Owner.RagdolledDisablerBlend * Owner.NotSlidingBlend;
+                _glueTargetBlend = Owner.GlueBlend * ExtraGluingBlend * Owner.RagdolledDisablerBlend * Owner.NotSlidingBlend;
 
                 if (Owner.GlueOnlyOnIdle) _glueTargetBlend *= 1f - Owner.IsMovingBlend;
 
@@ -333,6 +336,8 @@ namespace FIMSpace.FProceduralAnimation
 
                     Vector3 offset = targetDragPos - _GluePosition;
                     G_GlueDragOffset = Vector3.Lerp(G_GlueDragOffset, offset, Owner.DeltaTime * 14f);
+
+                    if( float.IsNaN( G_GlueDragOffset.x ) || float.IsNaN( G_GlueDragOffset.z ) ) G_GlueDragOffset = Vector3.zero;
                 }
             }
 

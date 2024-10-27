@@ -52,8 +52,26 @@ namespace FIMSpace.FProceduralAnimation
         [Tooltip("Shift spherecast hit point result towards original XZ position instead of hit position. Can be helpful to prevent spider legs from being bent too much in narrow spaces.")]
         public float SpherecastRealign = 0f;
 
-        [Tooltip("If no raycast hit detected, should character still animate leg steps in air on zero height floor level? (fake floor)")]
+        [Tooltip("Shift spherecast hit point result towards original XZ position instead of hit position. Can be helpful to prevent spider legs from being bent too much in narrow spaces.")]
+        public float SpherecastResize = 1f;
+
+        public enum ENoRaycastBehviour
+        {
+            [Tooltip("If ground raycast is lost, leg will detach and switch to ungrounded state")]
+            Detach,
+            [Tooltip("If no raycast hit detected, should character still animate leg steps in air on zero height floor level? (fake floor)")]
+            ZeroFloorSteps, 
+            [Tooltip("If ground raycast is lost, leg will stick to lastest found raycast hit until leg get stretched")]
+            KeepAttached
+        }
+
+        [Tooltip("If foot will not find ground beneath, you can trigger different leg behavior in such scenario")]
+        public ENoRaycastBehviour NoRaycastGroundBehaviour = ENoRaycastBehviour.Detach;
+
+        [Tooltip("DEPRECATED - Used just for back compatibility - if true, switching NoRaycastGroundBehaviour to ZeroFloorSteps and changing this value to false.")]
         public bool ZeroStepsOnNoRaycast = false;
+
+        public float NoRaycast_KeepAttachedUntilStretch = 1.1f;
 
         [Tooltip("How low whole body can be pulled down when one of the legs raycast hit is lower than default object position.")]
         [Range(0f, 1f)] public float BodyStepDown = 0.5f;

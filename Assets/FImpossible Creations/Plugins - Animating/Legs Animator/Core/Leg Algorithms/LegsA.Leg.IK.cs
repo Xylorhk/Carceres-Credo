@@ -32,6 +32,7 @@ namespace FIMSpace.FProceduralAnimation
                 _FinalIKPos = IKProcessor.EndIKBone.transform.position;
                 _PreviousFinalIKPos = _FinalIKPos;
                 _PreviousFinalIKPosForStability = _FinalIKPos;
+                _PreviousFinalIKPosRootLocal = ToRootLocalSpace( _FinalIKPos );
 
                 IKProcessor.IKTargetPosition = _FinalIKPos;
                 IKProcessor.IKTargetRotation = _FinalIKRot;
@@ -93,11 +94,17 @@ namespace FIMSpace.FProceduralAnimation
 
 
             public Vector3 _PreviousFinalIKPos { get; private set; }
+            public Vector3 _PreviousFinalIKPosRootLocal { get; private set; }
             public Vector3 _PreviousFinalIKPosForStability { get; private set; }
             public Quaternion _PreviousFinalIKRot { get; private set; }
             public Vector3 _AnimatorStartBonePos { get; private set; }
             public Vector3 _AnimatorMidBonePos { get; private set; }
             public Vector3 _AnimatorEndBonePos { get; private set; }
+
+            bool _wasFixedCalibrateAnimationCaptured = false;
+            public Quaternion _AnimatorStartBoneLocRot { get; private set; }
+            public Quaternion _AnimatorMidBoneLocRot { get; private set; }
+            public Quaternion _AnimatorEndBoneLocRot { get; private set; }
 
             bool _wasGrounded = true;
             Vector3 _ungroundLocalIKCache;
@@ -107,7 +114,7 @@ namespace FIMSpace.FProceduralAnimation
             /// </summary>
             public void IK_PreUpdate()
             {
-                IKProcessor.CallPreCalibrate = Owner.Calibrate;
+                IKProcessor.CallPreCalibrate = Owner.Calibrate == ECalibrateMode.Calibrate;
 
                 #region Handling unground fade (return;)
 
@@ -177,6 +184,14 @@ namespace FIMSpace.FProceduralAnimation
                     }
                 }
 
+                // NaN protection
+                if ( float.IsNaN( _FinalIKPos.x) || float.IsNaN( _FinalIKPos.y ) || float.IsNaN( _FinalIKPos.z ) )
+                {
+                    Reset();
+                    _FinalIKPos = RootSpaceToWorld( InitialPosInRootSpace );
+                    Gluing_Init();
+                }
+
                 _PreviousFinalIKPosForStability = _FinalIKPos;
 
                 IKProcessor.IKTargetPosition = _FinalIKPos;
@@ -194,6 +209,8 @@ namespace FIMSpace.FProceduralAnimation
                 }
 
                 _PreviousFinalIKPos = IKProcessor.IKTargetPosition;
+                _PreviousFinalIKPosRootLocal = ToRootLocalSpace( _PreviousFinalIKPos );
+
                 if (Owner.AnimateFeet) _PreviousFinalIKRot = IKProcessor.IKTargetRotation;
 
                 //UnityEngine.Debug.DrawRay(IKProcessor.IKTargetPosition, IKProcessor.IKTargetRotation * Vector3.forward, Color.green, 0.01f);

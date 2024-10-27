@@ -55,7 +55,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Reading world translation of the character and providing as 'Desired Movement Direction'.\nIt's not precise as rigidbody desired direction read.", MessageType.Info);
+            EditorGUILayout.HelpBox("Reading world translation of the character and providing as 'Desired Movement Direction'.\nIt's not precise as rigidbody desired direction read.", UnityEditor.MessageType.Info);
             GUILayout.Space(3);
 
             var adjPowerV = helper.RequestVariable("Reaction Speed", .8f);

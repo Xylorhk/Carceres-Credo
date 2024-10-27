@@ -1,6 +1,4 @@
 ﻿using FIMSpace.FEditor;
-using FIMSpace.FEyes;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,12 +9,16 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
     {
         Undo.RecordObject(target, "Eyes Animator Inspector");
 
+        EditorGUI.BeginChangeCheck();
+
         serializedObject.Update();
 
         string title = drawDefaultInspector ? " Default Inspector" : " Eyes Animator 2";
         HeaderBoxMain(title, ref Get.DrawGizmos, ref drawDefaultInspector, _TexEyesAnimIcon, Get, 27);
 
         DrawNewGUI();
+
+        if( EditorGUI.EndChangeCheck() ) { EditorUtility.SetDirty( Get ); }
 
         serializedObject.ApplyModifiedProperties();
     }

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace FIMSpace.FProceduralAnimation
 {
@@ -95,10 +91,11 @@ namespace FIMSpace.FProceduralAnimation
             {
                 if (LegsInitialized == false) return;
                 User_UpdateParametersAfterManualChange();
+                Controll_DefineHashes();
             }
 
             _Editor_OnValidateTrigger = true;
-            if (!_editor_disabledGizmo) { FSceneIcons.SetGizmoIconEnabled(this, false); _editor_disabledGizmo = true; }
+            if( !_editor_disabledGizmo ) { FSceneIcons.SetGizmoIconEnabled(this, false); _editor_disabledGizmo = true; }
         }
 
 

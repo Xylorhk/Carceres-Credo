@@ -25,6 +25,7 @@ namespace FIMSpace.FProceduralAnimation
             [NonSerialized] public Vector3 LastKeyframePosition;
             [NonSerialized] public Vector3 LastKeyframeLocalPosition;
             [NonSerialized] public Quaternion LastKeyframeRotation;
+            [NonSerialized] public Quaternion LastKeyframeLocalRotation;
             /// <summary> Keyframe, legs animator local space </summary>
             [NonSerialized] public Vector3 LastRootLocalPos;
 
@@ -70,6 +71,7 @@ namespace FIMSpace.FProceduralAnimation
                 HipsRotMuscle.Initialize(Quaternion.identity);
 
                 UniRotate = new UniRotateBone(bone, root);
+                Calibrate();
             }
 
 
@@ -210,14 +212,22 @@ namespace FIMSpace.FProceduralAnimation
             {
                 Calibrate();
                 _Hips_LastHipsOffset = 0f;
-                _Hips_StepHeightAdjustOffset = 0f;
             }
 
             public void PreCalibrate()
             {
                 UniRotate.PreCalibrate();
+
                 //bone.localPosition = initLocalPos;
                 //bone.localRotation = initLocalRot;
+
+                if( Owner.Calibrate != ECalibrateMode.FixedCalibrate )
+                    UniRotate.PreCalibrate();
+                else
+                {
+                    bone.localPosition = LastKeyframeLocalPosition;
+                    bone.localRotation = LastKeyframeLocalRotation;
+                }
 
                 if ( HubBackBones != null) for (int h = 0; h < HubBackBones.Count; h++) HubBackBones[h].PreCalibrate();
             }
@@ -226,10 +236,10 @@ namespace FIMSpace.FProceduralAnimation
             {
                 LastKeyframePosition = bone.position;
                 LastKeyframeLocalPosition = bone.localPosition;
+                LastKeyframeLocalRotation = bone.localRotation;
                 LastKeyframeRotation = bone.rotation;
                 LastRootLocalPos = Owner.ToRootLocalSpace(LastKeyframePosition);
                 LastHipsHeightDiff = GetHeightDiff(LastRootLocalPos.y);
-
                 if (HubBackBones != null) for (int h = 0; h<HubBackBones.Count; h++) HubBackBones[h].Calibrate();
             }
 

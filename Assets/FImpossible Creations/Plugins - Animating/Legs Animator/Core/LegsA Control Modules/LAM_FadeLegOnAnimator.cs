@@ -89,7 +89,7 @@ namespace FIMSpace.FProceduralAnimation
 
             // Prepare target animation hashes for quick checking animator state
             string animStates = statesV.GetString();
-            animStates = animStates.Replace(" ", "");
+            //animStates = animStates.Replace(" ", "");
             var statesSeparated = animStates.Split(',');
 
             #region Prepare mecanim hashes
@@ -105,7 +105,7 @@ namespace FIMSpace.FProceduralAnimation
             }
 
             string tagNames = tagsV.GetString();
-            tagNames = tagNames.Replace(" ", "");
+            //tagNames = tagNames.Replace(" ", "");
             var tagsSeparated = tagNames.Split(',');
 
             if (tagsSeparated.Length > 0)
@@ -255,11 +255,11 @@ namespace FIMSpace.FProceduralAnimation
         {
             if (legsAnimator.Mecanim == null)
             {
-                EditorGUILayout.HelpBox("Unity Animator Reference (Mecanim) is required by this module. Go to Extra/Control category and assign Mecanim reference there!", MessageType.Warning);
+                EditorGUILayout.HelpBox("Unity Animator Reference (Mecanim) is required by this module. Go to Extra/Control category and assign Mecanim reference there!", UnityEditor.MessageType.Warning);
                 if (GUILayout.Button("Go to Extra/Control")) { legsAnimator._EditorCategory = LegsAnimator.EEditorCategory.Extra; legsAnimator._EditorExtraCategory = LegsAnimator.EEditorExtraCategory.Control; }
             }
 
-            EditorGUILayout.HelpBox("This module will help to disable legs animator motion, when playing special animations!\nUseful when using Legs Animator on insect creature which playes attack animations using front legs.", MessageType.Info);
+            EditorGUILayout.HelpBox("This module will help to disable legs animator motion, when playing special animations!\nUseful when using Legs Animator on insect creature which playes attack animations using front legs.", UnityEditor.MessageType.Info);
 
             Animator anim = legsAnimator.Mecanim;
             bool drawLayer = true;
@@ -308,7 +308,7 @@ namespace FIMSpace.FProceduralAnimation
                 EditorGUILayout.EndHorizontal();
                 EditorGUIUtility.labelWidth = 0;
 
-                if (selMode == ELayerSelectMode.Auto) EditorGUILayout.HelpBox("Automatic Layer: " + lastAutoWeightIndex, MessageType.None);
+                if (selMode == ELayerSelectMode.Auto) EditorGUILayout.HelpBox("Automatic Layer: " + lastAutoWeightIndex, UnityEditor.MessageType.None);
             }
 
             #region Draw legs list

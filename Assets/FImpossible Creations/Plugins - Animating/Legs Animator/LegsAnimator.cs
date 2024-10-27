@@ -4,6 +4,7 @@ using UnityEngine;
 namespace FIMSpace.FProceduralAnimation
 {
     [AddComponentMenu("FImpossible Creations/Legs Animator")]
+    [HelpURL( "https://assetstore.unity.com/packages/tools/animation/legs-animator-154245" )]
     [DefaultExecutionOrder(-7)]
     public partial class LegsAnimator : MonoBehaviour
     {
@@ -11,11 +12,12 @@ namespace FIMSpace.FProceduralAnimation
 
         /// <summary> Once per frame calculated component's blend value for the algorithms </summary>
         public float _MainBlend { get; protected set; }
-        
+
         float _lastMainBlend = 1f;
         /// <summary> For extra update calls liek IK refresh </summary>
         protected bool _lastMainBlendChanged { get; private set; }
 
+        public float _MainBlendNoRagdolling { get; protected set; }
         public float _MainBlendPlusGrounded { get; protected set; }
 
         [Tooltip("Total blend of the plugin effects. When zero it disables most of the calculations (but not all)")]
@@ -145,7 +147,7 @@ namespace FIMSpace.FProceduralAnimation
             // Reactivating procedures
             if (legsWasDisabled)
             {
-                if (_MainBlend > 0f)
+                if (_MainBlendNoRagdolling > 0f)
                     if (LegsInitialized)
                     {
                         OnLegsReactivate();
@@ -224,15 +226,16 @@ namespace FIMSpace.FProceduralAnimation
         /// <summary> Prepare target blend value for the component's algorithms </summary>
         protected virtual void PrepareValues(float delta)
         {
-            _MainBlend = LegsAnimatorBlend * cullingBlend * protectedBlend * RagdolledDisablerBlend;
+            _MainBlendNoRagdolling = LegsAnimatorBlend * cullingBlend * protectedBlend;
+            _MainBlend = _MainBlendNoRagdolling * RagdolledDisablerBlend;
             _MainBlendPlusGrounded = _MainBlend * IsGroundedBlend;
             if (Mecanim != null) AnimatePhysics = Mecanim.updateMode == AnimatorUpdateMode.Fixed;
 
-            if (_lastMainBlend != _MainBlend) 
-            { 
+            if (_lastMainBlend != _MainBlend)
+            {
                 _lastMainBlendChanged = true;
                 for (int l = 0; l < Legs.Count; l++) Legs[l].IK_UpdateParamsBase();
-            } 
+            }
             else { _lastMainBlendChanged = false; }
 
             _lastMainBlend = _MainBlend;
@@ -255,8 +258,7 @@ namespace FIMSpace.FProceduralAnimation
                 if (_wasInstantTriggered == false) IK_TriggerGlueInstantTransition();
 
                 RefreshTargetMovementDirectionHelper();
-
-                RefreshMatrices();
+                //RefreshMatrices();
 
                 Controll_Update();
                 UpdateGroundedBlend();
@@ -272,6 +274,7 @@ namespace FIMSpace.FProceduralAnimation
             }
             else
             {
+                Controll_Update();
                 Legs_PreCalibrate();
                 legsWasDisabled = true;
             }
@@ -290,6 +293,8 @@ namespace FIMSpace.FProceduralAnimation
             MeasurePerformancePreLateUpdate(true);
 
             #endregion Editor Debug Performance Measure Start
+
+            RefreshMatrices();
 
             Legs_CheckAnimatorPose();
             Modules_AfterAnimatorCaptureUpdate();
@@ -384,6 +389,18 @@ namespace FIMSpace.FProceduralAnimation
             }
         }
 
+        /// <summary> Use if you're adding legs animator runtime </summary>
+        public void OnAddedReset()
+        {
+            MotionInfluence = new MotionInfluenceProcessor();
+            MotionInfluence.AxisMotionInfluence.x = 0f;
+
+            BaseLegAnimating = new LegStepAnimatingParameters();
+            LegAnimatingSettings.RefreshDefaultCurves();
+
+            CustomModules = new System.Collections.Generic.List<LegsAnimatorCustomModuleHelper>();
+        }
+
         #region Editor Code (void Reset())
 
 #if UNITY_EDITOR
@@ -393,13 +410,8 @@ namespace FIMSpace.FProceduralAnimation
 
         protected virtual void Reset()
         {
-            MotionInfluence = new MotionInfluenceProcessor();
-            MotionInfluence.AxisMotionInfluence.x = 0f;
+            OnAddedReset();
 
-            BaseLegAnimating = new LegStepAnimatingParameters();
-            LegAnimatingSettings.RefreshDefaultCurves();
-
-            CustomModules = new System.Collections.Generic.List<LegsAnimatorCustomModuleHelper>();
             var helper = new LegsAnimatorCustomModuleHelper(this);
             helper.ModuleReference = _Editor_DefaultModuleOnStart;
             if (helper.ModuleReference == null) return;

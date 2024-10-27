@@ -26,7 +26,7 @@ namespace FIMSpace.FProceduralAnimation
             //View_Setup_GroundLayerMask();
             EditorGUIUtility.labelWidth = 0;
 
-            if (Get.Hips == null) EditorGUILayout.HelpBox("Hips reference is required for Legs Animator to work!\nAssign it first!", MessageType.Warning);
+            if (Get.Hips == null) EditorGUILayout.HelpBox("Hips reference is required for Legs Animator to work!\nAssign it first!", UnityEditor.MessageType.Warning);
 
             EditorGUILayout.EndVertical();
 
@@ -43,7 +43,7 @@ namespace FIMSpace.FProceduralAnimation
 
                 if (Get.Legs.Count > 0)
                 {
-                    //EditorGUILayout.HelpBox("Hips reference is required for Legs Animator to work!\nAssign it first!", MessageType.Warning);
+                    //EditorGUILayout.HelpBox("Hips reference is required for Legs Animator to work!\nAssign it first!", UnityEditor.MessageType.Warning);
                     if (_foldout_legsList)
                     {
                         GUILayout.Space(2);
@@ -341,14 +341,14 @@ namespace FIMSpace.FProceduralAnimation
                 if (_appliedPreset == EPres.Insect || _appliedPreset == EPres.Animal)
                 {
                     if (Get.GetModuleHelper<LAM_InsectLegsHelper>() == null)
-                        EditorGUILayout.HelpBox("When animating Spider/Animal Creature, consider adding 'Multi Leg/Leg Helper' module!\nYou can add module under Motion/Modules.", MessageType.Info);
+                        EditorGUILayout.HelpBox("When animating Spider/Animal Creature, consider adding 'Multi Leg/Leg Helper' module!\nYou can add module under Motion/Modules.", UnityEditor.MessageType.Info);
                 }
                 else
                 {
                     if (Get.Legs.Count > 3)
                         if (Get.GetModuleHelper<LAM_InsectLegsHelper>() == null)
                         {
-                            EditorGUILayout.HelpBox("Your character has more than 3 legs, consider adding 'Multi Leg/Legs Helper' module!", MessageType.Info);
+                            EditorGUILayout.HelpBox("Your character has more than 3 legs, consider adding 'Multi Leg/Legs Helper' module!", UnityEditor.MessageType.Info);
                             if (Get._Editor_LegHelperModule)
                             {
                                 if (GUILayout.Button("Add Leg Helper Module"))
@@ -453,11 +453,13 @@ namespace FIMSpace.FProceduralAnimation
                 EditorGUILayout.BeginHorizontal();
                 View_Setup_Leg_BoneButton(Tex_smLegStart, leg.BoneStart, _selected_leg); GUILayout.Space(4);
                 Leg_AssignStartBone(leg, (Transform)EditorGUILayout.ObjectField("Start Bone: ", leg.BoneStart, typeof(Transform), true));
+                GUI.color = Color.white;
                 EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.BeginHorizontal();
                 View_Setup_Leg_BoneButton(Tex_smLegMid, leg.BoneMid, _selected_leg); GUILayout.Space(4);
                 leg.BoneMid = (Transform)EditorGUILayout.ObjectField("Middle Bone: ", leg.BoneMid, typeof(Transform), true);
+                GUI.color = Color.white;
                 EditorGUILayout.EndHorizontal();
 
                 if (EditorGUI.EndChangeCheck()) _requestRepaint = true;
@@ -466,6 +468,7 @@ namespace FIMSpace.FProceduralAnimation
                 View_Setup_Leg_BoneButton(Tex_smLegEnd, leg.BoneEnd, _selected_leg); GUILayout.Space(4);
                 EditorGUI.BeginChangeCheck();
                 leg.BoneEnd = (Transform)EditorGUILayout.ObjectField("End Bone: ", leg.BoneEnd, typeof(Transform), true);
+                GUI.color = Color.white;
 
                 if (EditorGUI.EndChangeCheck())
                 {
@@ -521,7 +524,7 @@ namespace FIMSpace.FProceduralAnimation
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Space(10);
                 EditorGUILayout.PropertyField(sp_AnimateFoot, new GUIContent("  Animate Feet:", Tex_FootRotate, sp_AnimateFoot.tooltip), true);
-                if (Get.AnimateFeet) EditorGUILayout.HelpBox("For spider setups disable it", MessageType.None);
+                if (Get.AnimateFeet) EditorGUILayout.HelpBox("For spider setups disable it", UnityEditor.MessageType.None);
                 EditorGUILayout.EndHorizontal();
                 GUILayout.Space(8);
 
@@ -544,7 +547,7 @@ namespace FIMSpace.FProceduralAnimation
             EditorGUILayout.PropertyField(sp_AnimateFoot, new GUIContent("  Animate Feet:", Tex_FootRotate, sp_AnimateFoot.tooltip), true);
 
             GUILayout.Space(2);
-            EditorGUILayout.HelpBox("More details for each Leg under IK category", MessageType.None);
+            EditorGUILayout.HelpBox("More details for each Leg under IK category", UnityEditor.MessageType.None);
 
         }
 
@@ -561,7 +564,8 @@ namespace FIMSpace.FProceduralAnimation
             GUILayout.Space(3);
             EditorGUILayout.BeginHorizontal();
 
-            GUI.color = new Color(0.35f, .9f, 0.35f, 1f);
+            if (Get.CheckIfSomeOfTheLegsHasNullBone()) GUI.color = Color.yellow; else GUI.color = new Color(0.35f, .9f, 0.35f, 1f);
+
             if (GUILayout.Button("  " + FGUI_Resources.GetFoldSimbol(_foldout_legsList, true) + "  Legs:  " + Get.Legs.Count, EditorStyles.boldLabel)) _foldout_legsList = !_foldout_legsList;
             GUI.color = Color.white;
 
@@ -704,7 +708,7 @@ namespace FIMSpace.FProceduralAnimation
                 if (_displayHipsHubs)
                 {
                     GUILayout.Space(3);
-                    EditorGUILayout.HelpBox("If it's quadruped or some kind of insect, it's legs may be parented to further spine bones. To separate some of the animation calculations, assign parent bones of other legs here.", MessageType.None);
+                    EditorGUILayout.HelpBox("If it's quadruped or some kind of insect, it's legs may be parented to further spine bones. To separate some of the animation calculations, assign parent bones of other legs here.", UnityEditor.MessageType.None);
                     GUILayout.Space(3);
                     EditorGUILayout.LabelField("EXPERIMENTAL FEATURE", EditorStyles.centeredGreyMiniLabel);
                     GUILayout.Space(3);
@@ -855,20 +859,19 @@ namespace FIMSpace.FProceduralAnimation
             Transform preSBone = leg.BoneStart; Transform preMBone = leg.BoneMid; Transform preEBone = leg.BoneEnd;
 
             if (View_Setup_Leg_BoneButton(Tex_smLegStart, leg.BoneStart, index)) { Setup_Leg_LegRMB(leg, 0); }
-            if (leg.BoneStart == null) GUI.color = Color.yellow;
             Leg_AssignStartBone(leg, View_Setup_Leg_BoneField(leg.BoneStart));
-            if (leg.BoneStart == null) GUI.color = preC;
+            GUI.color = preC;
 
             GUILayout.Space(8);
             if (View_Setup_Leg_BoneButton(Tex_smLegMid, leg.BoneMid, index)) { Setup_Leg_LegRMB(leg, 1); }
             leg.BoneMid = View_Setup_Leg_BoneField(leg.BoneMid);
+            GUI.color = preC;
 
             GUILayout.Space(8);
             if (View_Setup_Leg_BoneButton(Tex_smLegEnd, leg.BoneEnd, index)) { Setup_Leg_LegRMB(leg, 2); }
 
-            if (leg.BoneEnd == null) GUI.color = Color.yellow;
             leg.BoneEnd = View_Setup_Leg_BoneField(leg.BoneEnd);
-            if (leg.BoneEnd == null) GUI.color = preC;
+            GUI.color = preC;
 
             if (preSBone != leg.BoneStart || preMBone != leg.BoneMid || preEBone != leg.BoneEnd)
             {
@@ -1090,7 +1093,9 @@ namespace FIMSpace.FProceduralAnimation
         /// <summary> True if rmb pressed </summary>
         bool View_Setup_Leg_BoneButton(Texture icon, Transform bRef, int index)
         {
-            return View_Setup_Leg_LegBoneButton(new GUIContent(icon, "Bone reference for the single leg"), bRef, index);
+            bool pressed = View_Setup_Leg_LegBoneButton(new GUIContent(icon, "Bone reference for the single leg"), bRef, index);
+            if ( bRef == null) GUI.color = Color.yellow;
+            return pressed;
         }
 
         Transform View_Setup_Leg_BoneField(Transform t, float? wdth = 0.11f)

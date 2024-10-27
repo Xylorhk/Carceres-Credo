@@ -117,7 +117,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Triggering hips push impulses when Legs Animator IsMoving and IsGrounded variables are changing.", MessageType.Info);
+            EditorGUILayout.HelpBox("Triggering hips push impulses when Legs Animator IsMoving and IsGrounded variables are changing.", UnityEditor.MessageType.Info);
             GUILayout.Space(4);
 
             var powerMulV = helper.RequestVariable(powerMulStrN, 1f);

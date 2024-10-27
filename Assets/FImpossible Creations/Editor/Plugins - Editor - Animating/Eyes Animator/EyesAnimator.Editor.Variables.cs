@@ -44,6 +44,7 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
     protected SerializedProperty sp_DetectionFactor;
     protected SerializedProperty sp_LagStiffness;
     protected SerializedProperty sp_OptimizeWithMesh;
+    protected SerializedProperty sp_IndClamp;
 
     protected virtual void OnEnable()
     {
@@ -73,6 +74,7 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
         sp_DetectionFactor = serializedObject.FindProperty("GoOutFactor");
         sp_LagStiffness = serializedObject.FindProperty("LagStiffness");
         sp_OptimizeWithMesh = serializedObject.FindProperty("OptimizeWithMesh");
+        sp_IndClamp = serializedObject.FindProperty("IndividualClamping");
 
         InitBlinking();
 
@@ -153,6 +155,13 @@ public partial class FEyesAnimator_Editor : UnityEditor.Editor
                 if (Get.EyeLids != null)
                     for (int i = 0; i < Get.EyeLids.Count; i++)
                         if (Get.EyeLids[i] != null) Get.EyeLids[i].localPosition = (openPositions[i] + Get.EyeLidsClosePositions[i]);
+            }
+
+            if (openScales != null)
+            {
+                if (Get.EyeLids != null)
+                    for (int i = 0; i < Get.EyeLids.Count; i++)
+                        if (Get.EyeLids[i] != null) Get.EyeLids[i].localScale = (Get.EyeLidsCloseScales[i] );
             }
         }
     }

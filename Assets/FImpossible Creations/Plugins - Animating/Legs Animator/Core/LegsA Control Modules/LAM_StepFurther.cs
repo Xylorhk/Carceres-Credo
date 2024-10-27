@@ -60,11 +60,11 @@ namespace FIMSpace.FProceduralAnimation
         {
             if (legsAnimator.Rigidbody == null)
             {
-                EditorGUILayout.HelpBox("This module requires rigidbody assigned inside Legs Animator!\n(Ignore this message if you're assigning 'Desired Movement Direction' through code)", MessageType.Warning);
+                EditorGUILayout.HelpBox("This module requires rigidbody assigned inside Legs Animator!\n(Ignore this message if you're assigning 'Desired Movement Direction' through code)", UnityEditor.MessageType.Warning);
                 GUILayout.Space(5);
             }
 
-            EditorGUILayout.HelpBox("Pushing leg step raycast position further or pushing hips with rigidbody velocity.", MessageType.Info);
+            EditorGUILayout.HelpBox("Pushing leg step raycast position further or pushing hips with rigidbody velocity.", UnityEditor.MessageType.Info);
             GUILayout.Space(5);
             var rotateVar = helper.RequestVariable("Predict Forward IK Offset", 0.1f);
                 rotateVar.SetMinMaxSlider(0f, 0.3f);

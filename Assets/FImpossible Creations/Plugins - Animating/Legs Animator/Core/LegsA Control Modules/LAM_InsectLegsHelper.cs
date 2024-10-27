@@ -146,7 +146,7 @@ namespace FIMSpace.FProceduralAnimation
         {
 
             EditorGUIUtility.labelWidth = 220;
-            EditorGUILayout.HelpBox("Better leg controll for multiple legs creatures.", MessageType.Info);
+            EditorGUILayout.HelpBox("Better leg controll for multiple legs creatures.", UnityEditor.MessageType.Info);
             GUILayout.Space(5);
 
             var legsOnSideV = helper.RequestVariable(minSideS, 2);

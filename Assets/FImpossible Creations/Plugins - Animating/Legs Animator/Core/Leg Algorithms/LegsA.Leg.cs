@@ -73,8 +73,10 @@ namespace FIMSpace.FProceduralAnimation
             public float FeetSensitivity = 0.5f;
 
             /// <summary> To avoid using for() loops but while() for better performance (Only Playmode) </summary>
-            public Leg NextLeg { get; private set; }
-            [NonSerialized] public HipsReference ParentHub; // Unity throws serialization depth limit warning when it's using {get; private set;} ¯\_(ツ)_/¯ 
+            [field:NonSerialized] public Leg NextLeg { get; private set; }
+            [field: NonSerialized] public HipsReference ParentHub { get; private set; }
+            // Unity throws serialization depth limit warning when it's using {get; private set;} ¯\_(ツ)_/¯ 
+            // Finally! [field:NonSerialized] seems to fix it!!!
             //public HipsReference ParentHub { get; private set; }
 
             bool hasOppositeleg = false;
@@ -114,11 +116,17 @@ namespace FIMSpace.FProceduralAnimation
                 Stability_Init();
                 AlignStep_Init();
 
-                if (GetOppositeLeg() != null) hasOppositeleg = true;
+                RefreshHasOppositeLeg();
 
                 targetLegAnimating = CustomLegAnimating ? CustomLegAnimating.Settings : creator.LegAnimatingSettings;
                 ankleAlignedOnGroundHitWorldPos = _FinalIKPos; //
 
+            }
+
+            public void RefreshHasOppositeLeg()
+            {
+                hasOppositeleg = false;
+                if (GetOppositeLeg() != null) hasOppositeleg = true;
             }
 
             public void Leg_UpdateParams()
@@ -195,7 +203,20 @@ namespace FIMSpace.FProceduralAnimation
                     return;
                 }
 
-                if (Owner.Calibrate) IKProcessor.PreCalibrate();
+                if( Owner.Calibrate == ECalibrateMode.Calibrate )
+                {
+                    IKProcessor.PreCalibrate();
+                }
+                else if( Owner.Calibrate == ECalibrateMode.FixedCalibrate )
+                {
+                    if( !_wasFixedCalibrateAnimationCaptured ) IKProcessor.PreCalibrate();
+                    else
+                    {
+                        BoneStart.localRotation = _AnimatorStartBoneLocRot;
+                        BoneMid.localRotation = _AnimatorMidBoneLocRot;
+                        BoneEnd.localRotation = _AnimatorEndBoneLocRot;
+                    }
+                }
 
                 //G_CustomForceNOTDetach = false;
                 //G_CustomForceDetach = false;
@@ -207,6 +228,14 @@ namespace FIMSpace.FProceduralAnimation
                 _AnimatorStartBonePos = BoneStart.position;
                 _AnimatorMidBonePos = BoneMid.position;
                 _AnimatorEndBonePos = BoneEnd.position;
+
+                if( Owner.Calibrate == ECalibrateMode.FixedCalibrate )
+                {
+                    _wasFixedCalibrateAnimationCaptured = true;
+                    _AnimatorStartBoneLocRot = BoneStart.localRotation;
+                    _AnimatorMidBoneLocRot = BoneMid.localRotation;
+                    _AnimatorEndBoneLocRot = BoneEnd.localRotation;
+                }
             }
 
             public void BeginLateUpdate()
@@ -322,6 +351,7 @@ namespace FIMSpace.FProceduralAnimation
 
             bool _StepSent = true;
             float _StepSentAt = -100f;
+            float _RaiseSentAt = -100f;
             bool _OppositeLegStepped = true;
             float _ToConfirmStepEvent = 0f;
 
@@ -341,6 +371,16 @@ namespace FIMSpace.FProceduralAnimation
                     _OppositeLegStepped = true;
                     GetOppositeLeg()._OppositeLegStepped = !Owner.IsMoving;
                 }
+            }
+
+            void SendRaiseEvent( float distanceToNew = 1f)
+            {
+                if (Time.unscaledTime - _RaiseSentAt < 0.05f) return;
+                _RaiseSentAt = Time.unscaledTime;
+
+                EStepType type = EStepType.IdleGluing;
+                if( Owner.IsMoving == false ) if( Owner.StoppedTime < 0.15f ) type = EStepType.OnStopping;
+                Owner.Events_OnRaise( this, distanceToNew, type );
             }
 
             void StepEventRestore()
@@ -366,7 +406,7 @@ namespace FIMSpace.FProceduralAnimation
                             if (Owner.Helper_WasMoving) return;
                         }
 
-                        if (Owner.StoppedTime < 0.155f) return;
+                        if (Owner.SendOnStopping == false && Owner.StoppedTime < 0.155f) return;
                         if (G_AttachementHandler.lasGlueModeOnAttaching != EGlueMode.Idle) return;
                         if (G_AttachementHandler.legMoveDistanceFactor < 0.05f) return;
                     }

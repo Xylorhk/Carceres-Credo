@@ -31,6 +31,7 @@ namespace FIMSpace.FProceduralAnimation
         public SerializedProperty sp_GroundMask;
         public SerializedProperty sp_IKHint;
         public SerializedProperty sp_CastDistance;
+        public SerializedProperty sp_MaxStepDown;
         public SerializedProperty sp_StabilityAlgorithm;
         public SerializedProperty sp_UseHipsRotation;
         public SerializedProperty sp_Event_OnStep;
@@ -56,6 +57,7 @@ namespace FIMSpace.FProceduralAnimation
         protected virtual void OnEnable()
         {
             Get.Legs_RefreshLegsOwner();
+            Get.DoBackCompatibilityChecks();
 
             sp_Debug_IsGrounded = serializedObject.FindProperty("Debug_IsGrounded");
             sp_BaseTransform = serializedObject.FindProperty("baseTransform");
@@ -73,6 +75,7 @@ namespace FIMSpace.FProceduralAnimation
             sp_GroundMask = serializedObject.FindProperty("GroundMask");
             sp_IKHint = serializedObject.FindProperty("IKHintMode");
             sp_CastDistance = serializedObject.FindProperty("CastDistance");
+            sp_MaxStepDown = serializedObject.FindProperty( "BodyStepDown" );
             sp_StabilityAlgorithm = serializedObject.FindProperty("StabilityAlgorithm");
             sp_UseHipsRotation = serializedObject.FindProperty("UseHipsRotation");
             sp_Event_OnStep = serializedObject.FindProperty("Event_OnStep");

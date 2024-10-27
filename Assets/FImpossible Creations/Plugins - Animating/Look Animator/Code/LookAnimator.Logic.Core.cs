@@ -101,7 +101,6 @@ namespace FIMSpace.FLook
             else // Universal correction method
             {
                 lookRotation = LookRotationParental((finalLookPosition - GetLookStartMeasurePosition()).normalized).eulerAngles;
-                lookRotation += RotationOffset;
             }
 
             if (!_stopLooking) lookFreezeFocusPoint = BaseTransform.InverseTransformPoint(finalLookPosition);
@@ -182,6 +181,11 @@ namespace FIMSpace.FLook
             {
                 float nodAmount = nodValue * nodPower * 40f;
                 _parentalAngles.x += nodAmount * BackBonesNod;
+            }
+
+            if (RotationOffset != Vector3.zero)
+            {
+                _parentalAngles += new Vector2(RotationOffset.x, RotationOffset.y);
             }
 
             return ParentalRotationMaths(referenceRightDir, _parentalAngles.x, _parentalAngles.y);

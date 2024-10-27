@@ -802,7 +802,7 @@ namespace FIMSpace.FProceduralAnimation
             {
                 EditorGUILayout.BeginHorizontal();
                 if (GUILayout.Button(FGUI_Resources.GUIC_Info, FGUI_Resources.ButtonStyle, GUILayout.Width(26))) InfoDisplay = !InfoDisplay; GUILayout.Space(4);
-                EditorGUILayout.HelpBox("Reading Legs Animator's .MovementDirection variable to drive this module.By default it will use rigidbody velocity to do it, so you don't need to code anything.\nBut if you need to drive direction manually, Use legsAnim.User_SetDesiredMovementDirection... or use unity Animator variables (assign animator under Extra/Control and check bottom of this module GUI)", MessageType.None);
+                EditorGUILayout.HelpBox("Reading Legs Animator's .MovementDirection variable to drive this module.By default it will use rigidbody velocity to do it, so you don't need to code anything.\nBut if you need to drive direction manually, Use legsAnim.User_SetDesiredMovementDirection... or use unity Animator variables (assign animator under Extra/Control and check bottom of this module GUI)", UnityEditor.MessageType.None);
                 EditorGUILayout.EndHorizontal();
             }
 
@@ -930,9 +930,9 @@ namespace FIMSpace.FProceduralAnimation
             if (!usingAnimParams)
             {
                 if (la.Rigidbody)
-                    EditorGUILayout.HelpBox("Module will use rigidbody velocity to drive legs direction", MessageType.None);
+                    EditorGUILayout.HelpBox("Module will use rigidbody velocity to drive legs direction", UnityEditor.MessageType.None);
                 else
-                    EditorGUILayout.HelpBox("You can assign 'Rigidbody' under Extra/Control to drive legs direction automatically! Or use legsAnimator.User_SetDesiredMovementDirection...", MessageType.None);
+                    EditorGUILayout.HelpBox("You can assign 'Rigidbody' under Extra/Control to drive legs direction automatically! Or use legsAnimator.User_SetDesiredMovementDirection...", UnityEditor.MessageType.None);
             }
 
             LAM_DirectionalMovement dirMovPlaymode = helper.PlaymodeModule as LAM_DirectionalMovement;

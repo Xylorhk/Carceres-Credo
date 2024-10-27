@@ -67,8 +67,17 @@ namespace FIMSpace.FProceduralAnimation
         [Tooltip("Do component init after few frames of the game (can be useful when waiting for some of the components to be generated, or to initialize component not during T-pose)")]
         public bool DelayedInitialization = false;
 
-        [Tooltip("Hard refresh bones on update: it's required when any of procedurally animated bones is not handled by keyframe animation.\nIf you're sure, your animations are always keyframe animated, you can disable this feature for small performance boost.")]
-        public bool Calibrate = true;
+        [Tooltip( "Hard refresh bones on update: it's required when any of procedurally animated bones is not handled by keyframe animation.\nIf you're sure, your animations are always keyframe animated, you can disable this feature for small performance boost." )]
+        public ECalibrateMode Calibrate = ECalibrateMode.Calibrate;
+        public enum ECalibrateMode : int
+        {
+            [Tooltip( "No Extra overhead" )]
+            None = 0,
+            [Tooltip( "Resetting bones local rotations to the initialized state" )]
+            Calibrate = 1,
+            [Tooltip( "Resetting bones local rotations to the captured animator state (can fix trigger colliders detection when colliders added on legs)" )]
+            FixedCalibrate = 2
+        }
 
         [Tooltip("If your Unity Animator is using 'Animate Physics' update mode, you should enable this parameter.")]
         public bool AnimatePhysics = false;

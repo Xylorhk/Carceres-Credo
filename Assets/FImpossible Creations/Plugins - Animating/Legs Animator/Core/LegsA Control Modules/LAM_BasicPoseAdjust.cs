@@ -76,7 +76,7 @@ namespace FIMSpace.FProceduralAnimation
 
         public override void Editor_InspectorGUI(LegsAnimator legsAnimator, LegsAnimator.LegsAnimatorCustomModuleHelper helper)
         {
-            EditorGUILayout.HelpBox("Multiplying IK positions in local space, so you can adjust legs spacing.", MessageType.Info);
+            EditorGUILayout.HelpBox("Multiplying IK positions in local space, so you can adjust legs spacing.", UnityEditor.MessageType.Info);
             GUILayout.Space(3);
 
             var adjPowerV = helper.RequestVariable("Adjust X Positioning", 1f);

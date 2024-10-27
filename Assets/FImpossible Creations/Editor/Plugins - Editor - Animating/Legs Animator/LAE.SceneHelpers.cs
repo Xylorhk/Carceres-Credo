@@ -414,6 +414,24 @@ namespace FIMSpace.FProceduralAnimation
                     }
                 }
             }
+
+            // Drawing spherecast guides
+
+            if (Get.RaycastShape == LegsAnimator.ERaycastMode.Spherecast)
+            {
+                Handles.color = new Color(0.3f, 1f, 0.3f, 0.11f);
+
+                float sphRadius = Get.ScaleReference * 0.065f * Get.SpherecastResize;
+
+                for (int l = 0; l < Get.Legs.Count; l++)
+                {
+                    var leg = Get.Legs[l];
+                    if (leg.BoneEnd == null || leg.BoneMid == null) continue;
+                    Vector3 legDir = (leg.BoneEnd.position - leg.BoneMid.position).normalized;
+                    Handles.SphereHandleCap(0, leg.BoneEnd.position - (legDir * sphRadius * 0.5f), Quaternion.identity, sphRadius, EventType.Repaint);
+                }
+            }
+
         }
 
 

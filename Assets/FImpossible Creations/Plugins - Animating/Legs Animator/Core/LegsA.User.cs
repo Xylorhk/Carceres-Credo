@@ -92,11 +92,13 @@ namespace FIMSpace.FProceduralAnimation
             StartCoroutine(IEFadeLegTo(Legs[legIndex], 0f, duration));
         }
 
+        bool? _wasFadingOn = null;
+
         /// <summary> Fading legs animation weight to disabled state. </summary>
         public void User_FadeToDisabled(float duration)
         {
             StopAllCoroutines();
-            StartCoroutine(IEFadeLegsAnimatorTo(0f, duration));
+            if (duration <= 0f) { LegsAnimatorBlend = 0f; enabled = false; } else { _wasFadingOn = false; StartCoroutine(IEFadeLegsAnimatorTo(0f, duration)); }
         }
 
         /// <summary> Fading legs animation weight to fully enabled state. </summary>
@@ -104,7 +106,8 @@ namespace FIMSpace.FProceduralAnimation
         {
             if (enabled == false) enabled = true;
             StopAllCoroutines();
-            StartCoroutine(IEFadeLegsAnimatorTo(1f, duration));
+
+            if (duration <= 0f) LegsAnimatorBlend = 1f; else { _wasFadingOn = true; StartCoroutine(IEFadeLegsAnimatorTo(1f, duration)); }
             for (int l = 0; l < Legs.Count; l++) Legs[l].LegBlendWeight = 1f;
         }
 
@@ -148,16 +151,20 @@ namespace FIMSpace.FProceduralAnimation
         {
             float startBlend = LegsAnimatorBlend;
             float elapsed = 0f;
-            
-            while(elapsed < duration)
+
+            while (elapsed < duration)
             {
                 elapsed += DeltaTime;
                 LegsAnimatorBlend = Mathf.Lerp(startBlend, blend, elapsed / duration);
                 yield return null;
+
+                if ( blend == 0f) { if (_wasFadingOn == true) { _wasFadingOn = null;  yield break; } }
+                else if ( blend == 1f) { if (_wasFadingOn == false) { _wasFadingOn = null; yield break; } }
             }
 
             LegsAnimatorBlend = blend;
             if (blend <= 0f) enabled = false;
+
             yield break;
         }
 

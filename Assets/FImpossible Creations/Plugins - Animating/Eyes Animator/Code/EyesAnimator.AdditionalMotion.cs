@@ -16,7 +16,7 @@ namespace FIMSpace.FEyes
 
             if (IsClamping)
             {
-                eyesData[i].lagStartRotation = eyesData[i].lerpRotation;
+                eyesData[i].SetLagStartRotation(BaseTransform, eyesData[i].lerpRotation);
             }
             else
             {
@@ -24,7 +24,7 @@ namespace FIMSpace.FEyes
                 {
                     if (eyesData[i].lagTimer < 0f)
                     {
-                        eyesData[i].lagProgress -= Random.Range(0.4f, 0.85f) * Time.deltaTime * 50f * LagStiffness;
+                        eyesData[i].lagProgress -= Random.Range(0.4f, 0.85f) * 0.7f * LagStiffness;
                     }
                 }
                 else
@@ -34,7 +34,7 @@ namespace FIMSpace.FEyes
                         if (eyesData[i].lagTimer < 0f)
                         {
                             eyesData[i].lagProgress = 1f;
-                            eyesData[i].lagStartRotation = eyesData[i].lerpRotation;
+                            eyesData[i].SetLagStartRotation(BaseTransform, eyesData[i].lerpRotation);
                             changeFlag = true;
                         }
                     }
@@ -48,7 +48,7 @@ namespace FIMSpace.FEyes
 
         private void CalculateLagTimerNonIndividualEvent(int i)
         {
-            if (changeFlag) eyesData[i].lagStartRotation = eyesData[i].lerpRotation;
+            if (changeFlag) eyesData[i].SetLagStartRotation(BaseTransform, eyesData[i].lerpRotation);
         }
 
 
