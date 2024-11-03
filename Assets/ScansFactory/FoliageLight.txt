@@ -1,0 +1,18 @@
+For fast baking light:
+
+Lightmap Resolution: 8
+Direct Samples: 16
+Indirect Samples: 32
+Environment Samples: 16
+
+Medium baking light:
+
+Lightmap Resolution: 12
+Direct Samples: 32
+Indirect Samples: 64
+Environment Samples: 64
+
+Lightmap Resolution: more then 15 need >64GB RAM
+
+
+"Bake light probe for Trees" cause errors (very bright piece of foliage) - for that reason foliage uses dynamic light (HDR Sky & sun & lamps).
