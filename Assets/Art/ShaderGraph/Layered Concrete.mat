@@ -24,8 +24,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Layered Concrete
-  m_Shader: {fileID: -6465566751694194690, guid: 7d09200e7b09e6f4ebd2f4d0f97df1e2,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7d09200e7b09e6f4ebd2f4d0f97df1e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -132,7 +131,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Roughness:
-        m_Texture: {fileID: 2800000, guid: 202897901d9cfee4394a2930ed17b8dd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5b5f09d31f567674ea32972d86836528, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_181da13c7c544943a863be2a05db4e4c_Texture_1:
@@ -235,10 +234,10 @@ Material:
     m_Floats:
     - Vector1_10a3b1097c6f4915a3649a0f7d7f694c: 15
     - Vector1_4376366fdec54414848fc85bda09866c: 6.08
-    - Vector1_774399ff0e274223b3c42576f6e0e0b9: 4.88
-    - Vector1_9cceb0c46d2a4d5c9ae58ff4984572e6: 0.81
-    - Vector1_c5984984b96b400b8e657312ffe53866: 1.5
-    - Vector1_f7af464ca5f24b878d9d175d25d27cf0: 2.27
+    - Vector1_774399ff0e274223b3c42576f6e0e0b9: 6.71
+    - Vector1_9cceb0c46d2a4d5c9ae58ff4984572e6: -3.82
+    - Vector1_c5984984b96b400b8e657312ffe53866: 1.96
+    - Vector1_f7af464ca5f24b878d9d175d25d27cf0: 2.35
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -273,6 +272,7 @@ Material:
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
     - _DstBlend: 0
+    - _DstBlend2: 0
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
     - _EmissiveIntensity: 1
@@ -297,6 +297,7 @@ Material:
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
+    - _MaterialTypeMask: 2
     - _Metallic: 0
     - _MetallicRemapMax: 1
     - _MetallicRemapMin: 0
@@ -308,6 +309,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
+    - _PerPixelSorting: 0
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
@@ -377,3 +379,4 @@ Material:
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
