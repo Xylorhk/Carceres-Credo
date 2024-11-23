@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 9107965866115369274}
   - component: {fileID: 7098608243681670622}
   - component: {fileID: 4399953664573108553}
+  - component: {fileID: 1212175725842608440}
   - component: {fileID: 4458876562952699451}
   - component: {fileID: 67923926309636067}
   - component: {fileID: 2972632993507838304}
@@ -310,6 +311,7 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.SendEvent
+        - HutongGames.PlayMaker.Actions.SetFsmString
         - HutongGames.PlayMaker.Actions.SetIsKinematic
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetParent
@@ -317,13 +319,14 @@ MonoBehaviour:
         customNames:
         - Send Event_NotVisible
         - 
+        - 
         - Set Property_ColliderOff
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 000000000400000006000000080000000d000000
-        actionHashCodes: 5e69bb0415264c015ac85204a0dd83035e69bb04
+        actionEnabled: 010101010101
+        actionIsOpen: 010101010101
+        actionStartIndex: 0000000004000000090000000b0000000d00000012000000
+        actionHashCodes: 5e69bb0452221a0215264c015ac85204a0dd83035e69bb04
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -333,6 +336,14 @@ MonoBehaviour:
           networkSync: 0
           value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         - ownerOption: 0
           gameObject:
             useVariable: 0
@@ -551,7 +562,25 @@ MonoBehaviour:
             objectReferences: []
           setProperty: 1
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Package
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Action String
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: '"R" to Throw'
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -603,16 +632,21 @@ MonoBehaviour:
         stringParams:
         - Package / NotVisible
         - Holder / Holding
-        byteData: 000000
+        byteData: 00000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1f000000170000000f000000010000001400000011000000240000000100000014000000130000001100000011000000110000001f000000170000000f00000001000000
+        paramDataType: 1f000000170000000f0000000100000014000000120000001200000012000000010000001400000011000000240000000100000014000000130000001100000011000000110000001f000000170000000f00000001000000
         paramName:
         - eventTarget
         - sendEvent
         - delay
+        - everyFrame
+        - gameObject
+        - fsmName
+        - variableName
+        - setValue
         - everyFrame
         - gameObject
         - isKinematic
@@ -627,8 +661,8 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000000000000000000000000000001000000010000000000000001000000020000000300000001000000010000000100000002000000
-        paramByteDataSize: 0000000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000000000000000000001000000020000000100000001000000000000000000000002000000020000000000000001000000020000000300000001000000010000000100000003000000
+        paramByteDataSize: 00000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Get Dropped
       description: 
       colorIndex: 4
@@ -1585,8 +1619,31 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6371881, y: 0.46550196, z: 0.4425851}
-  m_Center: {x: 0.0014156699, y: 0.1764085, z: -0.028707445}
+  m_Size: {x: 0.68797404, y: 0.46550196, z: 0.4425851}
+  m_Center: {x: 0.02680865, y: 0.1764085, z: -0.028707445}
+--- !u!136 &1212175725842608440
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2677233038747908128}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.20000002
+  m_Height: 0.7968433
+  m_Direction: 0
+  m_Center: {x: 0.011578321, y: 0.33, z: 0}
 --- !u!54 &4458876562952699451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1666,7 +1723,7 @@ MonoBehaviour:
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
-          name: MainCamera
+          name: Main Camera
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -1679,7 +1736,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 1
             networkSync: 0
-            value: {fileID: 0}
+            value: {fileID: 3192363240490798877}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -1905,7 +1962,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 0}
+        value: {fileID: 3192363240490798877}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -1993,7 +2050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2774450684592739014
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2104,8 +2161,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.36, y: 1.36, z: 1.36}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2774450684592739014}
   - {fileID: 3192363240491065629}
@@ -2309,6 +2366,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b77ee05d4e9c4b45bd4815c03b526da, type: 3}
+--- !u!1 &3192363240490798877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 154748, guid: 5b77ee05d4e9c4b45bd4815c03b526da, type: 3}
+  m_PrefabInstance: {fileID: 3192363240490947425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3192363240491065629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 422524, guid: 5b77ee05d4e9c4b45bd4815c03b526da, type: 3}
