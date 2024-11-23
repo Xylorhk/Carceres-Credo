@@ -847,7 +847,13 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 1
-      stringVariables: []
+      stringVariables:
+      - useVariable: 1
+        name: Action String
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: Toggle Light
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
@@ -867,7 +873,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -878,7 +884,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -1011,8 +1017,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9084076135166484960, guid: fd67ab87eaf45de448010c1823cbf1cf, type: 3}
+      propertyPath: fsm.preprocessed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084076135166484960, guid: fd67ab87eaf45de448010c1823cbf1cf, type: 3}
       propertyPath: fsm.variables.stringVariables.Array.data[0].value
       value: Switch
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084076135166484960, guid: fd67ab87eaf45de448010c1823cbf1cf, type: 3}
+      propertyPath: fsm.states.Array.data[3].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9084076135166484960, guid: fd67ab87eaf45de448010c1823cbf1cf, type: 3}
       propertyPath: fsm.states.Array.data[0].actionData.fsmPropertyParams.Array.data[0].StringParameter.value

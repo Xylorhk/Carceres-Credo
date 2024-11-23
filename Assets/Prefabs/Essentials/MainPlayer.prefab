@@ -5317,16 +5317,32 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.SetFsmGameObject
         - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 5e69bb04
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 5b66cf005e69bb04
         unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Player Holder
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 5611785256814935899}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Target Object
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -5365,7 +5381,19 @@ MonoBehaviour:
           fsmComponent: {fileID: 0}
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Package
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Holder
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -5386,19 +5414,24 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Interact
-        byteData: 00
+        byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1f000000170000000f00000001000000
+        paramDataType: 14000000120000001200000013000000010000001f000000170000000f00000001000000
         paramName:
+        - gameObject
+        - fsmName
+        - variableName
+        - setValue
+        - everyFrame
         - eventTarget
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 00000000000000000000000000000000
-        paramByteDataSize: 00000000000000000000000001000000
+        paramDataPos: 000000000000000001000000000000000000000000000000000000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000000000001000000
     events:
     - name: Raycast
       isSystemEvent: 0
@@ -5439,6 +5472,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Player Holder
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 5611785256814935899}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -5446,7 +5485,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -15001,7 +15040,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Flashlight / On
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Flashlight On
         linkStyle: 0
         linkConstraint: 0
@@ -15101,7 +15140,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Flashlight / Off
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Flashlight Off
         linkStyle: 0
         linkConstraint: 0
@@ -15188,10 +15227,10 @@ MonoBehaviour:
     events:
     - name: Flashlight / On
       isSystemEvent: 0
-      isGlobal: 0
+      isGlobal: 1
     - name: Flashlight / Off
       isSystemEvent: 0
-      isGlobal: 0
+      isGlobal: 1
     globalTransitions: []
     variables:
       floatVariables: []
@@ -20449,7 +20488,7 @@ Transform:
   m_GameObject: {fileID: 2377764793169031499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.037, y: 0.223, z: -0.03}
+  m_LocalPosition: {x: 0.037, y: 0.309, z: -0.043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20468,7 +20507,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 4194304
   m_Range: 15
-  m_SpotAngle: 75
+  m_SpotAngle: 100.30806
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -20539,7 +20578,7 @@ MonoBehaviour:
   m_LightUnit: 4
   m_LuxAtDistance: 1
   m_Intensity: 25
-  m_InnerSpotPercent: 85
+  m_InnerSpotPercent: 63.55422
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 0.03
@@ -22706,7 +22745,7 @@ Transform:
   m_GameObject: {fileID: 4413680239592874955}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2000122, z: 0}
+  m_LocalPosition: {x: 0, y: 2.0999756, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27136,7 +27175,7 @@ Transform:
   m_GameObject: {fileID: 6534232539031036258}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
