@@ -15983,16 +15983,16 @@ MonoBehaviour:
         serializedVersion: 2
         x: 50
         y: 100
-        width: 100
+        width: 120.66
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Crouch
+          name: Player / Crouch
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Set Crouch Speed
         linkStyle: 0
         linkConstraint: 0
@@ -16070,7 +16070,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Crouch
+        - Player / Crouch
         byteData: 32010000010000000000
         arrayParamSizes: 
         arrayParamTypes: []
@@ -16105,9 +16105,9 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Crouch
+          name: Player / Crouch
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Reduce Radius
         linkStyle: 0
         linkConstraint: 0
@@ -16943,7 +16943,7 @@ MonoBehaviour:
         stringParams:
         - 
         - 
-        - Crouch
+        - Player / Crouch
         byteData: 070000000007000000000101000000
         arrayParamSizes: 
         arrayParamTypes: []
@@ -16998,20 +16998,11 @@ MonoBehaviour:
         x: 303
         y: 211
         width: 100
-        height: 48
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
-      - fsmEvent:
-          name: Stand
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Set Crouch Speed
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
       - fsmEvent:
           name: Done
           isSystemEvent: 0
@@ -17042,7 +17033,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101010101010101
+        actionEnabled: 000101010101010101
         actionIsOpen: 010101010101000000
         actionStartIndex: 00000000030000000a000000140000001e00000020000000220000002400000026000000
         actionHashCodes: ff77a904fa0e5402bd9b4401bd9b44015ac852045ac852045ac852045ac852045ac85204
@@ -17857,9 +17848,9 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Stand
+        - Player / Stand
         - 
-        - 
+        - Done
         - 
         byteData: 32010000070000000007000000000101000000
         arrayParamSizes: 
@@ -17924,9 +17915,9 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Stand
+          name: Player / Stand
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Stand Check
         linkStyle: 0
         linkConstraint: 0
@@ -18148,7 +18139,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Stand
+        - Player / Stand
         - 
         byteData: 32010000070000000001
         arrayParamSizes: 
@@ -18181,16 +18172,16 @@ MonoBehaviour:
         serializedVersion: 2
         x: 118
         y: 200
-        width: 106.34
+        width: 111.93
         height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Stand
+          name: Player / Stand
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Set Crouch Speed
         linkStyle: 0
         linkConstraint: 0
@@ -18421,7 +18412,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Stand
+        - Player / Stand
         - Done
         byteData: 32010000150000000001
         arrayParamSizes: 
@@ -18454,25 +18445,25 @@ MonoBehaviour:
         serializedVersion: 2
         x: 500
         y: 225
-        width: 105.07
+        width: 120.66
         height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Stand
+          name: Player / Stand
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Reset Vars
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
         colorIndex: 0
       - fsmEvent:
-          name: Crouch
+          name: Player / Crouch
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: ListenForStandInput
         linkStyle: 0
         linkConstraint: 0
@@ -18599,8 +18590,8 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        - Crouch
-        - Stand
+        - Player / Crouch
+        - Player / Stand
         byteData: 0000000000
         arrayParamSizes: 00000000
         arrayParamTypes:
@@ -18645,9 +18636,9 @@ MonoBehaviour:
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Stand
+          name: Player / Stand
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Stand Check
         linkStyle: 0
         linkConstraint: 0
@@ -18691,7 +18682,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Stand
+        - Player / Stand
         byteData: 32010000
         arrayParamSizes: 
         arrayParamTypes: []
@@ -18708,15 +18699,15 @@ MonoBehaviour:
     - name: FINISHED
       isSystemEvent: 1
       isGlobal: 0
-    - name: Crouch
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: Stand
-      isSystemEvent: 0
-      isGlobal: 0
     - name: Done
       isSystemEvent: 0
       isGlobal: 0
+    - name: Player / Crouch
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: Player / Stand
+      isSystemEvent: 0
+      isGlobal: 1
     globalTransitions: []
     variables:
       floatVariables:
@@ -23187,8 +23178,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4413680239592874955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.000000015832484, y: 2.100006, z: -0.00000010058284}
+  m_LocalRotation: {x: 0.00040773596, y: 0.7069852, z: 0.0026602196, w: 0.7072233}
+  m_LocalPosition: {x: -39.23772, y: 1006.411, z: 7.6339684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
