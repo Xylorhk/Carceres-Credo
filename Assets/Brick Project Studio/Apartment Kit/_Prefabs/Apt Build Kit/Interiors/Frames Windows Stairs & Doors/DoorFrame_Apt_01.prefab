@@ -1193,7 +1193,7 @@ MonoBehaviour:
         serializedVersion: 2
         x: 834.7344
         y: 401.91406
-        width: 128.29001
+        width: 144.76001
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -1893,11 +1893,14 @@ MonoBehaviour:
     - name: Door / Settled
       isSystemEvent: 0
       isGlobal: 0
+    - name: Foreboding / Affect
+      isSystemEvent: 0
+      isGlobal: 1
     globalTransitions:
     - fsmEvent:
-        name: Door / Creak
+        name: Foreboding / Affect
         isSystemEvent: 0
-        isGlobal: 0
+        isGlobal: 1
       toState: DoorCreakOpen
       linkStyle: 0
       linkConstraint: 0
