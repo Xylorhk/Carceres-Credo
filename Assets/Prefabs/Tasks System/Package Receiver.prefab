@@ -765,7 +765,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Return
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Listen
         linkStyle: 0
         linkConstraint: 0
@@ -951,7 +951,7 @@ MonoBehaviour:
       isGlobal: 1
     - name: Return
       isSystemEvent: 0
-      isGlobal: 0
+      isGlobal: 1
     globalTransitions:
     - fsmEvent:
         name: Receiver / Destroy
@@ -1021,7 +1021,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 000000000200000004000000
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1

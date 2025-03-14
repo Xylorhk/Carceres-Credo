@@ -355,7 +355,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -407,7 +407,7 @@ MonoBehaviour:
   fsm:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
-    name: Can Audio
+    name: ObjectCollisionAudio
     startState: Listen
     states:
     - name: Listen
@@ -417,17 +417,17 @@ MonoBehaviour:
         serializedVersion: 2
         x: 50
         y: 100
-        width: 100
+        width: 106.93
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: Can Sound
+          name: ObjectSound
           isSystemEvent: 0
           isGlobal: 0
-        toState: Can Sound
+        toState: ObjectSound
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Can Sound
+        - ObjectSound
         byteData: 00000000
         arrayParamSizes: 
         arrayParamTypes: []
@@ -506,14 +506,14 @@ MonoBehaviour:
         - storeForce
         paramDataPos: 000000000000000000000000000000000000000000000000
         paramByteDataSize: 000000000400000000000000000000000000000000000000
-    - name: Can Sound
+    - name: ObjectSound
       description: Need Real Can Sounds
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 214.79688
         y: 103.796875
-        width: 128.4
+        width: 134.655
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -601,11 +601,11 @@ MonoBehaviour:
         paramDataPos: 00000000000000000000000000000000
         paramByteDataSize: 00000000000000000000000000000000
     events:
-    - name: Can Sound
-      isSystemEvent: 0
-      isGlobal: 0
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: ObjectSound
+      isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
     variables:
@@ -637,7 +637,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -657,7 +657,7 @@ MonoBehaviour:
     handleTriggerEnter: 0
     handleTriggerExit: 0
     handleTriggerStay: 0
-    handleCollisionEnter: 1
+    handleCollisionEnter: 0
     handleCollisionExit: 0
     handleCollisionStay: 0
     handleParticleCollision: 0
@@ -696,63 +696,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2344045134195215176}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.028
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.0242653e-16
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
+    - target: {fileID: -7511558181221131132, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c6b4736f2241a0046914bf69cba16a09, type: 2}
-    - target: {fileID: 919132149155446097, guid: c7aa160a893feb9428781fcfb6db83c6,
-        type: 3}
+    - target: {fileID: 919132149155446097, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
       propertyPath: m_Name
       value: Can
       objectReference: {fileID: 0}
@@ -763,7 +751,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
 --- !u!4 &3326713032490854884 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c7aa160a893feb9428781fcfb6db83c6, type: 3}
   m_PrefabInstance: {fileID: 2999505782136557071}
   m_PrefabAsset: {fileID: 0}
