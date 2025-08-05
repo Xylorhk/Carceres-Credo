@@ -6082,7 +6082,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 3
+          value: 0.1
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -6142,10 +6142,10 @@ MonoBehaviour:
         fsmOwnerDefaultParams:
         - ownerOption: 1
           gameObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: EnemyAnimator
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: {fileID: 440213288519543825}
         animationCurveParams: []
@@ -6160,7 +6160,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: Scream
+          value: Alert
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -6353,6 +6353,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: EnemyAnimator
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 440213288519543825}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -6360,7 +6366,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -8603,7 +8609,7 @@ MonoBehaviour:
     isCullingExpanded: 0
     isColliderExpanded: 1
     isLodExpanded: 1
-  instanceID: -397304
+  instanceID: -265894
   materialPostfix: Strands
   isHdrp: 1
   isUrp: 0
@@ -8671,7 +8677,7 @@ MonoBehaviour:
     isCullingExpanded: 0
     isColliderExpanded: 1
     isLodExpanded: 1
-  instanceID: -397306
+  instanceID: -265896
   materialPostfix: Strands
   isHdrp: 1
   isUrp: 0
@@ -9318,7 +9324,7 @@ MonoBehaviour:
     isCullingExpanded: 0
     isColliderExpanded: 1
     isLodExpanded: 1
-  instanceID: -397664
+  instanceID: -266254
   materialPostfix: Strands
   isHdrp: 1
   isUrp: 0
@@ -9386,7 +9392,7 @@ MonoBehaviour:
     isCullingExpanded: 0
     isColliderExpanded: 1
     isLodExpanded: 1
-  instanceID: -397666
+  instanceID: -266256
   materialPostfix: Strands
   isHdrp: 1
   isUrp: 0
