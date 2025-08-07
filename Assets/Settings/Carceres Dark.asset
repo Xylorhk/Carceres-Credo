@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cc4c5fcb677014ebdc0d8be227b40c, type: 3}
   m_Name: ScreenSpaceLensFlare
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: -1
+    m_Value: 0
   contrast:
     m_OverrideState: 1
     m_Value: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.97
+    m_Value: 0.99
   directLightingStrength:
     m_OverrideState: 1
     m_Value: 0.43
@@ -387,7 +387,7 @@ MonoBehaviour:
   active: 1
   indirectDiffuseLightingMultiplier:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 1
   indirectDiffuseLightingLayers:
     m_OverrideState: 0
     m_Value: 65535
@@ -936,10 +936,10 @@ MonoBehaviour:
     m_Value: 1000
   baseHeight:
     m_OverrideState: 1
-    m_Value: 900
+    m_Value: 10
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 1500
+    m_Value: 50
   meanFreePath:
     m_OverrideState: 1
     m_Value: 10
