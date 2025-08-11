@@ -123,7 +123,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
+        - Set Property_VirtualCamPriority
         - 
         - 
         - 
@@ -278,12 +278,12 @@ MonoBehaviour:
           fsmComponent: {fileID: 0}
         fsmPropertyParams:
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: VirtualCamera
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: Cinemachine.CinemachineVirtualCamera
             value: {fileID: 4273438687792249155}
           TargetTypeName: Cinemachine.CinemachineVirtualCamera
           PropertyName: Priority
@@ -607,7 +607,7 @@ MonoBehaviour:
         customNames:
         - 
         - 
-        - 
+        - Set Property_VirtualCamPriority
         actionEnabled: 010101
         actionIsOpen: 010101
         actionStartIndex: 000000000400000008000000
@@ -685,12 +685,12 @@ MonoBehaviour:
           fsmComponent: {fileID: 0}
         fsmPropertyParams:
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: VirtualCamera
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: Cinemachine.CinemachineVirtualCamera
             value: {fileID: 4273438687792249155}
           TargetTypeName: Cinemachine.CinemachineVirtualCamera
           PropertyName: Priority
@@ -2018,7 +2018,7 @@ MonoBehaviour:
       - useVariable: 1
         name: ScareCam
         tooltip: 
-        showInInspector: 1
+        showInInspector: 0
         networkSync: 0
         value: {fileID: 2444795073126131175}
       - useVariable: 1
@@ -2045,7 +2045,14 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 7205549152462856291}
-      objectVariables: []
+      objectVariables:
+      - useVariable: 1
+        name: VirtualCamera
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: Cinemachine.CinemachineVirtualCamera
+        value: {fileID: 4273438687792249155}
       materialVariables: []
       textureVariables: []
       arrayVariables: []
@@ -2053,7 +2060,7 @@ MonoBehaviour:
       categories:
       - 
       - DangerDifficulty
-      variableCategoryIDs: 0000000000000000010000000000000000000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -9921,7 +9928,7 @@ MonoBehaviour:
   baseTransform: {fileID: 2630214806025330292}
   Hips: {fileID: 947558089474786063}
   ScaleReferenceMode: 3
-  finalScaleReference: 1.0422252
+  finalScaleReference: 1.042225
   finalScaleReferenceSqrt: 1.8357391
   customScaleReferenceValue: 0.5
   DelayedInitialization: 0
