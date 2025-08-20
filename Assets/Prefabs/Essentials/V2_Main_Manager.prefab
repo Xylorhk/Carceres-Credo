@@ -17431,15 +17431,15 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.BuildString
+        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000002000000
-        actionHashCodes: 5ac852047370ae05
+        actionStartIndex: 0000000007000000
+        actionHashCodes: 7370ae055ac85204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -17631,10 +17631,8 @@ MonoBehaviour:
         - HutongGames.PlayMaker.FsmString
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 24000000010000000c000000120000001200000012000000110000001200000001000000
+        paramDataType: 0c0000001200000012000000120000001100000012000000010000002400000001000000
         paramName:
-        - targetProperty
-        - everyFrame
         - stringParts
         - 
         - 
@@ -17642,8 +17640,10 @@ MonoBehaviour:
         - addToEnd
         - storeResult
         - everyFrame
-        paramDataPos: 000000000000000000000000000000000100000002000000000000000300000001000000
-        paramByteDataSize: 000000000100000000000000000000000000000000000000000000000000000001000000
+        - targetProperty
+        - everyFrame
+        paramDataPos: 000000000000000001000000020000000000000003000000000000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000010000000000000001000000
     - name: Add Funds
       description: 
       colorIndex: 0
@@ -17933,7 +17933,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 2
+          value: 0.8
         - useVariable: 1
           name: 
           tooltip: 
@@ -18345,7 +18345,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 2
+          value: 0.8
         - useVariable: 1
           name: 
           tooltip: 
