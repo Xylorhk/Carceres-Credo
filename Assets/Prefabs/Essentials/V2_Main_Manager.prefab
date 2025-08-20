@@ -17431,15 +17431,15 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.BuildString
         - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.BuildString
         customNames:
         - 
         - 
         actionEnabled: 0101
         actionIsOpen: 0101
-        actionStartIndex: 0000000007000000
-        actionHashCodes: 7370ae055ac85204
+        actionStartIndex: 0000000002000000
+        actionHashCodes: 5ac852047370ae05
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -17631,8 +17631,10 @@ MonoBehaviour:
         - HutongGames.PlayMaker.FsmString
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0c0000001200000012000000120000001100000012000000010000002400000001000000
+        paramDataType: 24000000010000000c000000120000001200000012000000110000001200000001000000
         paramName:
+        - targetProperty
+        - everyFrame
         - stringParts
         - 
         - 
@@ -17640,10 +17642,8 @@ MonoBehaviour:
         - addToEnd
         - storeResult
         - everyFrame
-        - targetProperty
-        - everyFrame
-        paramDataPos: 000000000000000001000000020000000000000003000000000000000000000001000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000010000000000000001000000
+        paramDataPos: 000000000000000000000000000000000100000002000000000000000300000001000000
+        paramByteDataSize: 000000000100000000000000000000000000000000000000000000000000000001000000
     - name: Add Funds
       description: 
       colorIndex: 0
@@ -17671,6 +17671,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.FloatOperator
         - HutongGames.PlayMaker.Actions.EaseFloat
         - HutongGames.PlayMaker.Actions.FloatRoundToNearest
+        - HutongGames.PlayMaker.Actions.FormatString
         - HutongGames.PlayMaker.Actions.BuildString
         - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
@@ -17679,10 +17680,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 00000000050000000f000000140000001b000000
-        actionHashCodes: 0cdb0405bd9b4401d97407057370ae055ac85204
+        - 
+        actionEnabled: 010101010001
+        actionIsOpen: 010101010101
+        actionStartIndex: 00000000050000000f000000140000001900000020000000
+        actionHashCodes: 0cdb0405bd9b4401d9740705641744007370ae055ac85204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -17830,6 +17832,18 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
+          value: ${0:F2}
+        - useVariable: 1
+          name: Funds String
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
           value: $
         - useVariable: 1
           name: Current Funds
@@ -17850,7 +17864,31 @@ MonoBehaviour:
           networkSync: 0
           value: 
         fsmObjectParams: []
-        fsmVarParams: []
+        fsmVarParams:
+        - variableName: Current Funds
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 0
+          floatValue: 11.53
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams:
@@ -17859,7 +17897,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Funds to Add
           tooltip: 
@@ -17877,7 +17915,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Total Funds
           tooltip: 
@@ -17889,13 +17927,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
+          value: 2
         - useVariable: 1
           name: 
           tooltip: 
@@ -17913,7 +17951,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
@@ -17925,7 +17963,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         fsmIntParams:
         - useVariable: 1
           name: 
@@ -17953,13 +17991,14 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Return
-        byteData: 00000000000400000000010101
-        arrayParamSizes: 02000000
+        byteData: 0000000000040000000001010101
+        arrayParamSizes: 0100000002000000
         arrayParamTypes:
+        - HutongGames.PlayMaker.FsmVar
         - HutongGames.PlayMaker.FsmString
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f0000000f0000000f0000000f0000000f000000070000001100000017000000010000000f0000000f000000100000000f000000010000000c0000001200000012000000120000001100000012000000010000002400000001000000
+        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f0000000f0000000f0000000f0000000f000000070000001100000017000000010000000f0000000f000000100000000f00000001000000120000000c0000002700000012000000010000000c0000001200000012000000120000001100000012000000010000002400000001000000
         paramName:
         - float1
         - float2
@@ -17981,6 +18020,11 @@ MonoBehaviour:
         - resultAsInt
         - resultAsFloat
         - everyFrame
+        - format
+        - variables
+        - 
+        - storeResult
+        - everyFrame
         - stringParts
         - 
         - 
@@ -17990,8 +18034,8 @@ MonoBehaviour:
         - everyFrame
         - targetProperty
         - everyFrame
-        paramDataPos: 000000000100000000000000020000000400000003000000040000000500000006000000070000000800000005000000000000000000000009000000090000000a000000000000000b0000000a0000000000000000000000010000000200000001000000030000000b000000000000000c000000
-        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000000000000000000000000000040000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000001000000
+        paramDataPos: 000000000100000000000000020000000400000003000000040000000500000006000000070000000800000005000000000000000000000009000000090000000a000000000000000b0000000a000000000000000000000000000000010000000b0000000100000002000000030000000400000001000000050000000c000000000000000d000000
+        paramByteDataSize: 00000000000000000400000000000000010000000000000000000000000000000000000000000000000000000400000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000001000000
     - name: Subtract Funds
       description: 
       colorIndex: 0
@@ -18021,6 +18065,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.EaseFloat
         - HutongGames.PlayMaker.Actions.FloatRoundToNearest
         - HutongGames.PlayMaker.Actions.BuildString
+        - HutongGames.PlayMaker.Actions.FormatString
         - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
@@ -18029,10 +18074,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101010101
-        actionIsOpen: 010101010101
-        actionStartIndex: 00000000050000000900000013000000180000001f000000
-        actionHashCodes: 0cdb04050c8bc100bd9b4401d97407057370ae055ac85204
+        - 
+        actionEnabled: 01010101000101
+        actionIsOpen: 01010101000101
+        actionStartIndex: 00000000050000000900000013000000180000001f00000024000000
+        actionHashCodes: 0cdb04050c8bc100bd9b4401d97407057370ae05641744005ac85204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -18199,8 +18245,44 @@ MonoBehaviour:
           showInInspector: 1
           networkSync: 0
           value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: ${0:F2}
+        - useVariable: 1
+          name: Funds String
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
         fsmObjectParams: []
-        fsmVarParams: []
+        fsmVarParams:
+        - variableName: Current Funds
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 0
+          floatValue: 11.53
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams:
@@ -18209,7 +18291,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Funds to Subtract
           tooltip: 
@@ -18245,7 +18327,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Total Funds
           tooltip: 
@@ -18257,13 +18339,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
+          value: 2
         - useVariable: 1
           name: 
           tooltip: 
@@ -18281,7 +18363,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
@@ -18293,7 +18375,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         fsmIntParams:
         - useVariable: 1
           name: 
@@ -18321,13 +18403,14 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Return
-        byteData: 0100000000000400000000010101
-        arrayParamSizes: 02000000
+        byteData: 010000000000040000000001010101
+        arrayParamSizes: 0200000001000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmString
+        - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f0000000f000000010000000f0000000f0000000f0000000f0000000f0000000f000000070000001100000017000000010000000f0000000f000000100000000f000000010000000c0000001200000012000000120000001100000012000000010000002400000001000000
+        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f0000000f000000010000000f0000000f0000000f0000000f0000000f0000000f000000070000001100000017000000010000000f0000000f000000100000000f000000010000000c000000120000001200000012000000110000001200000001000000120000000c0000002700000012000000010000002400000001000000
         paramName:
         - float1
         - float2
@@ -18360,10 +18443,15 @@ MonoBehaviour:
         - addToEnd
         - storeResult
         - everyFrame
+        - format
+        - variables
+        - 
+        - storeResult
+        - everyFrame
         - targetProperty
         - everyFrame
-        paramDataPos: 000000000100000000000000020000000400000003000000040000000500000005000000060000000700000008000000090000000a0000000b0000000600000000000000000000000a0000000c0000000d000000000000000e0000000b0000000000000000000000010000000200000001000000030000000c000000000000000d000000
-        paramByteDataSize: 000000000000000004000000000000000100000000000000000000000000000001000000000000000000000000000000000000000000000000000000040000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000001000000
+        paramDataPos: 000000000100000000000000020000000400000003000000040000000500000005000000060000000700000008000000090000000a0000000b0000000600000000000000000000000a0000000c0000000d000000000000000e0000000b0000000000000000000000010000000200000001000000030000000c000000040000000100000000000000050000000d000000000000000e000000
+        paramByteDataSize: 0000000000000000040000000000000001000000000000000000000000000000010000000000000000000000000000000000000000000000000000000400000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000001000000
     - name: Listen
       description: 
       colorIndex: 0
@@ -18542,7 +18630,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
@@ -18939,7 +19027,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Funds to Subtract
           tooltip: 
@@ -18975,7 +19063,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Total Funds
           tooltip: 
@@ -18987,7 +19075,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
@@ -19011,7 +19099,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
@@ -19023,7 +19111,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         fsmIntParams:
         - useVariable: 1
           name: 
@@ -19316,13 +19404,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Current Funds
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Total Funds
           tooltip: 
@@ -19352,7 +19440,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 1
           name: Total Funds
           tooltip: 
@@ -19364,7 +19452,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
@@ -19388,7 +19476,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         - useVariable: 0
           name: 
           tooltip: 
@@ -19400,7 +19488,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 13.73
+          value: 11.53
         fsmIntParams:
         - useVariable: 1
           name: 
@@ -19507,7 +19595,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 0
+        value: 11.53
       - useVariable: 1
         name: Funds to Subtract
         tooltip: 
@@ -19535,6 +19623,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 
+      - useVariable: 1
+        name: 
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
@@ -19554,7 +19648,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -27191,15 +27285,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 434.3216
+      value: 456.8422
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -999.6678
+      value: -999.3608
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 456.89105
+      value: 211.55527
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27273,6 +27367,10 @@ PrefabInstance:
       propertyPath: fsm.variables.gameObjectVariables.Array.data[1].value
       value: 
       objectReference: {fileID: 6906617041477270813}
+    - target: {fileID: 2727830811887805947, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: fsm.states.Array.data[3].actionData.fsmEventTargetParams.Array.data[0].gameObject.gameObject.value
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2727830811887805947, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: fsm.states.Array.data[3].actionData.fsmEventTargetParams.Array.data[1].gameObject.gameObject.value
       value: 
