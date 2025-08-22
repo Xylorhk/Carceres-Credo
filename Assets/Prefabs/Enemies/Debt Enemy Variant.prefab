@@ -32,7 +32,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4871561951982890905}
   - {fileID: 241332023405538268}
   m_Father: {fileID: 9140728672747275836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2947,15 +2946,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2444795073126131175}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.011072271, y: -0.9766488, z: -0.20842527, w: -0.050927088}
-  m_LocalPosition: {x: 0.036, y: 2.342, z: 0.218}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.65261966, y: 0.38970232, z: 0.47051895, w: 0.4481424}
+  m_LocalPosition: {x: -0.026, y: -0.414, z: -0.019}
+  m_LocalScale: {x: 0.6153849, y: 0.61538464, z: 0.6153848}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5526929100275182084}
   - {fileID: 3142387796865170967}
-  m_Father: {fileID: 6532888431681687305}
-  m_LocalEulerAnglesHint: {x: -24.095, y: 174.035, z: -0.025}
+  m_Father: {fileID: 2364997959474117010}
+  m_LocalEulerAnglesHint: {x: -108.954, y: -90.022, z: 164.477}
 --- !u!114 &4273438687792249155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2979,7 +2978,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 100
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -11843,6 +11842,7 @@ Transform:
   m_Children:
   - {fileID: 789545096402229553}
   - {fileID: 1254815526887931487}
+  - {fileID: 4871561951982890905}
   m_Father: {fileID: 2031960499539607677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8580365090025721222
