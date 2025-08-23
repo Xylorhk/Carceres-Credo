@@ -5081,14 +5081,14 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: EnemyMovement
-    startState: Init
+    startState: Initial Wait
     states:
     - name: Init
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 52.21875
+        x: 196.21875
         y: 381.0078
         width: 100
         height: 48
@@ -5187,7 +5187,7 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 522.7422
+        x: 666.7422
         y: 354.8047
         width: 140.66
         height: 64
@@ -5445,7 +5445,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 784.2969
+        x: 928.2969
         y: 571.03125
         width: 169.83
         height: 64
@@ -5550,11 +5550,7 @@ MonoBehaviour:
           boolValues: 
           stringValues: []
           vector4Values: []
-          objectReferences:
-          - {fileID: 0}
-          - {fileID: 0}
-          - {fileID: 0}
-          - {fileID: 0}
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams:
         - useVariable: 1
@@ -5614,7 +5610,7 @@ MonoBehaviour:
       colorIndex: 2
       position:
         serializedVersion: 2
-        x: 303.20312
+        x: 447.20312
         y: 481.1328
         width: 156.93
         height: 80
@@ -6043,7 +6039,7 @@ MonoBehaviour:
       colorIndex: 5
       position:
         serializedVersion: 2
-        x: 450.3672
+        x: 594.3672
         y: 177.05469
         width: 160.52
         height: 32
@@ -6134,7 +6130,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 686.0547
+        x: 830.0547
         y: 232.30469
         width: 131.22
         height: 32
@@ -6207,7 +6203,7 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 784.4922
+        x: 928.4922
         y: 366
         width: 193.63
         height: 64
@@ -6444,7 +6440,7 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 497.03125
+        x: 641.03125
         y: 626.8672
         width: 184.575
         height: 48
@@ -6785,7 +6781,7 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 1123.4609
+        x: 1267.4609
         y: 502.41406
         width: 107.69
         height: 32
@@ -7099,7 +7095,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 1126.0703
+        x: 1270.0703
         y: 553.6172
         width: 202.27
         height: 32
@@ -7160,7 +7156,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 924.1172
+        x: 1068.1172
         y: 110.0625
         width: 129.92
         height: 32
@@ -7540,7 +7536,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 53.203125
+        x: 197.20312
         y: 490.3828
         width: 119.68
         height: 32
@@ -7615,11 +7611,7 @@ MonoBehaviour:
           boolValues: 
           stringValues: []
           vector4Values: []
-          objectReferences:
-          - {fileID: 0}
-          - {fileID: 0}
-          - {fileID: 0}
-          - {fileID: 0}
+          objectReferences: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
@@ -7641,6 +7633,79 @@ MonoBehaviour:
         - value
         paramDataPos: 0000000000000000
         paramByteDataSize: 0000000000000000
+    - name: Initial Wait
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 50
+        y: 355
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Next
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Init
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 48c01101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.1
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Next
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f0000001700000001000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000001000000
     events:
     - name: Enemy / ChaseTarget
       isSystemEvent: 0
