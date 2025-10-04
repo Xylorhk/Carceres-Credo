@@ -50,11 +50,25 @@ MonoBehaviour:
     objectVariables: []
     materialVariables: []
     textureVariables: []
-    arrayVariables: []
+    arrayVariables:
+    - useVariable: 1
+      name: ActiveEnemies
+      tooltip: Each Enemy will add itself to this list when they are spawned
+      showInInspector: 0
+      networkSync: 0
+      type: 3
+      objectTypeName: UnityEngine.Object
+      floatValues: []
+      intValues: 
+      boolValues: 
+      stringValues: []
+      vector4Values: []
+      objectReferences: []
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000000000000000000000000000
+    - Enemies
+    variableCategoryIDs: 0000000000000000000000000000000001000000
   events:
   - Interact
   - Item / Get
@@ -236,3 +250,6 @@ MonoBehaviour:
   - ATM / ResetWithdraw
   - Check View
   - Foreboding / Check View
+  - Enemies / Destroy
+  - Enemy / Deactivate
+  - Enemy / Register
