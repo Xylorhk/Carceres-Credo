@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3398327367260481710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 444.26, y: 0, z: 213.87}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 322
+        x: 418
         y: 100
         width: 162.81
         height: 32
@@ -343,33 +343,44 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 622
-        y: 112
+        x: 506
+        y: 163
         width: 110.04
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: Return
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Listen
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CreateObject
         - HutongGames.PlayMaker.Actions.SetFsmGameObject
+        - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000006000000
-        actionHashCodes: 605323015b66cf00
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000060000000b000000
+        actionHashCodes: 605323015b66cf0048c01101
         unityObjectParams: []
         fsmGameObjectParams:
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: EnemyToSpawn
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
-          value: {fileID: 4404428818073810638, guid: 4ff5b97f59f50724286861f67f67f0d0, type: 3}
+          value: {fileID: 0}
         - useVariable: 0
           name: 
           tooltip: 
@@ -426,7 +437,13 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 5
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
@@ -446,13 +463,14 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 00
+        stringParams:
+        - Return
+        byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1300000013000000130000001c0000001c000000130000001400000012000000120000001300000001000000
+        paramDataType: 1300000013000000130000001c0000001c0000001300000014000000120000001200000013000000010000000f0000001700000001000000
         paramName:
         - gameObject
         - parent
@@ -465,15 +483,18 @@ MonoBehaviour:
         - variableName
         - setValue
         - everyFrame
-        paramDataPos: 0000000001000000020000000000000001000000030000000000000000000000010000000400000000000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000001000000020000000000000001000000030000000000000000000000010000000400000000000000000000000000000001000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000001000000
     - name: Init
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 63
-        y: 103
+        x: 58
+        y: 108
         width: 177.76
         height: 32
       isBreakpoint: 0
@@ -492,12 +513,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetFsmGameObject
+        - HutongGames.PlayMaker.Actions.GetFsmGameObject
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 5b66cf00
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 5b66cf005b66cf00
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -506,7 +529,21 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
+        - useVariable: 1
+          name: EnemyToSpawn
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 4272988701626518057}
         - ownerOption: 1
           gameObject:
             useVariable: 0
@@ -534,6 +571,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Zone
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Foreboding
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: EnemyToSpawn
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
@@ -547,20 +596,86 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 00
+        byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000012000000120000001300000001000000
+        paramDataType: 14000000120000001200000013000000010000001400000012000000120000001300000001000000
         paramName:
         - gameObject
         - fsmName
         - variableName
         - storeValue
         - everyFrame
-        paramDataPos: 0000000000000000010000000000000000000000
-        paramByteDataSize: 0000000000000000000000000000000001000000
+        - gameObject
+        - fsmName
+        - variableName
+        - storeValue
+        - everyFrame
+        paramDataPos: 00000000000000000100000000000000000000000100000002000000030000000100000001000000
+        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000
+    - name: Listen
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 183
+        y: 198
+        width: 183.17
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Foreboding / Check View
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Check Screen Position
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: Foreboding / Check View
       isSystemEvent: 0
@@ -568,6 +683,9 @@ MonoBehaviour:
     - name: Out of View
       isSystemEvent: 0
       isGlobal: 0
+    - name: Return
+      isSystemEvent: 0
+      isGlobal: 1
     globalTransitions: []
     variables:
       floatVariables:
@@ -610,6 +728,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: EnemyToSpawn
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -617,7 +741,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -626,7 +750,7 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 04000000
+    outVariableIndices: 0400000005000000
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
@@ -725,7 +849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4272988701626518057}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -28.364, y: 1001.231, z: 3.604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -976,7 +1100,7 @@ MonoBehaviour:
           name: Foreboding / EndHaunt
           isSystemEvent: 0
           isGlobal: 0
-        toState: Cooldown
+        toState: CheckIfSpawnEnemy
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -1160,7 +1284,7 @@ MonoBehaviour:
           name: Foreboding / EndHaunt
           isSystemEvent: 0
           isGlobal: 0
-        toState: Cooldown
+        toState: CheckIfSpawnEnemy
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -1408,8 +1532,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 583.1719
-        y: 263.3125
+        x: 490.17188
+        y: 256.3125
         width: 165.59
         height: 32
       isBreakpoint: 0
@@ -1490,8 +1614,8 @@ MonoBehaviour:
         serializedVersion: 2
         x: 555
         y: 52
-        width: 189.6
-        height: 64
+        width: 195.59
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -1510,15 +1634,6 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 0
         toState: AffectObject_Loop
-        linkStyle: 0
-        linkConstraint: 0
-        linkTarget: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: Foreboding / Spawn
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Debt Enemy Spawn
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -1614,12 +1729,6 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
           value: 0
         fsmIntParams: []
         fsmBoolParams:
@@ -1644,15 +1753,14 @@ MonoBehaviour:
         - BeginListen
         - Foreboding / SpookySound
         - Foreboding / AffectObject
-        - Foreboding / Spawn
         byteData: 000000
-        arrayParamSizes: 0300000003000000
+        arrayParamSizes: 0200000002000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmEvent
         - HutongGames.PlayMaker.FsmFloat
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000110000001100000001000000010000001f000000170000000f000000010000000c0000001700000017000000170000000c0000000f0000000f0000000f0000000f000000
+        paramDataType: 14000000110000001100000001000000010000001f000000170000000f000000010000000c00000017000000170000000c0000000f0000000f0000000f000000
         paramName:
         - gameObject
         - activate
@@ -1666,21 +1774,19 @@ MonoBehaviour:
         - events
         - 
         - 
-        - 
         - weights
         - 
         - 
-        - 
         - delay
-        paramDataPos: 000000000000000001000000000000000100000000000000000000000000000002000000000000000100000002000000030000000100000001000000020000000300000004000000
-        paramByteDataSize: 000000000000000000000000010000000100000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000
+        paramDataPos: 00000000000000000100000000000000010000000000000000000000000000000200000000000000010000000200000001000000010000000200000003000000
+        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000
     - name: DeactivateStressZone
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 326.78125
-        y: 286.96094
+        x: 239.78125
+        y: 262.96094
         width: 161.76
         height: 32
       isBreakpoint: 0
@@ -1927,8 +2033,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 777
-        y: 152
+        x: 721.0156
+        y: 365
         width: 143.79001
         height: 32
       isBreakpoint: 0
@@ -1939,7 +2045,7 @@ MonoBehaviour:
           name: Return
           isSystemEvent: 0
           isGlobal: 1
-        toState: HauntSelect
+        toState: Cooldown
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -2050,6 +2156,130 @@ MonoBehaviour:
         - sendEvent
         paramDataPos: 00000000000000000000000000000000000000000000000001000000
         paramByteDataSize: 00000000000000000000000000000000000000000100000000000000
+    - name: CheckIfSpawnEnemy
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 928
+        y: 264
+        width: 155.75
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Foreboding / Spawn
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Debt Enemy Spawn
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Return
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Cooldown
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.RandomInt
+        - HutongGames.PlayMaker.Actions.IntCompare
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: 070f300009faa102
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 10
+        - useVariable: 1
+          name: EnemyChance
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: EnemyChance
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: EnemyChanceThreshold
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 2
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Foreboding / Spawn
+        - Foreboding / Spawn
+        - Return
+        byteData: 0100
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1000000010000000100000000100000011000000100000001000000017000000170000001700000001000000
+        paramName:
+        - min
+        - max
+        - storeResult
+        - inclusiveMax
+        - noRepeat
+        - integer1
+        - integer2
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        paramDataPos: 0000000001000000020000000000000000000000030000000400000000000000010000000200000001000000
+        paramByteDataSize: 0000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
     events:
     - name: Foreboding / AffectObject
       isSystemEvent: 0
@@ -2136,6 +2366,18 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 90
+      - useVariable: 1
+        name: EnemyChance
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: EnemyChanceThreshold
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 2
       boolVariables: []
       stringVariables: []
       vector2Variables: []
@@ -2166,6 +2408,12 @@ MonoBehaviour:
         name: Current Spawn
         tooltip: 
         showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: EnemyToSpawn
+        tooltip: 
+        showInInspector: 1
         networkSync: 0
         value: {fileID: 0}
       objectVariables:
@@ -2214,7 +2462,8 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      - Enemy
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -2223,7 +2472,7 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 0b000000
+    outVariableIndices: 0e000000
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []

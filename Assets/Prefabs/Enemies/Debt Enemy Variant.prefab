@@ -10449,6 +10449,7 @@ GameObject:
   - component: {fileID: 454573185723452024}
   - component: {fileID: 3141124428443454465}
   - component: {fileID: 6194185953846599825}
+  - component: {fileID: 8471247530478896596}
   m_Layer: 12
   m_Name: Enemy Audio
   m_TagString: Untagged
@@ -11180,15 +11181,15 @@ AudioSource:
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.85
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
-  MaxDistance: 20
+  MinDistance: 1
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -11263,6 +11264,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!164 &8471247530478896596
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7101270280743697551}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -2000
+  m_DecayTime: 1.49
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -2466
+  m_ReverbLevel: -1926
+  m_ReverbDelay: 0.1
+  m_Diffusion: 21
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 20
 --- !u!1 &7205549152462856291
 GameObject:
   m_ObjectHideFlags: 0

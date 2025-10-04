@@ -37,8 +37,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Branch_01_01_Interactive
-  m_Shader: {fileID: -6465566751694194690, guid: 7a2dbb47d5986bc4d8d9ea466745b986,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7a2dbb47d5986bc4d8d9ea466745b986, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -132,7 +131,7 @@ Material:
     - Boolean_8D2075D0: 1
     - Boolean_8DF6575E: 1
     - Vector1_19174781: 1
-    - Vector1_2E02C893: 1.99
+    - Vector1_2E02C893: 0.1
     - Vector1_31C5A0D2: 1
     - Vector1_5DE2A733: 1
     - Vector1_5E4C65CA: 1
@@ -157,17 +156,21 @@ Material:
     - _DoubleSidedGIMode: 1
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
+    - _DstBlend2: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _MaterialID: 1
+    - _MaterialTypeMask: 2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _OpaqueCullMode: 2
     - _Parallax: 0.02
+    - _PerPixelSorting: 0
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
@@ -189,6 +192,7 @@ Material:
     - _StencilWriteMaskMV: 41
     - _SupportDecals: 1
     - _SurfaceType: 0
+    - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentDepthPostpassEnable: 0
@@ -211,3 +215,4 @@ Material:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
