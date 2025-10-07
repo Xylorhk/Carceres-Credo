@@ -6713,7 +6713,9 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SendEvent
         - HutongGames.PlayMaker.Actions.SendEvent
         - HutongGames.PlayMaker.Actions.SendEvent
+        - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
+        - 
         - 
         - 
         - 
@@ -6721,10 +6723,10 @@ MonoBehaviour:
         - 
         - Send Event_SleepSystem
         - Send Event_Bankrupt
-        actionEnabled: 01010101010001
-        actionIsOpen: 01010101010101
-        actionStartIndex: 0000000005000000090000000e00000012000000160000001a000000
-        actionHashCodes: b2cf10005e69bb045f9135045e69bb045e69bb045e69bb045e69bb04
+        actionEnabled: 0101010101010000
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 0000000005000000090000000e00000012000000160000001a0000001e000000
+        actionHashCodes: b2cf10005e69bb045f9135045e69bb045e69bb045e69bb045e69bb045e69bb04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -6804,6 +6806,38 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: GotYouZone
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 1
+              name: SaveManager
+              tooltip: 
+              showInInspector: 0
+              networkSync: 0
+              value: {fileID: 0}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: SaveManager
           sendToChildren:
             useVariable: 0
             name: 
@@ -6952,6 +6986,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -6980,15 +7020,16 @@ MonoBehaviour:
         stringParams:
         - Player / Lock
         - DangerZone / Release
+        - Save / Funds
         - Player / Passed Out
         - SleepSystem / PassedOut
         - Funds / Bankrupt
-        byteData: 000000000000000000000000
+        byteData: 00000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000110000001100000001000000010000001f000000170000000f0000000100000014000000120000001100000001000000070000001f000000170000000f000000010000001f000000170000000f000000010000001f000000170000000f000000010000001f000000170000000f00000001000000
+        paramDataType: 14000000110000001100000001000000010000001f000000170000000f0000000100000014000000120000001100000001000000070000001f000000170000000f000000010000001f000000170000000f000000010000001f000000170000000f000000010000001f000000170000000f000000010000001f000000170000000f00000001000000
         paramName:
         - gameObject
         - activate
@@ -7020,8 +7061,12 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 000000000000000001000000000000000100000000000000000000000000000002000000010000000000000002000000030000000400000001000000010000000100000008000000020000000200000002000000090000000300000003000000030000000a0000000400000004000000040000000b000000
-        paramByteDataSize: 000000000000000000000000010000000100000000000000000000000000000001000000000000000000000000000000010000000400000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 000000000000000001000000000000000100000000000000000000000000000002000000010000000000000002000000030000000400000001000000010000000100000008000000020000000200000002000000090000000300000003000000030000000a0000000400000004000000040000000b0000000500000005000000050000000c000000
+        paramByteDataSize: 00000000000000000000000001000000010000000000000000000000000000000100000000000000000000000000000001000000040000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000
     - name: Stress Increase Mild
       description: 
       colorIndex: 0
@@ -7966,6 +8011,9 @@ MonoBehaviour:
     - name: Player / Lock
       isSystemEvent: 0
       isGlobal: 1
+    - name: Save / Funds
+      isSystemEvent: 0
+      isGlobal: 1
     globalTransitions:
     - fsmEvent:
         name: Stress / Increase
@@ -8150,8 +8198,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
-        y: 260
+        x: 58
+        y: 256
         width: 100
         height: 32
       isBreakpoint: 0
@@ -9522,7 +9570,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 50
-        y: 148
+        y: 132
         width: 100
         height: 32
       isBreakpoint: 0
@@ -9719,7 +9767,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 250.01562
-        y: 141.57812
+        y: 125.578125
         width: 159.6
         height: 64
       isBreakpoint: 0
@@ -9814,7 +9862,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 0.02
+          value: 0
         - useVariable: 1
           name: Stress
           tooltip: 
@@ -9826,7 +9874,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 0.02
+          value: 0
         - useVariable: 1
           name: Stress
           tooltip: 
@@ -9873,8 +9921,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 462.79688
-        y: 243.39062
+        x: 485.79688
+        y: 212.39062
         width: 137.2
         height: 32
       isBreakpoint: 0
@@ -9895,6 +9943,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SendEvent
         - HutongGames.PlayMaker.Actions.SendEvent
         - HutongGames.PlayMaker.Actions.FloatAdd
+        - HutongGames.PlayMaker.Actions.SetFloatValue
         - HutongGames.PlayMaker.Actions.FloatClamp
         - HutongGames.PlayMaker.Actions.UiSliderSetValue
         - HutongGames.PlayMaker.Actions.SetFsmFloat
@@ -9905,10 +9954,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101010101
-        actionIsOpen: 010101010101
-        actionStartIndex: 0000000004000000080000000c0000001000000014000000
-        actionHashCodes: 5e69bb045e69bb042a6e8a000c8bc10052cb520387604502
+        - 
+        actionEnabled: 01010101010101
+        actionIsOpen: 01010101010101
+        actionStartIndex: 0000000004000000080000000c0000000f0000001300000017000000
+        actionHashCodes: 5e69bb045e69bb042a6e8a009845b3050c8bc10052cb520387604502
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -10029,11 +10079,11 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         - useVariable: 1
-          name: Stress
+          name: UnclampedStress
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 0.02
+          value: 0
         - useVariable: 1
           name: Stress Increase Rate
           tooltip: 
@@ -10047,11 +10097,23 @@ MonoBehaviour:
           networkSync: 0
           value: 0.02
         - useVariable: 1
-          name: Min Base Stress
+          name: UnclampedStress
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Stress
           tooltip: 
           showInInspector: 1
           networkSync: 0
           value: 0.02
+        - useVariable: 1
+          name: Min Base Stress
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: Max Base Stress
           tooltip: 
@@ -10086,12 +10148,12 @@ MonoBehaviour:
         stringParams:
         - Audio / BadVibes
         - Stress / Increase
-        byteData: 00000101010101
+        byteData: 0000010101010101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1f000000170000000f000000010000001f000000170000000f000000010000000f0000000f00000001000000010000000f0000000f0000000f00000001000000140000000f00000011000000010000001400000012000000120000000f00000001000000
+        paramDataType: 1f000000170000000f000000010000001f000000170000000f000000010000000f0000000f00000001000000010000000f0000000f000000010000000f0000000f0000000f00000001000000140000000f00000011000000010000001400000012000000120000000f00000001000000
         paramName:
         - eventTarget
         - sendEvent
@@ -10106,6 +10168,9 @@ MonoBehaviour:
         - everyFrame
         - perSecond
         - floatVariable
+        - floatValue
+        - everyFrame
+        - floatVariable
         - minValue
         - maxValue
         - everyFrame
@@ -10118,15 +10183,15 @@ MonoBehaviour:
         - variableName
         - setValue
         - everyFrame
-        paramDataPos: 00000000000000000000000000000000010000000100000001000000010000000200000003000000020000000300000004000000050000000600000004000000000000000700000000000000050000000100000000000000010000000800000006000000
-        paramByteDataSize: 00000000000000000000000001000000000000000000000000000000010000000000000000000000010000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000010000000100000001000000010000000200000003000000020000000300000004000000050000000400000006000000070000000800000005000000000000000900000000000000060000000100000000000000010000000a00000007000000
+        paramByteDataSize: 00000000000000000000000001000000000000000000000000000000010000000000000000000000010000000100000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000001000000
     - name: Stress Decrease
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 473.20312
-        y: 62.125
+        x: 498.20312
+        y: 51.117188
         width: 131.6
         height: 48
       isBreakpoint: 0
@@ -10157,6 +10222,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SendEvent
         - HutongGames.PlayMaker.Actions.UiSliderSetValue
         - HutongGames.PlayMaker.Actions.FloatSubtract
+        - HutongGames.PlayMaker.Actions.SetFloatValue
         - HutongGames.PlayMaker.Actions.FloatClamp
         - HutongGames.PlayMaker.Actions.SetFsmFloat
         - HutongGames.PlayMaker.Actions.FloatCompare
@@ -10168,10 +10234,11 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101010101
-        actionIsOpen: 01010101010101
-        actionStartIndex: 0000000004000000080000000c000000100000001400000019000000
-        actionHashCodes: 5e69bb045e69bb0452cb52032a6e8a000c8bc100876045021bcdca04
+        - 
+        actionEnabled: 0101010101010101
+        actionIsOpen: 0101010101010101
+        actionStartIndex: 0000000004000000080000000c0000001000000013000000170000001c000000
+        actionHashCodes: 5e69bb045e69bb0452cb52032a6e8a009845b3050c8bc100876045021bcdca04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -10298,11 +10365,11 @@ MonoBehaviour:
           networkSync: 0
           value: 0.02
         - useVariable: 1
-          name: Stress
+          name: UnclampedStress
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 0.02
+          value: 0
         - useVariable: 1
           name: Stress Decrease Rate
           tooltip: 
@@ -10316,11 +10383,23 @@ MonoBehaviour:
           networkSync: 0
           value: 0.02
         - useVariable: 1
-          name: Min Base Stress
+          name: UnclampedStress
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Stress
           tooltip: 
           showInInspector: 1
           networkSync: 0
           value: 0.02
+        - useVariable: 1
+          name: Min Base Stress
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 0
         - useVariable: 1
           name: Max Base Stress
           tooltip: 
@@ -10344,7 +10423,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 0.02
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -10370,12 +10449,12 @@ MonoBehaviour:
         - Stress / Reset
         - Stress / Reset
         - 
-        byteData: 0000010101010101
+        byteData: 000001010101010101
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1f000000170000000f000000010000001f000000170000000f00000001000000140000000f00000011000000010000000f0000000f00000001000000010000000f0000000f0000000f000000010000001400000012000000120000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramDataType: 1f000000170000000f000000010000001f000000170000000f00000001000000140000000f00000011000000010000000f0000000f00000001000000010000000f0000000f000000010000000f0000000f0000000f000000010000001400000012000000120000000f000000010000000f0000000f0000000f00000017000000170000001700000001000000
         paramName:
         - eventTarget
         - sendEvent
@@ -10394,6 +10473,9 @@ MonoBehaviour:
         - everyFrame
         - perSecond
         - floatVariable
+        - floatValue
+        - everyFrame
+        - floatVariable
         - minValue
         - maxValue
         - everyFrame
@@ -10409,15 +10491,15 @@ MonoBehaviour:
         - lessThan
         - greaterThan
         - everyFrame
-        paramDataPos: 00000000000000000000000000000000010000000100000001000000010000000000000002000000000000000200000003000000040000000300000004000000050000000600000007000000050000000100000000000000010000000800000006000000090000000a0000000b00000002000000030000000400000007000000
-        paramByteDataSize: 0000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000010000000100000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000010000000100000001000000010000000000000002000000000000000200000003000000040000000300000004000000050000000600000005000000070000000800000009000000060000000100000000000000010000000a000000070000000b0000000c0000000d00000002000000030000000400000008000000
+        paramByteDataSize: 0000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000010000000100000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
     - name: StressFlatIncrease
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 681.7969
-        y: 175.38281
+        y: 159.38281
         width: 142.8
         height: 32
       isBreakpoint: 0
@@ -10514,7 +10596,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 0.02
+          value: 0
         - useVariable: 1
           name: Max Base Stress
           tooltip: 
@@ -10579,7 +10661,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 136.69531
-        y: 251.60938
+        y: 235.60938
         width: 248.40001
         height: 32
       isBreakpoint: 0
@@ -10638,7 +10720,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 0.02
+          value: 0
         - useVariable: 1
           name: StressBaseIncrease
           tooltip: 
@@ -10740,6 +10822,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 0.15
+      - useVariable: 1
+        name: UnclampedStress
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -10756,7 +10844,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -10765,7 +10853,7 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 
+    outVariableIndices: 07000000
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
@@ -28963,7 +29051,7 @@ Transform:
   m_GameObject: {fileID: 4413680239592874955}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 446.25204, y: -999.3608, z: 211.55}
+  m_LocalPosition: {x: 0, y: 1.9000243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
