@@ -7020,7 +7020,7 @@ MonoBehaviour:
         stringParams:
         - Player / Lock
         - DangerZone / Release
-        - Save / Funds
+        - Save / Region Data
         - Player / Passed Out
         - SleepSystem / PassedOut
         - Funds / Bankrupt
@@ -8012,6 +8012,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 1
     - name: Save / Funds
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: Save / Region Data
       isSystemEvent: 0
       isGlobal: 1
     globalTransitions:
