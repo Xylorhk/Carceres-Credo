@@ -26387,6 +26387,9 @@ MonoBehaviour:
     - name: Enemies / Destroy
       isSystemEvent: 0
       isGlobal: 1
+    - name: Stress / Decrease
+      isSystemEvent: 0
+      isGlobal: 1
     globalTransitions:
     - fsmEvent:
         name: Set Time / Dawn
@@ -28507,15 +28510,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 446.25204
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -999.3608
+      value: 1.9000244
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 211.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalRotation.w
