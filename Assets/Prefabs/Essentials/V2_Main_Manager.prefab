@@ -2946,12 +2946,12 @@ MonoBehaviour:
           intValue: 0
         fsmFloatParams: []
         fsmIntParams:
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: SceneIndexToLoad
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 2
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -3047,7 +3047,13 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: 10
-      intVariables: []
+      intVariables:
+      - useVariable: 1
+        name: SceneIndexToLoad
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
       boolVariables: []
       stringVariables:
       - useVariable: 1
@@ -3087,7 +3093,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -3096,7 +3102,7 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 0200000004000000
+    outVariableIndices: 0300000005000000
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
@@ -31012,15 +31018,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 417.83643
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9000244
+      value: -999.6678
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 325.61328
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalRotation.w
