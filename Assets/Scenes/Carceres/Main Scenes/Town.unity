@@ -2074,10 +2074,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 944389133}
-  - {fileID: 1660736527}
-  - {fileID: 1139246550}
-  - {fileID: 496225795}
+  - {fileID: 126343393}
+  - {fileID: 787557346}
+  - {fileID: 1424061763}
+  - {fileID: 463074566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &55664392
@@ -6727,6 +6727,84 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 611aad38e5f5bfc469f92453ab234c6d, type: 3}
+--- !u!1 &126343392
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 126343393}
+  - component: {fileID: 126343395}
+  - component: {fileID: 126343394}
+  m_Layer: 0
+  m_Name: HTraceWSGI Pre Pass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &126343393
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126343392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 53221890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &126343394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126343392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  fadeRadius: 0
+  priority: 10
+  customPasses:
+  - rid: 3283546617848004782
+  injectionPoint: 5
+  m_TargetCamera: {fileID: 0}
+  useTargetCamera: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3283546617848004782
+      type: {class: HTracePrePass, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
+      data:
+        m_Name: HTraceWSGI Pre Pass
+        enabled: 1
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+--- !u!114 &126343395
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126343392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fa6b601ac8415db9e6eb3a5c5b2779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &130219125
 GameObject:
   m_ObjectHideFlags: 0
@@ -27391,6 +27469,96 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 611aad38e5f5bfc469f92453ab234c6d, type: 3}
+--- !u!1 &463074565
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463074566}
+  - component: {fileID: 463074568}
+  - component: {fileID: 463074567}
+  m_Layer: 0
+  m_Name: HTraceWSGI Voxelization Pass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463074566
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463074565}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 53221890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &463074567
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463074565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  fadeRadius: 0
+  priority: -10
+  customPasses:
+  - rid: 3283546617848004778
+  - rid: 3283546617848004779
+  injectionPoint: 5
+  m_TargetCamera: {fileID: 0}
+  useTargetCamera: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3283546617848004778
+      type: {class: VoxelizationPassConstant, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
+      data:
+        m_Name: HTraceWSGI Voxelizaion Constant
+        enabled: 1
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+    - rid: 3283546617848004779
+      type: {class: VoxelizationPassPartial, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
+      data:
+        m_Name: HTraceWSGI Voxelizaion Partial
+        enabled: 1
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+--- !u!114 &463074568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463074565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32cb7ac2d87f50e4c8a37dedff7d50ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowVoxelBounds: 0
 --- !u!1 &463112128
 GameObject:
   m_ObjectHideFlags: 0
@@ -28463,96 +28631,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &496225794
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 496225795}
-  - component: {fileID: 496225797}
-  - component: {fileID: 496225796}
-  m_Layer: 0
-  m_Name: HTraceWSGI Voxelization Pass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &496225795
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496225794}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 53221890}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &496225796
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496225794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  fadeRadius: 0
-  priority: -10
-  customPasses:
-  - rid: 3283546617848004727
-  - rid: 3283546617848004728
-  injectionPoint: 5
-  m_TargetCamera: {fileID: 0}
-  useTargetCamera: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 3283546617848004727
-      type: {class: VoxelizationPassConstant, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
-      data:
-        m_Name: HTraceWSGI Voxelizaion Constant
-        enabled: 1
-        targetColorBuffer: 0
-        targetDepthBuffer: 0
-        clearFlags: 0
-        passFoldout: 0
-        m_Version: 0
-    - rid: 3283546617848004728
-      type: {class: VoxelizationPassPartial, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
-      data:
-        m_Name: HTraceWSGI Voxelizaion Partial
-        enabled: 1
-        targetColorBuffer: 0
-        targetDepthBuffer: 0
-        clearFlags: 0
-        passFoldout: 0
-        m_Version: 0
---- !u!114 &496225797
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496225794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32cb7ac2d87f50e4c8a37dedff7d50ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowVoxelBounds: 0
 --- !u!1 &496408541
 GameObject:
   m_ObjectHideFlags: 0
@@ -44719,6 +44797,84 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785750416}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &787557345
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 787557346}
+  - component: {fileID: 787557348}
+  - component: {fileID: 787557347}
+  m_Layer: 0
+  m_Name: HTraceWSGI Main Pass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &787557346
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787557345}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 53221890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787557347
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787557345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  fadeRadius: 0
+  priority: -20
+  customPasses:
+  - rid: 3283546617848004781
+  injectionPoint: 5
+  m_TargetCamera: {fileID: 0}
+  useTargetCamera: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3283546617848004781
+      type: {class: HTraceMainPass, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
+      data:
+        m_Name: HTraceWSGI Main Pass
+        enabled: 1
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+--- !u!114 &787557348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787557345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fa6b601ac8415db9e6eb3a5c5b2779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &788937122
 GameObject:
   m_ObjectHideFlags: 0
@@ -50189,84 +50345,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 490476826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &944389132
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 944389133}
-  - component: {fileID: 944389135}
-  - component: {fileID: 944389134}
-  m_Layer: 0
-  m_Name: HTraceWSGI Pre Pass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &944389133
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944389132}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 53221890}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &944389134
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944389132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  fadeRadius: 0
-  priority: 10
-  customPasses:
-  - rid: 3283546617848004731
-  injectionPoint: 5
-  m_TargetCamera: {fileID: 0}
-  useTargetCamera: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 3283546617848004731
-      type: {class: HTracePrePass, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
-      data:
-        m_Name: HTraceWSGI Pre Pass
-        enabled: 1
-        targetColorBuffer: 0
-        targetDepthBuffer: 0
-        clearFlags: 0
-        passFoldout: 0
-        m_Version: 0
---- !u!114 &944389135
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944389132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa6b601ac8415db9e6eb3a5c5b2779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &945199737
 GameObject:
   m_ObjectHideFlags: 0
@@ -58143,84 +58221,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1661960745}
   m_LocalEulerAnglesHint: {x: 0, y: 990, z: 0}
---- !u!1 &1139246549
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1139246550}
-  - component: {fileID: 1139246552}
-  - component: {fileID: 1139246551}
-  m_Layer: 0
-  m_Name: HTraceWSGI Final Pass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1139246550
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139246549}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 53221890}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1139246551
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139246549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  fadeRadius: 0
-  priority: -30
-  customPasses:
-  - rid: 3283546617848004729
-  injectionPoint: 2
-  m_TargetCamera: {fileID: 0}
-  useTargetCamera: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 3283546617848004729
-      type: {class: HTraceFinalPass, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
-      data:
-        m_Name: HTraceWSGI Final Pass
-        enabled: 1
-        targetColorBuffer: 0
-        targetDepthBuffer: 0
-        clearFlags: 0
-        passFoldout: 0
-        m_Version: 0
---- !u!114 &1139246552
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139246549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa6b601ac8415db9e6eb3a5c5b2779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1140123706
 GameObject:
   m_ObjectHideFlags: 0
@@ -71492,6 +71492,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1661960745}
   m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
+--- !u!1 &1424061762
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1424061763}
+  - component: {fileID: 1424061765}
+  - component: {fileID: 1424061764}
+  m_Layer: 0
+  m_Name: HTraceWSGI Final Pass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1424061763
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424061762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 53221890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1424061764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424061762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  fadeRadius: 0
+  priority: -30
+  customPasses:
+  - rid: 3283546617848004780
+  injectionPoint: 2
+  m_TargetCamera: {fileID: 0}
+  useTargetCamera: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3283546617848004780
+      type: {class: HTraceFinalPass, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
+      data:
+        m_Name: HTraceWSGI Final Pass
+        enabled: 1
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+--- !u!114 &1424061765
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424061762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fa6b601ac8415db9e6eb3a5c5b2779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1425695852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78758,84 +78836,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2616371246749292792, guid: 288dc870af864d54c972d0d1c0991728, type: 3}
   m_PrefabInstance: {fileID: 1653244782}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1660736526
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1660736527}
-  - component: {fileID: 1660736529}
-  - component: {fileID: 1660736528}
-  m_Layer: 0
-  m_Name: HTraceWSGI Main Pass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1660736527
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660736526}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 53221890}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1660736528
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660736526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  fadeRadius: 0
-  priority: -20
-  customPasses:
-  - rid: 3283546617848004730
-  injectionPoint: 5
-  m_TargetCamera: {fileID: 0}
-  useTargetCamera: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 3283546617848004730
-      type: {class: HTraceMainPass, ns: HTraceWSGI.Scripts.Passes, asm: HTraceWSGI}
-      data:
-        m_Name: HTraceWSGI Main Pass
-        enabled: 1
-        targetColorBuffer: 0
-        targetDepthBuffer: 0
-        clearFlags: 0
-        passFoldout: 0
-        m_Version: 0
---- !u!114 &1660736529
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660736526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05fa6b601ac8415db9e6eb3a5c5b2779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1661164020
 GameObject:
   m_ObjectHideFlags: 0
@@ -81678,6 +81678,7 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.GetKeyDown
         - HutongGames.PlayMaker.Actions.GetFsmInt
         - HutongGames.PlayMaker.Actions.GetFsmFloat
         - HutongGames.PlayMaker.Actions.GetFsmFloat
@@ -81692,6 +81693,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetMouseCursor
         customNames:
+        - 
         - Get Fsm Int_RegionIndex
         - 
         - Get Fsm Float_BankFunds
@@ -81705,10 +81707,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 01010101010101010101010101
-        actionIsOpen: 01010101010101010101010101
-        actionStartIndex: 00000000050000000a0000000f000000130000001a0000001c0000002100000023000000280000002a0000002e00000030000000
-        actionHashCodes: 081bbf058760450287604502352320027370ae055ac85204641744005ac8520452221a025ac852045e69bb045ac85204074b1504
+        actionEnabled: 0101010101010101010101010101
+        actionIsOpen: 0101010101010101010101010101
+        actionStartIndex: 0000000003000000080000000d00000012000000160000001d0000001f00000024000000260000002b0000002d0000003100000033000000
+        actionHashCodes: ff77a904081bbf058760450287604502352320027370ae055ac85204641744005ac8520452221a025ac852045e69bb045ac85204074b1504
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -82481,6 +82483,12 @@ MonoBehaviour:
           networkSync: 0
           value: 0
         fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -82505,16 +82513,20 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
+        - Interact
         - Player / Lock
-        byteData: 00000000000000000000000000
+        byteData: 1b00000000000000000000000000000000
         arrayParamSizes: 0200000001000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmString
         - HutongGames.PlayMaker.FsmVar
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 14000000120000001200000010000000010000001400000012000000120000000f000000010000001400000012000000120000000f000000010000000f0000001200000012000000010000000c0000001200000012000000120000001100000012000000010000002400000001000000120000000c0000002700000012000000010000002400000001000000140000001200000012000000120000000100000024000000010000001f000000170000000f00000001000000240000000100000021000000110000001100000001000000
+        paramDataType: 07000000170000001100000014000000120000001200000010000000010000001400000012000000120000000f000000010000001400000012000000120000000f000000010000000f0000001200000012000000010000000c0000001200000012000000120000001100000012000000010000002400000001000000120000000c0000002700000012000000010000002400000001000000140000001200000012000000120000000100000024000000010000001f000000170000000f00000001000000240000000100000021000000110000001100000001000000
         paramName:
+        - key
+        - sendEvent
+        - storeResult
         - gameObject
         - fsmName
         - variableName
@@ -82567,8 +82579,8 @@ MonoBehaviour:
         - hideCursor
         - lockCursor
         - everyFrame
-        paramDataPos: 000000000000000001000000000000000000000001000000020000000300000000000000010000000200000004000000050000000100000002000000020000000600000007000000030000000000000008000000090000000a000000000000000b0000000400000000000000050000000c00000001000000000000000d000000060000000100000007000000030000000e0000000f000000100000000800000002000000090000000000000000000000030000000a000000030000000b0000000000000001000000020000000c000000
-        paramByteDataSize: 00000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000100000000000000000000000000000001000000000000000100000000000000000000000000000001000000
+        paramDataPos: 000000000000000000000000000000000000000001000000000000000400000001000000020000000300000000000000050000000200000004000000050000000100000006000000020000000600000007000000070000000000000008000000090000000a000000010000000b0000000800000000000000090000000c00000001000000000000000d0000000a000000010000000b000000030000000e0000000f000000100000000c000000020000000d0000000000000001000000030000000e000000030000000f00000000000000020000000300000010000000
+        paramByteDataSize: 04000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000100000000000000000000000000000001000000000000000100000000000000000000000000000001000000
     - name: Payment Amount
       description: 
       colorIndex: 0
@@ -89780,13 +89792,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.Wait
         - HutongGames.PlayMaker.Actions.SetMouseCursor
+        - HutongGames.PlayMaker.Actions.GetKeyDown
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 48c01101074b1504
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000007000000
+        actionHashCodes: 48c01101074b1504ff77a904
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -89829,6 +89843,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -89836,12 +89856,13 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - ATM / ResetAll
-        byteData: 0000
+        - Interact
+        byteData: 00001b000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f000000170000000100000021000000110000001100000001000000
+        paramDataType: 0f000000170000000100000021000000110000001100000001000000070000001700000011000000
         paramName:
         - time
         - finishEvent
@@ -89850,8 +89871,11 @@ MonoBehaviour:
         - hideCursor
         - lockCursor
         - everyFrame
-        paramDataPos: 00000000000000000000000000000000000000000100000001000000
-        paramByteDataSize: 00000000000000000100000000000000000000000000000001000000
+        - key
+        - sendEvent
+        - storeResult
+        paramDataPos: 00000000000000000000000000000000000000000100000001000000020000000100000002000000
+        paramByteDataSize: 00000000000000000100000000000000000000000000000001000000040000000000000000000000
     - name: Withdraw
       description: 
       colorIndex: 0
