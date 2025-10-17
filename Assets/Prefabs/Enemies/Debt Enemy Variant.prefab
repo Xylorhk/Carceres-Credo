@@ -1854,16 +1854,18 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.SendEvent
+        - HutongGames.PlayMaker.Actions.SendEvent
         - HutongGames.PlayMaker.Actions.SetFsmGameObject
         - HutongGames.PlayMaker.Actions.SetAnimatorBool
         customNames:
         - 
+        - Send Event_Critical
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000400000009000000
-        actionHashCodes: 5e69bb045b66cf005f913504
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000004000000080000000d000000
+        actionHashCodes: 5e69bb045e69bb045b66cf005f913504
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -1925,6 +1927,38 @@ MonoBehaviour:
             networkSync: 0
             value: 0
           fsmComponent: {fileID: 0}
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 1
+              name: Player
+              tooltip: 
+              showInInspector: 0
+              networkSync: 0
+              value: {fileID: 0}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: Critical
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
@@ -1957,6 +1991,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -1972,13 +2012,18 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Mirrors / MashToEscape
-        byteData: 01000000000000
+        - Critical / PassOut
+        byteData: 0101000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1f000000170000000f0000000100000014000000120000001200000013000000010000001400000012000000110000000100000007000000
+        paramDataType: 1f000000170000000f000000010000001f000000170000000f0000000100000014000000120000001200000013000000010000001400000012000000110000000100000007000000
         paramName:
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
         - eventTarget
         - sendEvent
         - delay
@@ -1993,8 +2038,8 @@ MonoBehaviour:
         - Value
         - everyFrame
         - everyFrameOption
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000000000000010000000100000002000000000000000200000003000000
-        paramByteDataSize: 0000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000100000004000000
+        paramDataPos: 000000000000000000000000000000000100000001000000010000000100000000000000000000000100000000000000020000000100000002000000000000000300000004000000
+        paramByteDataSize: 000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000100000004000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -2060,6 +2105,12 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 1
     - name: Player / Unsafe
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: Critical / Critical
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: Critical / PassOut
       isSystemEvent: 0
       isGlobal: 1
     globalTransitions:
