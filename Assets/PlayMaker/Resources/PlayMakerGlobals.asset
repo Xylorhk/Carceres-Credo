@@ -15,7 +15,13 @@ MonoBehaviour:
   variables:
     floatVariables: []
     intVariables: []
-    boolVariables: []
+    boolVariables:
+    - useVariable: 1
+      name: Night
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
     stringVariables: []
     vector2Variables: []
     vector3Variables: []
@@ -67,7 +73,7 @@ MonoBehaviour:
     categories:
     - 
     - Enemies
-    variableCategoryIDs: 00000000000000000000000000000000000000000000000001000000
+    variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000001000000
   events:
   - Interact
   - Item / Get
@@ -276,3 +282,5 @@ MonoBehaviour:
   - Critical / Critical
   - Critical / Recover
   - Critical / PassOut
+  - Region / Day
+  - Region / Night
