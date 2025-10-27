@@ -1163,6 +1163,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2788790094201538894}
+  - {fileID: 4815461111860305785}
   - {fileID: 3703724331841631625}
   - {fileID: 5129053118646064673}
   m_Father: {fileID: 8578228652960586170}
@@ -12291,23 +12292,39 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetMouseCursor
         - HutongGames.PlayMaker.Actions.GetKeyDown
+        - HutongGames.PlayMaker.Actions.SetMaterialFloat
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000004000000
-        actionHashCodes: 074b1504ff77a904
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000400000007000000
+        actionHashCodes: 074b1504ff77a904b8ee8100
         unityObjectParams: []
         fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: _BlurIntensity
         fsmObjectParams:
         - useVariable: 0
           name: 
@@ -12316,11 +12333,30 @@ MonoBehaviour:
           networkSync: 0
           typeName: 
           value: {fileID: 0}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 2100000, guid: 904c505daf00df541ba1ab6383d02add, type: 2}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
-        fsmIntParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -12347,12 +12383,12 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Phone / View
-        byteData: 0009000000
+        byteData: 000900000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 21000000110000001100000001000000070000001700000011000000
+        paramDataType: 21000000110000001100000001000000070000001700000011000000140000001000000020000000120000000f00000001000000
         paramName:
         - cursorTexture
         - hideCursor
@@ -12361,8 +12397,14 @@ MonoBehaviour:
         - key
         - sendEvent
         - storeResult
-        paramDataPos: 00000000000000000100000000000000010000000000000002000000
-        paramByteDataSize: 00000000000000000000000001000000040000000000000000000000
+        - gameObject
+        - materialIndex
+        - material
+        - namedFloat
+        - floatValue
+        - everyFrame
+        paramDataPos: 00000000000000000100000000000000010000000000000002000000000000000000000001000000000000000000000005000000
+        paramByteDataSize: 00000000000000000000000001000000040000000000000000000000000000000000000000000000000000000000000001000000
     - name: Phone View
       description: 
       colorIndex: 0
@@ -12394,6 +12436,8 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.GetChild
         - HutongGames.PlayMaker.Actions.SendEvent
+        - HutongGames.PlayMaker.Actions.TweenFloat
+        - HutongGames.PlayMaker.Actions.SetMaterialFloat
         customNames:
         - Set Mouse Cursor_Unlock
         - Set Animator Bool_InView
@@ -12402,10 +12446,12 @@ MonoBehaviour:
         - Set Property
         - Get Child_OfHolder
         - 
-        actionEnabled: 01010101010101
-        actionIsOpen: 00000001010101
-        actionStartIndex: 0000000004000000090000000c0000000e0000001000000014000000
-        actionHashCodes: 074b15045f913504ff77a9045ac852045ac85204184b57045e69bb04
+        - Tween Float_BlurIntensity
+        - 
+        actionEnabled: 010101010101010101
+        actionIsOpen: 000000010101010101
+        actionStartIndex: 0000000004000000090000000c0000000e00000010000000140000001800000027000000
+        actionHashCodes: 074b15045f913504ff77a9045ac852045ac85204184b57045e69bb0481bfb304b8ee8100
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -12431,7 +12477,21 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 5611785256814935899}
-        animationCurveParams: []
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams:
+        - curve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams:
@@ -12752,6 +12812,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Package
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: _BlurIntensity
         fsmObjectParams:
         - useVariable: 0
           name: 
@@ -12760,9 +12826,23 @@ MonoBehaviour:
           networkSync: 0
           typeName: 
           value: {fileID: 0}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 2100000, guid: 904c505daf00df541ba1ab6383d02add, type: 2}
         fsmVarParams: []
         fsmArrayParams: []
-        fsmEnumParams: []
+        fsmEnumParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          enumName: HutongGames.EasingFunction+Ease
+          intValue: 0
         fsmFloatParams:
         - useVariable: 0
           name: 
@@ -12770,7 +12850,49 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmIntParams: []
+        - useVariable: 1
+          name: BlurIntensity
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 4
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.2
+        - useVariable: 1
+          name: BlurIntensity
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -12796,6 +12918,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -12804,12 +12932,13 @@ MonoBehaviour:
         stringParams:
         - Phone / Hide
         - Package / Visible
-        byteData: 00000000000009000000000000
+        - 
+        byteData: 0000000000000900000000000000000000020000000000000000000000000000000001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 21000000110000001100000001000000140000001200000011000000010000000700000007000000170000001100000024000000010000002400000001000000140000001200000012000000130000001f000000170000000f00000001000000
+        paramDataType: 21000000110000001100000001000000140000001200000011000000010000000700000007000000170000001100000024000000010000002400000001000000140000001200000012000000130000001f000000170000000f000000010000000f000000070000000f000000070000000f0000000f0000002a000000160000000f000000110000000700000017000000020000000100000007000000140000001000000020000000120000000f00000001000000
         paramName:
         - cursorTexture
         - hideCursor
@@ -12835,8 +12964,29 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 000000000000000001000000000000000000000000000000020000000100000002000000060000000000000003000000000000000a000000010000000b000000010000000100000002000000000000000000000001000000000000000c000000
-        paramByteDataSize: 000000000000000000000000010000000000000000000000000000000100000004000000040000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000001000000
+        - variable
+        - fromOption
+        - fromValue
+        - toOption
+        - toValue
+        - startDelay
+        - easeType
+        - customCurve
+        - time
+        - realTime
+        - loopType
+        - finishEvent
+        - normalizedTime
+        - everyFrame
+        - updateType
+        - gameObject
+        - materialIndex
+        - material
+        - namedFloat
+        - floatValue
+        - everyFrame
+        paramDataPos: 000000000000000001000000000000000000000000000000020000000100000002000000060000000000000003000000000000000a000000010000000b000000010000000100000002000000000000000000000001000000000000000c000000010000000d00000002000000110000000300000004000000000000000000000005000000040000001500000002000000190000001d0000001e000000020000000000000001000000030000000600000022000000
+        paramByteDataSize: 000000000000000000000000010000000000000000000000000000000100000004000000040000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000001000000000000000400000000000000040000000000000000000000000000000000000000000000000000000400000000000000040000000100000004000000000000000000000000000000000000000000000001000000
     - name: Phone View Hidden
       description: 
       colorIndex: 0
@@ -12868,6 +13018,8 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.GetKeyDown
         - HutongGames.PlayMaker.Actions.GetChild
         - HutongGames.PlayMaker.Actions.SendEvent
+        - HutongGames.PlayMaker.Actions.TweenFloat
+        - HutongGames.PlayMaker.Actions.SetMaterialFloat
         customNames:
         - Set Mouse Cursor_Unlock
         - Set Animator Bool_Hidden
@@ -12876,10 +13028,12 @@ MonoBehaviour:
         - 
         - Get Child_OfHolder
         - 
-        actionEnabled: 01010101010101
-        actionIsOpen: 00000000000101
-        actionStartIndex: 0000000004000000090000000b0000000d0000001000000014000000
-        actionHashCodes: 074b15045f9135045ac852045ac85204ff77a904184b57045e69bb04
+        - Tween Float_BlurIntensity
+        - 
+        actionEnabled: 010101010101010101
+        actionIsOpen: 000000000001010101
+        actionStartIndex: 0000000004000000090000000b0000000d00000010000000140000001800000027000000
+        actionHashCodes: 074b15045f9135045ac852045ac85204ff77a904184b57045e69bb0481bfb304b8ee8100
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -12905,7 +13059,21 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 5611785256814935899}
-        animationCurveParams: []
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams:
+        - curve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams:
@@ -13226,6 +13394,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Package
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: _BlurIntensity
         fsmObjectParams:
         - useVariable: 0
           name: 
@@ -13234,9 +13408,23 @@ MonoBehaviour:
           networkSync: 0
           typeName: 
           value: {fileID: 0}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 2100000, guid: 904c505daf00df541ba1ab6383d02add, type: 2}
         fsmVarParams: []
         fsmArrayParams: []
-        fsmEnumParams: []
+        fsmEnumParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          enumName: HutongGames.EasingFunction+Ease
+          intValue: 0
         fsmFloatParams:
         - useVariable: 0
           name: 
@@ -13244,7 +13432,49 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        fsmIntParams: []
+        - useVariable: 1
+          name: BlurIntensity
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.2
+        - useVariable: 1
+          name: BlurIntensity
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -13270,6 +13500,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -13278,12 +13514,13 @@ MonoBehaviour:
         stringParams:
         - Phone / View
         - Package / Visible
-        byteData: 00000000000000000900000000
+        - 
+        byteData: 0000000000000000090000000000000000020000000000000000000000000000000001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 21000000110000001100000001000000140000001200000011000000010000000700000024000000010000002400000001000000070000001700000011000000140000001200000012000000130000001f000000170000000f00000001000000
+        paramDataType: 21000000110000001100000001000000140000001200000011000000010000000700000024000000010000002400000001000000070000001700000011000000140000001200000012000000130000001f000000170000000f000000010000000f000000070000000f000000070000000f0000000f0000002a000000160000000f000000110000000700000017000000020000000100000007000000140000001000000020000000120000000f00000001000000
         paramName:
         - cursorTexture
         - hideCursor
@@ -13309,8 +13546,29 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 00000000000000000100000000000000000000000000000002000000010000000200000000000000060000000100000007000000080000000000000003000000010000000100000002000000000000000000000001000000000000000c000000
-        paramByteDataSize: 000000000000000000000000010000000000000000000000000000000100000004000000000000000100000000000000010000000400000000000000000000000000000000000000000000000000000000000000000000000000000001000000
+        - variable
+        - fromOption
+        - fromValue
+        - toOption
+        - toValue
+        - startDelay
+        - easeType
+        - customCurve
+        - time
+        - realTime
+        - loopType
+        - finishEvent
+        - normalizedTime
+        - everyFrame
+        - updateType
+        - gameObject
+        - materialIndex
+        - material
+        - namedFloat
+        - floatValue
+        - everyFrame
+        paramDataPos: 00000000000000000100000000000000000000000000000002000000010000000200000000000000060000000100000007000000080000000000000003000000010000000100000002000000000000000000000001000000000000000c000000010000000d00000002000000110000000300000004000000000000000000000005000000040000001500000002000000190000001d0000001e000000020000000000000001000000030000000600000022000000
+        paramByteDataSize: 000000000000000000000000010000000000000000000000000000000100000004000000000000000100000000000000010000000400000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000400000000000000040000000000000000000000000000000000000000000000000000000400000000000000040000000100000004000000000000000000000000000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -13339,6 +13597,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 2
+      - useVariable: 1
+        name: BlurIntensity
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -13361,7 +13625,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000
     description: Controls Camera Locking and Phone Controls
     docUrl: 
     showStateLabel: 0
@@ -26287,7 +26551,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 4
+        value: 1
       intVariables: []
       boolVariables: []
       stringVariables: []
@@ -35999,6 +36263,75 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
   eventHandlerComponentsAdded: 0
+--- !u!1 &4559272671420099483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4815461111860305785}
+  - component: {fileID: 4297127910241069837}
+  m_Layer: 0
+  m_Name: UI Blur
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4815461111860305785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559272671420099483}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.0037411451, z: -0, w: 0.999993}
+  m_LocalPosition: {x: 1558.0112, y: 3.3772705, z: -2399.173}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5360085984567865609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4297127910241069837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559272671420099483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  fadeRadius: 0
+  priority: 1
+  customPasses:
+  - rid: 3283546956631900392
+  injectionPoint: 2
+  m_TargetCamera: {fileID: 1674625305595808128}
+  useTargetCamera: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3283546956631900392
+      type: {class: FullScreenCustomPass, ns: UnityEngine.Rendering.HighDefinition, asm: Unity.RenderPipelines.HighDefinition.Runtime}
+      data:
+        m_Name: Custom Pass
+        enabled: 1
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+        fullscreenPassMaterial: {fileID: 2100000, guid: 904c505daf00df541ba1ab6383d02add, type: 2}
+        materialPassIndex: 0
+        materialPassName: Custom Pass 0
+        fetchColorBuffer: 0
 --- !u!1 &4563850781389278363
 GameObject:
   m_ObjectHideFlags: 0
@@ -41747,7 +42080,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6940672539545802967}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 365}
+  m_LocalPosition: {x: 0, y: 0, z: 322}
   m_LocalScale: {x: 1.6326971, y: 1.6326971, z: 1.6326971}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41755,8 +42088,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 55}
-  m_SizeDelta: {x: 200, y: 400}
+  m_AnchoredPosition: {x: -0, y: 55}
+  m_SizeDelta: {x: 85, y: 304.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4934835208805158657
 CanvasRenderer:
@@ -41780,7 +42113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.08395326, g: 1, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -49216,7 +49549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.058823586, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.614023, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
