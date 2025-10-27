@@ -3049,12 +3049,12 @@ MonoBehaviour:
           intValue: 0
         fsmFloatParams: []
         fsmIntParams:
-        - useVariable: 1
-          name: SceneIndex
+        - useVariable: 0
+          name: 
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 2
+          value: 0
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -5438,8 +5438,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'This concludes the Demo version of the game.
 
-    Did you find all of
-    the secrets?'
+    Thank You for Playing!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ebfe1260144ca2245940e5765ec69b94, type: 2}
   m_sharedMaterial: {fileID: -8730458190914458833, guid: ebfe1260144ca2245940e5765ec69b94, type: 2}
