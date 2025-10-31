@@ -12965,7 +12965,7 @@ MonoBehaviour:
         - 
         - Float Round To Nearest_Task_Fee
         actionEnabled: 01010101010101
-        actionIsOpen: 00000000000000
+        actionIsOpen: 00000000000001
         actionStartIndex: 0000000005000000080000000c000000110000001400000017000000
         actionHashCodes: 070f30004da3000536f094000cdb04059845b3059845b305d9740705
         unityObjectParams: []
@@ -13182,6 +13182,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.ConvertFloatToString
         - HutongGames.PlayMaker.Actions.BuildString
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.FloatRoundToNearest
@@ -13195,6 +13196,7 @@ MonoBehaviour:
         - Set Property_DeclineButton_Decline
         - Set Property_PickUpName
         - Set Property_DropOffName
+        - 
         - Build String_TaskFeeString
         - Set Property_OfferAmount
         - Float Round To Nearest_Task Distance
@@ -13202,10 +13204,10 @@ MonoBehaviour:
         - Set Property_Distance
         - 
         - Send Event_Icon FadeIn
-        actionEnabled: 010101010101010101010101
-        actionIsOpen: 000000000000000000000101
-        actionStartIndex: 000000000d0000001a0000001c0000001e0000002000000027000000290000002e00000036000000380000003c000000
-        actionHashCodes: f8464304f84643045ac852045ac852045ac852047370ae055ac85204d97407057370ae055ac852049cdc39055e69bb04
+        actionEnabled: 01010101010101010101010101
+        actionIsOpen: 00000000000101010000000101
+        actionStartIndex: 000000000d0000001a0000001c0000001e00000020000000240000002b0000002d000000320000003a0000003c00000040000000
+        actionHashCodes: f8464304f84643045ac852045ac852045ac85204352320027370ae055ac85204d97407057370ae055ac852049cdc39055e69bb04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -13944,6 +13946,18 @@ MonoBehaviour:
           setProperty: 1
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 1
+          name: Task_Fee_String
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: F2
         - useVariable: 0
           name: 
           tooltip: 
@@ -13951,7 +13965,7 @@ MonoBehaviour:
           networkSync: 0
           value: $
         - useVariable: 1
-          name: Task_Fee
+          name: Task_Fee_String
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -14049,6 +14063,12 @@ MonoBehaviour:
           networkSync: 0
           value: 0.25
         - useVariable: 1
+          name: Task_Fee
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
           name: Task Distance
           tooltip: 
           showInInspector: 0
@@ -14137,14 +14157,14 @@ MonoBehaviour:
         - 
         - 
         - Icon / FadeIn
-        byteData: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        byteData: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
         arrayParamSizes: 0200000003000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmString
         - HutongGames.PlayMaker.FsmString
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0700000025000000140000000f0000002a000000160000000f0000001100000007000000170000000200000001000000070000000700000025000000140000000f0000002a000000160000000f0000001100000007000000170000000200000001000000070000002400000001000000240000000100000024000000010000000c00000012000000120000001200000011000000120000000100000024000000010000000f0000000f000000100000000f000000010000000c000000120000001200000012000000120000001100000012000000010000002400000001000000140000001c000000180000000f0000001f000000170000000f00000001000000
+        paramDataType: 0700000025000000140000000f0000002a000000160000000f0000001100000007000000170000000200000001000000070000000700000025000000140000000f0000002a000000160000000f0000001100000007000000170000000200000001000000070000002400000001000000240000000100000024000000010000000f0000001200000012000000010000000c00000012000000120000001200000011000000120000000100000024000000010000000f0000000f000000100000000f000000010000000c000000120000001200000012000000120000001100000012000000010000002400000001000000140000001c000000180000000f0000001f000000170000000f00000001000000
         paramName:
         - tweenDirection
         - targetSize
@@ -14178,6 +14198,10 @@ MonoBehaviour:
         - everyFrame
         - targetProperty
         - everyFrame
+        - floatVariable
+        - stringVariable
+        - format
+        - everyFrame
         - stringParts
         - 
         - 
@@ -14210,8 +14234,8 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000400000000000000080000000c0000000d00000011000000010000000100000002000000010000000100000003000000010000001500000001000000190000001d0000001e000000000000002200000001000000230000000200000024000000000000000000000001000000020000000200000003000000250000000300000026000000040000000500000000000000060000002700000001000000040000000500000006000000070000000300000008000000280000000400000029000000020000000000000000000000070000000000000002000000080000002a000000
-        paramByteDataSize: 04000000000000000000000000000000000000000000000000000000000000000400000000000000040000000100000004000000040000000000000000000000000000000000000000000000000000000000000004000000000000000400000001000000040000000000000001000000000000000100000000000000010000000000000000000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000400000000000000080000000c0000000d00000011000000010000000100000002000000010000000100000003000000010000001500000001000000190000001d0000001e0000000000000022000000010000002300000002000000240000000400000000000000010000002500000000000000020000000300000004000000020000000500000026000000030000002700000005000000060000000000000007000000280000000100000006000000070000000800000009000000030000000a00000029000000040000002a000000020000000000000000000000080000000000000002000000090000002b000000
+        paramByteDataSize: 0400000000000000000000000000000000000000000000000000000000000000040000000000000004000000010000000400000004000000000000000000000000000000000000000000000000000000000000000400000000000000040000000100000004000000000000000100000000000000010000000000000001000000000000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000010000000000000000000000000000000000000000000000000000000000000001000000
     - name: OfferCountdown
       description: 
       colorIndex: 1
@@ -19239,8 +19263,8 @@ MonoBehaviour:
         - Send Event_Icon_FadeOut
         - 
         - 
-        actionEnabled: 0101010101010101010101010101010101
-        actionIsOpen: 0001010100000000000000000000000101
+        actionEnabled: 0101010101010101010100000101010101
+        actionIsOpen: 0001010100000000010000000000000101
         actionStartIndex: 000000000d00000010000000120000001600000023000000300000003d00000042000000460000004a0000004f00000053000000560000005a0000005e00000063000000
         actionHashCodes: f846430427fbe1035ac852045e69bb04f8464304f8464304f8464304876045025e69bb049cdc3905081bbf055e69bb04603dd9055e69bb045e69bb04876045025e69bb04
         unityObjectParams: []
@@ -22212,7 +22236,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 5
+        value: 1
       intVariables:
       - useVariable: 1
         name: Base Task Int
@@ -22302,6 +22326,12 @@ MonoBehaviour:
         value: 
       - useVariable: 1
         name: PackageID Text
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 
+      - useVariable: 1
+        name: Task_Fee_String
         tooltip: 
         showInInspector: 0
         networkSync: 0
@@ -22421,7 +22451,7 @@ MonoBehaviour:
       - Fee
       - References
       - Stamina
-      variableCategoryIDs: 020000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000002000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000030000000000000001000000010000000000000000000000
+      variableCategoryIDs: 02000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000200000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000030000000000000001000000010000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -22430,7 +22460,7 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 0100000002000000030000000a0000000d0000001200000013000000140000001500000016000000170000001c0000001f000000
+    outVariableIndices: 0100000002000000030000000a0000000d0000001200000013000000140000001500000016000000180000001d00000020000000
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
@@ -24812,15 +24842,17 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.ConvertFloatToString
         - HutongGames.PlayMaker.Actions.BuildString
         - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000007000000
-        actionHashCodes: 7370ae055ac85204
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000040000000b000000
+        actionHashCodes: 352320027370ae055ac85204
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -24963,6 +24995,18 @@ MonoBehaviour:
           setProperty: 1
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 1
+          name: Funds String
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: F2
         - useVariable: 0
           name: 
           tooltip: 
@@ -24970,9 +25014,9 @@ MonoBehaviour:
           networkSync: 0
           value: $
         - useVariable: 1
-          name: Current Funds
+          name: Funds String
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: 
         - useVariable: 0
@@ -24991,7 +25035,13 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: Current Funds
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 11.53
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -25006,14 +25056,18 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0000
+        byteData: 000000
         arrayParamSizes: 02000000
         arrayParamTypes:
         - HutongGames.PlayMaker.FsmString
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0c0000001200000012000000120000001100000012000000010000002400000001000000
+        paramDataType: 0f0000001200000012000000010000000c0000001200000012000000120000001100000012000000010000002400000001000000
         paramName:
+        - floatVariable
+        - stringVariable
+        - format
+        - everyFrame
         - stringParts
         - 
         - 
@@ -25023,8 +25077,8 @@ MonoBehaviour:
         - everyFrame
         - targetProperty
         - everyFrame
-        paramDataPos: 000000000000000001000000020000000000000003000000000000000000000001000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000010000000000000001000000
+        paramDataPos: 00000000000000000100000000000000000000000200000003000000040000000000000005000000010000000000000002000000
+        paramByteDataSize: 00000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000001000000
     - name: Add Funds
       description: 
       colorIndex: 0
@@ -35441,15 +35495,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 442.29004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -999.3608
+      value: 1.9000244
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 191.61505
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalRotation.w
