@@ -35470,6 +35470,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1011645807718827965, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: fsm.states.Array.data[0].actionData.fsmPropertyParams.Array.data[1].FloatParameter.value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011645807718827965, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: fsm.states.Array.data[2].actionData.fsmEventTargetParams.Array.data[0].gameObject.gameObject.value
       value: 
       objectReference: {fileID: 1555489969536610685}
@@ -35481,6 +35485,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2749765806357575186}
+    - target: {fileID: 1331644372469994274, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331644372469994274, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331644372469994274, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1350504447046237956, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 39.69995
@@ -35570,6 +35586,14 @@ PrefabInstance:
       value: ShowOrderDirection
       objectReference: {fileID: 0}
     - target: {fileID: 2727830811887805947, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: fsm.states.Array.data[6].position.x
+      value: 169.80469
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727830811887805947, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: fsm.states.Array.data[6].position.y
+      value: 334.98438
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727830811887805947, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: fsm.variables.gameObjectVariables.Array.data[0].value
       value: 
       objectReference: {fileID: 9151857951809460291}
@@ -35577,6 +35601,14 @@ PrefabInstance:
       propertyPath: fsm.variables.gameObjectVariables.Array.data[1].value
       value: 
       objectReference: {fileID: 6906617041477270813}
+    - target: {fileID: 2727830811887805947, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: 'fsm.states.Array.data[6].actionData.actionEnabled.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727830811887805947, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: 'fsm.states.Array.data[6].actionData.actionEnabled.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2727830811887805947, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: fsm.states.Array.data[3].actionData.fsmEventTargetParams.Array.data[0].gameObject.gameObject.value
       value: 
@@ -35700,6 +35732,10 @@ PrefabInstance:
     - target: {fileID: 3946083265655255427, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: fsm.states.Array.data[3].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947174962133430450, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4611580357115489891, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
