@@ -178,7 +178,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: Items
+            value: Inventory
           sendToChildren:
             useVariable: 0
             name: 
@@ -219,7 +219,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 0.1
         fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - Item / GetMirror
+        - Inventory / GetItem
         byteData: 00
         arrayParamSizes: 
         arrayParamTypes: []
@@ -275,6 +275,9 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 1
     - name: Item / GetMirror
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: Inventory / GetItem
       isSystemEvent: 0
       isGlobal: 1
     globalTransitions: []
@@ -306,10 +309,17 @@ MonoBehaviour:
       materialVariables: []
       textureVariables: []
       arrayVariables: []
-      enumVariables: []
+      enumVariables:
+      - useVariable: 1
+        name: ItemType
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        enumName: Com.MyGame.Items
+        intValue: 2
       categories:
       - 
-      variableCategoryIDs: 0000000000000000
+      variableCategoryIDs: 000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
