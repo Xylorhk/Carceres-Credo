@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: PlayMakerGlobals
   m_EditorClassIdentifier: 
   variables:
-    floatVariables: []
+    floatVariables:
+    - useVariable: 1
+      name: Volume
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0.5
     intVariables: []
     boolVariables:
     - useVariable: 1
@@ -73,7 +79,7 @@ MonoBehaviour:
     categories:
     - 
     - Enemies
-    variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000001000000
+    variableCategoryIDs: 000000000000000000000000000000000000000000000000000000000000000001000000
   events:
   - Interact
   - Item / Get
@@ -294,3 +300,8 @@ MonoBehaviour:
   - TaskStatus / CheckConfirm
   - Phone / Lock
   - Phone / Unlock
+  - Quit
+  - Fade / In
+  - ActuallyStart
+  - UI / Inactive
+  - UI / Active

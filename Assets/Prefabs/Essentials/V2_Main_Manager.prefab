@@ -14243,8 +14243,8 @@ MonoBehaviour:
         serializedVersion: 2
         x: 1258.4297
         y: 390.64062
-        width: 128.4
-        height: 48
+        width: 128.92
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -14263,6 +14263,15 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 1
         toState: Decline Task
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Tasks / Accept
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Begin Task
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -14807,9 +14816,9 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 781.8906
-        y: 724.21094
-        width: 173.2
+        x: 1019.8906
+        y: 668.21094
+        width: 163.75
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -22160,15 +22169,6 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 1
     globalTransitions:
-    - fsmEvent:
-        name: Tasks / Accept
-        isSystemEvent: 0
-        isGlobal: 1
-      toState: Begin Task
-      linkStyle: 0
-      linkConstraint: 0
-      linkTarget: 0
-      colorIndex: 0
     - fsmEvent:
         name: Tasks / PauseOrders
         isSystemEvent: 0
@@ -35511,15 +35511,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 442.29004
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9000244
+      value: -999.3608
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 191.61505
       objectReference: {fileID: 0}
     - target: {fileID: 1456666362122512156, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalRotation.w
