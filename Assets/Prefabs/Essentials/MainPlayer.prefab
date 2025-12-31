@@ -29161,7 +29161,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 381
-        y: 175
+        y: 271
         width: 125.14
         height: 176
       isBreakpoint: 0
@@ -29652,7 +29652,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 744
-        y: 130
+        y: 226
         width: 116.78
         height: 48
       isBreakpoint: 0
@@ -29815,7 +29815,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 751
-        y: 64.99219
+        y: 160.99219
         width: 112.95
         height: 32
       isBreakpoint: 0
@@ -29893,7 +29893,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 737.5
-        y: 242.15625
+        y: 338.15625
         width: 143.73999
         height: 48
       isBreakpoint: 0
@@ -30056,7 +30056,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 750.5
-        y: 334.15625
+        y: 430.15625
         width: 115.01
         height: 32
       isBreakpoint: 0
@@ -30134,7 +30134,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 576
-        y: 184
+        y: 280
         width: 100
         height: 32
       isBreakpoint: 0
@@ -30217,7 +30217,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 57
-        y: 174
+        y: 270
         width: 100
         height: 48
       isBreakpoint: 0
@@ -30336,7 +30336,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 67
-        y: 263
+        y: 359
         width: 100
         height: 32
       isBreakpoint: 0
@@ -30465,7 +30465,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 187
-        y: 178.98438
+        y: 274.98438
         width: 171.905
         height: 32
       isBreakpoint: 0
@@ -30562,7 +30562,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 129.23438
-        y: 374.64062
+        y: 470.64062
         width: 100
         height: 32
       isBreakpoint: 0
@@ -30685,7 +30685,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 118.5
-        y: 452.0078
+        y: 548.0078
         width: 100
         height: 32
       isBreakpoint: 0
@@ -30808,7 +30808,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 119.5
-        y: 516.0156
+        y: 612.0156
         width: 100
         height: 32
       isBreakpoint: 0
@@ -30931,7 +30931,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 255.5
-        y: 376.91406
+        y: 472.91406
         width: 100
         height: 32
       isBreakpoint: 0
@@ -31054,7 +31054,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 260.5
-        y: 441.82812
+        y: 537.8281
         width: 100
         height: 32
       isBreakpoint: 0
@@ -31177,7 +31177,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 263.5
-        y: 517.8828
+        y: 613.8828
         width: 100
         height: 32
       isBreakpoint: 0
@@ -31300,7 +31300,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 385.5
-        y: 379.6328
+        y: 475.6328
         width: 100
         height: 32
       isBreakpoint: 0
@@ -31423,7 +31423,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 386.5
-        y: 444.33594
+        y: 540.33594
         width: 100
         height: 32
       isBreakpoint: 0
@@ -31546,7 +31546,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 528
-        y: 425
+        y: 521
         width: 181.95999
         height: 48
       isBreakpoint: 0
@@ -31633,6 +31633,278 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 000000000100000000000000010000000200000000000000
         paramByteDataSize: 000000000000000000000000000000000000000001000000
+    - name: Add Slot
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 257.71875
+        y: 111.796875
+        width: 144.08
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Return
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Cycle to Slot 1
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Cycle to Slot 1
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SendEvent
+        - HutongGames.PlayMaker.Actions.IntAdd
+        - HutongGames.PlayMaker.Actions.GetChildNum
+        - HutongGames.PlayMaker.Actions.IntClamp
+        - HutongGames.PlayMaker.Actions.IntCompare
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.ArrayAdd
+        customNames:
+        - Send Event_SlotInactive
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 01010101010101
+        actionIsOpen: 01010101010101
+        actionStartIndex: 0000000004000000070000000a0000000e0000001400000019000000
+        actionHashCodes: 5e69bb04603dd905280cdd052181e80209faa102b2cf1000978a9b03
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: CurrentSlot
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 6813809716257567121}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: CurrentSlot
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams:
+        - target: 2
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 1
+              name: CurrentSlot
+              tooltip: 
+              showInInspector: 0
+              networkSync: 0
+              value: {fileID: 0}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams:
+        - variableName: CurrentSlot
+          objectType: UnityEngine.GameObject
+          useVariable: 1
+          type: 3
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: InventorySlots
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          type: 3
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams:
+        - useVariable: 1
+          name: SlotAmount
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 4
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 1
+          name: SlotAmount
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 4
+        - useVariable: 1
+          name: SlotAmount
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 4
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 7
+        - useVariable: 1
+          name: SlotAmount
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 4
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 8
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - UI / Inactive
+        - Return
+        - 
+        - Return
+        byteData: 000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1f000000170000000f000000010000001000000010000000010000001400000010000000130000001000000010000000100000000100000010000000100000001700000017000000170000000100000014000000110000001100000001000000010000002900000027000000
+        paramName:
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        - intVariable
+        - add
+        - everyFrame
+        - gameObject
+        - childIndex
+        - store
+        - intVariable
+        - minValue
+        - maxValue
+        - everyFrame
+        - integer1
+        - integer2
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        - array
+        - value
+        paramDataPos: 000000000000000000000000000000000000000001000000010000000000000002000000000000000300000004000000050000000200000006000000070000000100000002000000030000000300000001000000000000000100000004000000050000000000000000000000
+        paramByteDataSize: 000000000000000000000000010000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000100000000000000000000000000000001000000010000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -31685,7 +31957,19 @@ MonoBehaviour:
     - name: Keypad / 8
       isSystemEvent: 0
       isGlobal: 0
-    globalTransitions: []
+    - name: Inventory / AddSlot
+      isSystemEvent: 0
+      isGlobal: 1
+    globalTransitions:
+    - fsmEvent:
+        name: Inventory / AddSlot
+        isSystemEvent: 0
+        isGlobal: 1
+      toState: Add Slot
+      linkStyle: 0
+      linkConstraint: 0
+      linkTarget: 0
+      colorIndex: 0
     variables:
       floatVariables:
       - useVariable: 1
