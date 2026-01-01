@@ -3526,7 +3526,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Active
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Reset Inactive Timer
         linkStyle: 0
         linkConstraint: 0
@@ -3817,7 +3817,7 @@ MonoBehaviour:
       isGlobal: 1
     - name: Active
       isSystemEvent: 0
-      isGlobal: 0
+      isGlobal: 1
     - name: Player / Despair
       isSystemEvent: 0
       isGlobal: 1
@@ -22359,7 +22359,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 2677233038747908128, guid: 4def22bdab1a02146974c6798d1608b0, type: 3}
+        value: {fileID: 2677233038747908128, guid: 5906b28661ece9e4883116aa802af10b, type: 3}
       - useVariable: 1
         name: Pickup_Location
         tooltip: 

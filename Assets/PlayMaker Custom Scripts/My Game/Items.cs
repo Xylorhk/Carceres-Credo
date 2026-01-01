@@ -9,6 +9,7 @@ namespace Com.MyGame
 	{
 		Null,
 		EnergyDrink,
-		Mirror		
+		Mirror,
+		Package		
 	}
 }
