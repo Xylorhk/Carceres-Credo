@@ -3902,8 +3902,8 @@ MonoBehaviour:
       value: 1
   BlocksLineOfSight:
     serializedVersion: 2
-    m_Bits: 65
-  IgnoreTriggerColliders: 1
+    m_Bits: 65601
+  IgnoreTriggerColliders: 0
   PointSamplingMethod: 0
   TestLOSTargetsOnly: 0
   NumberOfRays: 3
@@ -4089,7 +4089,6 @@ MonoBehaviour:
     IgnoreList: []
     EnableTagFilter: 1
     AllowedTags:
-    - Player
     - LookTarget
   DetectionMode: 2
   runInSafeMode:
@@ -7287,10 +7286,10 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 1491.4609
-        y: 502.41406
-        width: 107.69
-        height: 32
+        x: 1495.4609
+        y: 478.41406
+        width: 127.13
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -7300,6 +7299,15 @@ MonoBehaviour:
           isSystemEvent: 0
           isGlobal: 1
         toState: End Animation
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Enemy / Search
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Search Last Known Position
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
