@@ -7550,10 +7550,10 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: CurrentFundsKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: CurrentFunds
         - useVariable: 0
@@ -7574,10 +7574,10 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: BankFundsKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: BankFunds
         - useVariable: 0
@@ -7598,10 +7598,10 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: RegionDebtListKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: RegionDebtList
         - useVariable: 0
@@ -8100,10 +8100,10 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Current Funds
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: CurrentFundsKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: CurrentFunds
         - useVariable: 0
@@ -8346,22 +8346,22 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Current Funds
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: LostFundsKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: LostFunds
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: RegionNameKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: RegionName
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: RegionDebtKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: RegionDebt
         - useVariable: 0
@@ -8823,10 +8823,10 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: BankFundsKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: BankFunds
         - useVariable: 0
@@ -8847,10 +8847,10 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: RegionDebtListKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: RegionDebtList
         - useVariable: 0
@@ -9337,10 +9337,10 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: RegionsDebt
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: RegionDebtListKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: RegionDebtList
         - useVariable: 0
@@ -9615,10 +9615,10 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: RegionDebtListKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: RegionDebtList
         - useVariable: 0
@@ -9639,10 +9639,10 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: CurrentFundsKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: CurrentFunds
         - useVariable: 0
@@ -9663,10 +9663,10 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
-        - useVariable: 0
-          name: 
+        - useVariable: 1
+          name: BankFundsKey
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
           value: BankFunds
         - useVariable: 0
@@ -10255,6 +10255,42 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: 
+      - useVariable: 1
+        name: CurrentFundsKey
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: CurrentFunds
+      - useVariable: 1
+        name: BankFundsKey
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: BankFunds
+      - useVariable: 1
+        name: RegionDebtListKey
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: RegionDebtList
+      - useVariable: 1
+        name: LostFundsKey
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: LostFunds
+      - useVariable: 1
+        name: RegionNameKey
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: RegionName
+      - useVariable: 1
+        name: RegionDebtKey
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: RegionDebt
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
@@ -10297,7 +10333,8 @@ MonoBehaviour:
       - 
       - Funds
       - Region
-      variableCategoryIDs: 0100000001000000000000000000000000000000000000000000000002000000000000000000000000000000
+      - SaveKeys
+      variableCategoryIDs: 0100000001000000000000000000000000000000000000000000000002000000030000000300000003000000030000000300000003000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -13205,7 +13242,7 @@ MonoBehaviour:
         - 
         - Send Event_Icon FadeIn
         actionEnabled: 01010101010101010101010101
-        actionIsOpen: 00000000000101010000000101
+        actionIsOpen: 00010000000101010000000101
         actionStartIndex: 000000000d0000001a0000001c0000001e00000020000000240000002b0000002d000000320000003a0000003c00000040000000
         actionHashCodes: f8464304f84643045ac852045ac852045ac85204352320027370ae055ac85204d97407057370ae055ac852049cdc39055e69bb04
         unityObjectParams: []
@@ -20882,19 +20919,21 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.TweenUiSize
         - HutongGames.PlayMaker.Actions.TweenUiSize
+        - HutongGames.PlayMaker.Actions.TweenUiSize
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SendEvent
         - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
         - Tween UI Size_PauseOrdersButton
         - Tween UI Size_ResumeOrdersButton
+        - Tween UI Size_DeclineButton
         - 
         - Send Event_MinimapHideDirection
         - Send Event_EndReminder
-        actionEnabled: 0101010101
-        actionIsOpen: 0000010101
-        actionStartIndex: 000000000d0000001a0000001c00000020000000
-        actionHashCodes: f8464304f84643045ac852045e69bb045e69bb04
+        actionEnabled: 010101010101
+        actionIsOpen: 000001000000
+        actionStartIndex: 000000000d0000001a00000027000000290000002d000000
+        actionHashCodes: f8464304f8464304f84643045ac852045e69bb045e69bb04
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -20914,7 +20953,21 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 1060874759899111729}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 6222615233332286621}
         animationCurveParams:
+        - curve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
         - curve:
             serializedVersion: 2
             m_Curve: []
@@ -21147,7 +21200,26 @@ MonoBehaviour:
           networkSync: 0
           enumName: HutongGames.EasingFunction+Ease
           intValue: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          enumName: HutongGames.EasingFunction+Ease
+          intValue: 0
         fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.25
         - useVariable: 0
           name: 
           tooltip: 
@@ -21198,6 +21270,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params:
         - useVariable: 0
           name: 
@@ -21211,6 +21289,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {x: 0, y: 80}
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 50}
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
@@ -21218,15 +21302,29 @@ MonoBehaviour:
         stringParams:
         - 
         - 
+        - 
         - Minimap / HideDirection
         - TaskStatus / EndReminder
-        byteData: 00000000000000000000000000000000000000000000000000000000000000000000000000
+        byteData: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0700000025000000140000000f0000002a000000160000000f0000001100000007000000170000000200000001000000070000000700000025000000140000000f0000002a000000160000000f00000011000000070000001700000002000000010000000700000024000000010000001f000000170000000f000000010000001f000000170000000f00000001000000
+        paramDataType: 0700000025000000140000000f0000002a000000160000000f0000001100000007000000170000000200000001000000070000000700000025000000140000000f0000002a000000160000000f0000001100000007000000170000000200000001000000070000000700000025000000140000000f0000002a000000160000000f00000011000000070000001700000002000000010000000700000024000000010000001f000000170000000f000000010000001f000000170000000f00000001000000
         paramName:
+        - tweenDirection
+        - targetSize
+        - gameObject
+        - startDelay
+        - easeType
+        - customCurve
+        - time
+        - realTime
+        - loopType
+        - finishEvent
+        - normalizedTime
+        - everyFrame
+        - updateType
         - tweenDirection
         - targetSize
         - gameObject
@@ -21263,8 +21361,8 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000400000000000000080000000c0000000d00000011000000010000000100000002000000010000000100000003000000010000001500000001000000190000001d0000001e00000000000000220000000000000002000000040000002300000001000000030000000500000024000000
-        paramByteDataSize: 040000000000000000000000000000000000000000000000000000000000000004000000000000000400000001000000040000000400000000000000000000000000000000000000000000000000000000000000040000000000000004000000010000000400000000000000010000000000000000000000000000000100000000000000000000000000000001000000
+        paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000400000000000000080000000c0000000d00000011000000010000000100000002000000010000000100000003000000010000001500000001000000190000001d0000001e000000220000000200000002000000040000000200000002000000050000000200000026000000020000002a0000002e0000002f00000000000000330000000000000003000000060000003400000001000000040000000700000035000000
+        paramByteDataSize: 04000000000000000000000000000000000000000000000000000000000000000400000000000000040000000100000004000000040000000000000000000000000000000000000000000000000000000000000004000000000000000400000001000000040000000400000000000000000000000000000000000000000000000000000000000000040000000000000004000000010000000400000000000000010000000000000000000000000000000100000000000000000000000000000001000000
     - name: Abort Order
       description: Abort Leads to Order paused automatically. Do not call pause after
         abort orders.
@@ -35433,6 +35531,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2688657792458754861}
     m_Modifications:
+    - target: {fileID: 45435966237021560, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45435966237021560, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45435966237021560, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45435966237021560, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 70723224290232961, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -35461,6 +35575,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 283319877087212178, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283319877087212178, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283319877087212178, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283319877087212178, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283319877087212178, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283319877087212178, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 308668972841354503, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -35474,6 +35612,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 308668972841354503, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462495018773023323, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462495018773023323, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462495018773023323, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462495018773023323, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462495018773023323, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462495018773023323, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -35501,6 +35663,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 922517982370976300, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 922517982370976300, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 922517982370976300, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 922517982370976300, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 922517982370976300, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 922517982370976300, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1011645807718827965, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: fsm.states.Array.data[0].actionData.fsmPropertyParams.Array.data[1].FloatParameter.value
       value: 20
@@ -35517,6 +35703,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2749765806357575186}
+    - target: {fileID: 1095187603758949207, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095187603758949207, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095187603758949207, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095187603758949207, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1331644372469994274, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -35630,6 +35832,54 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2433580177570897241, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656648613299865971, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656648613299865971, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656648613299865971, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656648613299865971, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656648613299865971, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656648613299865971, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706129350410499668, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706129350410499668, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706129350410499668, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706129350410499668, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706129350410499668, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706129350410499668, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -35785,6 +36035,70 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4326028813036049493, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326028813036049493, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326028813036049493, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326028813036049493, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326028813036049493, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326028813036049493, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396119855504208393, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396119855504208393, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396119855504208393, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396119855504208393, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467436883720286291, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467436883720286291, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467436883720286291, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467436883720286291, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467436883720286291, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467436883720286291, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4611580357115489891, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -35808,6 +36122,30 @@ PrefabInstance:
     - target: {fileID: 4914793687578242005, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918158208658921202, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918158208658921202, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918158208658921202, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918158208658921202, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918158208658921202, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918158208658921202, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5039509700083872061, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_SizeDelta.x
@@ -35887,6 +36225,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299297798081875259, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402124154106810764, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402124154106810764, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402124154106810764, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402124154106810764, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402124154106810764, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402124154106810764, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5671914987953665568, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
@@ -36021,6 +36383,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076821069486120016, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_Name
+      value: Accept Text
+      objectReference: {fileID: 0}
     - target: {fileID: 7126565315006891718, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -36033,6 +36399,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2749765806357575186}
+    - target: {fileID: 7454993273121702267, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454993273121702267, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454993273121702267, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454993273121702267, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454993273121702267, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454993273121702267, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7558213362234710975, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: fsm.states.Array.data[1].actionData.fsmPropertyParams.Array.data[0].FloatParameter.value
       value: 1.5
@@ -36056,6 +36446,30 @@ PrefabInstance:
     - target: {fileID: 7558213362234710975, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: fsm.states.Array.data[1].actionData.fsmPropertyParams.Array.data[2].FloatParameter.showInInspector
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577567418342089968, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577567418342089968, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577567418342089968, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577567418342089968, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577567418342089968, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577567418342089968, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7609418794100446240, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_SizeDelta.x
@@ -36149,6 +36563,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2749765806357575186}
+    - target: {fileID: 8891038763314069236, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891038763314069236, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891038763314069236, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891038763314069236, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891038763314069236, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891038763314069236, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007042157803832674, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9212596542524702153, guid: e6dd0e5cba31c83408785af26c91d758, type: 3}
       propertyPath: m_IsActive
       value: 1
