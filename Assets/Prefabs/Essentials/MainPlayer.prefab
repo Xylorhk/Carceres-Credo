@@ -39429,7 +39429,7 @@ MonoBehaviour:
           name: PhoneCam / TakePhoto
           isSystemEvent: 0
           isGlobal: 1
-        toState: NamePhoto and path
+        toState: GetPersistentDataPath
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -39719,13 +39719,13 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000400000000000000080000000c0000000d0000000100000001000000020000001100000012000000
         paramByteDataSize: 040000000000000000000000000000000000000000000000000000000000000004000000000000000400000001000000040000000000000000000000000000000100000001000000
-    - name: NamePhoto and path
+    - name: GetPersistentDataPath
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 562
-        y: 178
+        x: 581
+        y: 140
         width: 201.46
         height: 48
       isBreakpoint: 0
@@ -39752,21 +39752,19 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.ApplicationGetPersistentDataPath
         - HutongGames.PlayMaker.Actions.BuildString
-        - HutongGames.PlayMaker.Actions.GetSystemDateTime
-        - HutongGames.PlayMaker.Actions.BuildString
-        - HutongGames.PlayMaker.Actions.BuildString
+        - HutongGames.PlayMaker.Actions.DebugLog
         - HutongGames.PlayMaker.Actions.CreateDirectory
         customNames:
         - 
         - 
         - 
         - 
-        - 
-        actionEnabled: 0101010101
-        actionIsOpen: 0101010101
-        actionStartIndex: 00000000070000000a0000001200000019000000
-        actionHashCodes: 7370ae05c030f1037370ae057370ae05eb6d0901
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 0000000002000000090000000c000000
+        actionHashCodes: 2aa8e0057370ae059c59e501eb6d0901
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -39777,32 +39775,14 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Application.persistentDataPath
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: /Screenshots/
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
         - useVariable: 1
-          name: ScreenshotFolder
+          name: PersistentDataPath
           tooltip: 
           showInInspector: 1
           networkSync: 0
           value: 
         - useVariable: 1
-          name: TimeStamp
+          name: PersistentDataPath
           tooltip: 
           showInInspector: 1
           networkSync: 0
@@ -39812,25 +39792,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: MM/dd/yyyy HH:mm
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Shot
-        - useVariable: 1
-          name: TimeStamp
-          tooltip: 
-          showInInspector: 1
-          networkSync: 0
-          value: 
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: .png
+          value: Screenshots/
         - useVariable: 0
           name: 
           tooltip: 
@@ -39838,37 +39800,19 @@ MonoBehaviour:
           networkSync: 0
           value: 
         - useVariable: 1
-          name: FileName
+          name: ScreenshotFolderPath
           tooltip: 
           showInInspector: 1
           networkSync: 0
           value: 
         - useVariable: 1
-          name: ScreenshotFolder
+          name: ScreenshotFolderPath
           tooltip: 
           showInInspector: 1
           networkSync: 0
           value: 
         - useVariable: 1
-          name: FileName
-          tooltip: 
-          showInInspector: 1
-          networkSync: 0
-          value: 
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        - useVariable: 1
-          name: FullPath
-          tooltip: 
-          showInInspector: 1
-          networkSync: 0
-          value: 
-        - useVariable: 1
-          name: ScreenshotFolder
+          name: ScreenshotFolderPath
           tooltip: 
           showInInspector: 1
           networkSync: 0
@@ -39886,18 +39830,6 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -39907,16 +39839,16 @@ MonoBehaviour:
         - PhoneCam / TakeScreenshot
         - PhoneCam / TakeScreenshot
         - Return
-        byteData: 00000000
-        arrayParamSizes: 020000000300000002000000
+        byteData: 01000000000001
+        arrayParamSizes: 02000000
         arrayParamTypes:
-        - HutongGames.PlayMaker.FsmString
-        - HutongGames.PlayMaker.FsmString
         - HutongGames.PlayMaker.FsmString
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0c0000001200000012000000120000001100000012000000010000001200000012000000010000000c000000120000001200000012000000120000001100000012000000010000000c00000012000000120000001200000011000000120000000100000012000000170000001700000017000000
+        paramDataType: 12000000010000000c00000012000000120000001200000011000000120000000100000007000000120000000100000012000000170000001700000017000000
         paramName:
+        - persistentDataPath
+        - appendPathDelimiter
         - stringParts
         - 
         - 
@@ -39924,37 +39856,22 @@ MonoBehaviour:
         - addToEnd
         - storeResult
         - everyFrame
-        - storeString
-        - format
-        - everyFrame
-        - stringParts
-        - 
-        - 
-        - 
-        - separator
-        - addToEnd
-        - storeResult
-        - everyFrame
-        - stringParts
-        - 
-        - 
-        - separator
-        - addToEnd
-        - storeResult
-        - everyFrame
+        - logLevel
+        - text
+        - sendToUnityLog
         - directoryPath
         - successEvent
         - alreadyExistsEvent
         - failureEvent
-        paramDataPos: 000000000000000001000000020000000000000003000000000000000400000005000000010000000100000006000000070000000800000009000000010000000a00000002000000020000000b0000000c0000000d000000020000000e000000030000000f000000000000000100000002000000
-        paramByteDataSize: 0000000000000000000000000000000000000000000000000100000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000
+        paramDataPos: 00000000000000000000000001000000020000000300000000000000040000000100000002000000050000000600000006000000000000000100000002000000
+        paramByteDataSize: 00000000010000000000000000000000000000000000000000000000000000000100000004000000000000000100000000000000000000000000000000000000
     - name: TakeScreenshot
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 653
-        y: 283
+        x: 633
+        y: 343
         width: 127.81
         height: 32
       isBreakpoint: 0
@@ -39972,15 +39889,19 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.GetSystemDateTime
+        - HutongGames.PlayMaker.Actions.BuildString
         - HutongGames.PlayMaker.Actions.TakeCameraScreenshot
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 000000000e000000
-        actionHashCodes: 57110d04b2cf1000
+        - 
+        - 
+        actionEnabled: 00010100
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000030000000b00000019000000
+        actionHashCodes: c030f1037370ae0557110d04b2cf1000
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 0
@@ -40005,10 +39926,34 @@ MonoBehaviour:
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
+        - useVariable: 1
+          name: TimeStamp
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
+          networkSync: 0
+          value: MM_dd_yyyy HH:mm
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Photo
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: _
+        - useVariable: 1
+          name: TimeStamp
+          tooltip: 
+          showInInspector: 1
           networkSync: 0
           value: 
         - useVariable: 0
@@ -40017,6 +39962,24 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 
+        - useVariable: 1
+          name: FileName
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
+        - useVariable: 1
+          name: ScreenshotFolderPath
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Photo_
         - useVariable: 1
           name: CurrentPhotoFilepath
           tooltip: 
@@ -40059,7 +40022,13 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -40102,13 +40071,25 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 020000000000
-        arrayParamSizes: 
-        arrayParamTypes: []
+        byteData: 0000020000000000
+        arrayParamSizes: 03000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmString
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 13000000100000001000000011000000110000001200000011000000110000001200000011000000110000000700000011000000120000001400000011000000110000000100000001000000
+        paramDataType: 1200000012000000010000000c0000001200000012000000120000001200000011000000120000000100000013000000100000001000000011000000110000001200000011000000110000001200000011000000110000000700000011000000120000001400000011000000110000000100000001000000
         paramName:
+        - storeString
+        - format
+        - everyFrame
+        - stringParts
+        - 
+        - 
+        - 
+        - separator
+        - addToEnd
+        - storeResult
+        - everyFrame
         - gameObject
         - resWidth
         - resHeight
@@ -40128,15 +40109,15 @@ MonoBehaviour:
         - recursive
         - resetOnExit
         - everyFrame
-        paramDataPos: 00000000000000000100000000000000010000000000000002000000030000000100000004000000050000000000000006000000020000000000000007000000080000000400000005000000
-        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000100000001000000
+        paramDataPos: 000000000100000000000000000000000200000003000000040000000500000000000000060000000100000000000000000000000100000001000000020000000700000003000000040000000800000005000000060000000200000007000000090000000000000008000000090000000600000007000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000100000001000000
     - name: wait
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 467
-        y: 313
+        x: 427
+        y: 356
         width: 100
         height: 32
       isBreakpoint: 0
@@ -40147,7 +40128,7 @@ MonoBehaviour:
           name: Return
           isSystemEvent: 0
           isGlobal: 1
-        toState: ShowCamMode
+        toState: Load Image
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -40156,13 +40137,15 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.Wait
         - HutongGames.PlayMaker.Actions.SetProperty
+        - ES3PlayMaker.GetFiles
         customNames:
         - 
         - 
-        actionEnabled: 0101
-        actionIsOpen: 0101
-        actionStartIndex: 0000000003000000
-        actionHashCodes: 48c011015ac85204
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000005000000
+        actionHashCodes: 48c011015ac85204df2b4a03
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -40304,11 +40287,83 @@ MonoBehaviour:
             objectReferences: []
           setProperty: 1
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: ScreenshotFolderPath
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: SaveFile.es3
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: password
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
         fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: PhotoFilePaths
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 4
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          enumName: 
+          intValue: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          enumName: 
+          intValue: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          enumName: 
+          intValue: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          enumName: 
+          intValue: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          enumName: 
+          intValue: 0
         fsmFloatParams:
         - useVariable: 0
           name: 
@@ -40316,8 +40371,20 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 1
-        fsmIntParams: []
-        fsmBoolParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 2048
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
@@ -40325,20 +40392,34 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - Return
+        - 
         byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f00000017000000010000002400000001000000
+        paramDataType: 0f00000017000000010000002400000001000000120000002900000011000000120000002a0000002a000000120000002a0000002a0000002a000000100000001700000012000000
         paramName:
         - time
         - finishEvent
         - realTime
         - targetProperty
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000001000000
-        paramByteDataSize: 0000000000000000010000000000000001000000
+        - directoryPath
+        - files
+        - overrideDefaultSettings
+        - path
+        - location
+        - encryptionType
+        - encryptionPassword
+        - compressionType
+        - directory
+        - format
+        - bufferSize
+        - errorEvent
+        - errorMessage
+        paramDataPos: 000000000000000000000000000000000100000000000000000000000000000001000000000000000100000002000000020000000300000004000000000000000100000003000000
+        paramByteDataSize: 000000000000000001000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     - name: Load Image
       description: 
       colorIndex: 0
@@ -40356,7 +40437,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: ShowCamMode
+        toState: State 1
         linkStyle: 0
         linkConstraint: 0
         linkTarget: 0
@@ -40520,6 +40601,253 @@ MonoBehaviour:
         - resetOnExit
         paramDataPos: 00000000000000000000000001000000000000000100000002000000020000000300000004000000000000000000000003000000000000000100000001000000
         paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    - name: State 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 124
+        y: 305
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Return
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: State 2
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.ArrayGetNext
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 3df26a04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams:
+        - variableName: FileName
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 4
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+        fsmArrayParams:
+        - useVariable: 1
+          name: PhotoFilePaths
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          type: 4
+          objectTypeName: UnityEngine.Object
+          floatValues: []
+          intValues: 
+          boolValues: 
+          stringValues: []
+          vector4Values: []
+          objectReferences: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Return
+        - 
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 2900000010000000100000001700000011000000170000002700000010000000
+        paramName:
+        - array
+        - startIndex
+        - endIndex
+        - loopEvent
+        - resetFlag
+        - finishedEvent
+        - result
+        - currentIndex
+        paramDataPos: 0000000000000000010000000000000000000000010000000000000002000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000000000000000000
+    - name: State 2
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 86
+        y: 238
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Return
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Load Image
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.BuildString
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000007000000
+        actionHashCodes: 7370ae0548c01101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: ScreenshotFolderPath
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
+        - useVariable: 1
+          name: FileName
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 1
+          name: CurrentPhotoFilepath
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 3
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Return
+        byteData: 0000
+        arrayParamSizes: 02000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmString
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0c0000001200000012000000120000001100000012000000010000000f0000001700000001000000
+        paramName:
+        - stringParts
+        - 
+        - 
+        - separator
+        - addToEnd
+        - storeResult
+        - everyFrame
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000000000000100000002000000000000000300000000000000000000000000000001000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000001000000000000000000000001000000
     events:
     - name: PhoneCam / Hide
       isSystemEvent: 0
@@ -40549,9 +40877,9 @@ MonoBehaviour:
       boolVariables: []
       stringVariables:
       - useVariable: 1
-        name: ScreenshotFolder
+        name: CurrentPhotoFilepath
         tooltip: 
-        showInInspector: 1
+        showInInspector: 0
         networkSync: 0
         value: 
       - useVariable: 1
@@ -40561,7 +40889,13 @@ MonoBehaviour:
         networkSync: 0
         value: 
       - useVariable: 1
-        name: FullPath
+        name: PersistentDataPath
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 
+      - useVariable: 1
+        name: ScreenshotFolderPath
         tooltip: 
         showInInspector: 1
         networkSync: 0
@@ -40570,12 +40904,6 @@ MonoBehaviour:
         name: TimeStamp
         tooltip: 
         showInInspector: 1
-        networkSync: 0
-        value: 
-      - useVariable: 1
-        name: CurrentPhotoFilepath
-        tooltip: 
-        showInInspector: 0
         networkSync: 0
         value: 
       vector2Variables: []
@@ -40594,11 +40922,24 @@ MonoBehaviour:
         networkSync: 0
         typeName: UnityEngine.Object
         value: {fileID: 0}
-      arrayVariables: []
+      arrayVariables:
+      - useVariable: 1
+        name: PhotoFilePaths
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        type: 4
+        objectTypeName: UnityEngine.Object
+        floatValues: []
+        intValues: 
+        boolValues: 
+        stringValues: []
+        vector4Values: []
+        objectReferences: []
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -40607,7 +40948,7 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 04000000
+    outVariableIndices: 00000000
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
@@ -54926,7 +55267,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6663825425531518953}
   - component: {fileID: 3871570261219600560}
-  - component: {fileID: 6325648127203745939}
   - component: {fileID: 7119711943428237018}
   m_Layer: 20
   m_Name: Camera_Phone
@@ -55001,14 +55341,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6325648127203745939
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4139177141068832490}
-  m_Enabled: 1
 --- !u!114 &7119711943428237018
 MonoBehaviour:
   m_ObjectHideFlags: 0
