@@ -132,7 +132,7 @@ MonoBehaviour:
         - ownerOption: 1
           gameObject:
             useVariable: 1
-            name: GalleryRenderDisplay
+            name: PhoneCamUI
             tooltip: 
             showInInspector: 1
             networkSync: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 
+          value: PhoneCam
         - useVariable: 0
           name: 
           tooltip: 
@@ -700,6 +700,12 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: PhoneCamUI
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables:
       - useVariable: 1
         name: GalleryDisplayRawImage
@@ -728,7 +734,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -737,7 +743,7 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 0100000006000000
+    outVariableIndices: 0100000007000000
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
