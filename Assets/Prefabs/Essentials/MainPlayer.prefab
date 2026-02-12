@@ -4033,7 +4033,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577339548545854205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.2856997}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4045,8 +4045,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 7.5238037, y: -1.0101206}
-  m_SizeDelta: {x: 0, y: 960}
+  m_AnchoredPosition: {x: 5.3, y: 4}
+  m_SizeDelta: {x: 954.8, y: 943.1}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &3715405701381921410
 CanvasRenderer:
@@ -4069,15 +4069,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20114198, g: 0.26438293, b: 0.32599998, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: aac0d7d46b557e1419d1acd5d566cf82, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -42787,7 +42787,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {x: 935, y: 960}
+          value: {x: 945, y: 960}
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
@@ -44318,7 +44318,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {x: 935, y: 950.94}
+          value: {x: 945, y: 950.94}
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
@@ -51221,7 +51221,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -0.014526367, y: -3.1501}
-  m_SizeDelta: {x: 934.96, y: 956.3}
+  m_SizeDelta: {x: 0, y: 956.3}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &8489215807489124645
 MonoBehaviour:
@@ -54353,7 +54353,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {x: 0, y: 956.3}
+          value: {x: 0, y: 939.81}
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
@@ -54481,7 +54481,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: {x: 950, y: 956.3}
+          value: {x: 945.8, y: 939.81}
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
@@ -56683,7 +56683,7 @@ RectTransform:
   m_GameObject: {fileID: 2151219228701594734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.16690063}
-  m_LocalScale: {x: 1, y: 0.985, z: 1}
+  m_LocalScale: {x: 1, y: 0.975, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7431780413449328279}
@@ -56699,8 +56699,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.1640775, y: -0.000061035156}
-  m_SizeDelta: {x: 935, y: 0}
+  m_AnchoredPosition: {x: -8.72, y: -0.000061035156}
+  m_SizeDelta: {x: 945, y: 960}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &4837427459788443211
 CanvasRenderer:
@@ -58030,7 +58030,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 65407
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
@@ -58123,7 +58123,7 @@ MonoBehaviour:
   m_EvsmLightLeakBias: 0
   m_EvsmVarianceBias: 0.00001
   m_EvsmBlurPasses: 0
-  m_LightlayersMask: 1
+  m_LightlayersMask: 65407
   m_LinkShadowLayers: 1
   m_ShadowNearPlane: 1
   m_BlockerSampleCount: 24
@@ -58730,7 +58730,7 @@ MonoBehaviour:
     materialQuality: 0
   renderingPathCustomFrameSettingsOverrideMask:
     mask:
-      data1: 0
+      data1: 1073741824
       data2: 2147516416
   defaultFrameSettings: 0
   m_Version: 9
@@ -60588,8 +60588,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.1640775, y: 92}
-  m_SizeDelta: {x: 935, y: 0}
+  m_AnchoredPosition: {x: -8.72, y: -0.000061035156}
+  m_SizeDelta: {x: 945, y: 960}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5572574274479470217
 CanvasRenderer:
@@ -69617,7 +69617,7 @@ MonoBehaviour:
   xrRendering: 1
   fullscreenPassthrough: 0
   allowDynamicResolution: 0
-  customRenderingSettings: 0
+  customRenderingSettings: 1
   invertFaceCulling: 0
   probeLayerMask:
     serializedVersion: 2
@@ -69660,7 +69660,7 @@ MonoBehaviour:
     materialQuality: 0
   renderingPathCustomFrameSettingsOverrideMask:
     mask:
-      data1: 0
+      data1: 1073741824
       data2: 0
   defaultFrameSettings: 0
   m_Version: 9
@@ -95279,8 +95279,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 1, b: 0.94117653, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.574, b: 0.5402353, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.9490196}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0, g: 0.347, b: 0.3279863, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -102771,6 +102771,26 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: -6288148728053096482, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6288148728053096482, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: -130936862723352074, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -130936862723352074, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
       propertyPath: m_Name
       value: PhoneMesh
@@ -102782,6 +102802,14 @@ PrefabInstance:
     - target: {fileID: 2392711082990104433, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560945213484427901, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560945213484427901, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8616597922432713453, guid: cd47c8e39b1f85343a469add030b76d4, type: 3}
       propertyPath: m_Layer
