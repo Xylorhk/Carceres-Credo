@@ -1,7 +1,7 @@
 using UnityEngine; 
 using UnityEditor;
 
-namespace FS_AlleyPack
+namespace FS_Atmo
 {
 
 public class AutoSnap : EditorWindow
