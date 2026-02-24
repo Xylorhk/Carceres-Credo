@@ -31032,7 +31032,7 @@ MonoBehaviour:
         - Get Property_StrafeSpeed
         - Get Property_BackwardSpeed
         - 
-        actionEnabled: 01010101
+        actionEnabled: 00000001
         actionIsOpen: 00000001
         actionStartIndex: 00000000020000000400000006000000
         actionHashCodes: 5ac852045ac852045ac85204b8ee8100
@@ -31473,7 +31473,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 1
+          value: 1.5
         fsmIntParams:
         - useVariable: 0
           name: 
@@ -31550,7 +31550,7 @@ MonoBehaviour:
         - Set Property_ForwardSpeed
         - Set Property_StrafeSpeed
         - 
-        actionEnabled: 0101010101010101
+        actionEnabled: 0101010100000001
         actionIsOpen: 0101000100000001
         actionStartIndex: 0000000006000000080000001700000026000000280000002a0000002c000000
         actionHashCodes: b8ee81005ac8520481bfb30481bfb3045ac852045ac852045ac8520448c01101
@@ -32149,7 +32149,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 1
+          value: 1.5
         - useVariable: 1
           name: CriticalAmount
           tooltip: 
@@ -32185,7 +32185,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 1
+          value: 1.5
         - useVariable: 0
           name: 
           tooltip: 
@@ -32213,9 +32213,9 @@ MonoBehaviour:
         - useVariable: 1
           name: RecoveryTime
           tooltip: 
-          showInInspector: 0
+          showInInspector: 1
           networkSync: 0
-          value: 0
+          value: 15
         fsmIntParams:
         - useVariable: 0
           name: 
@@ -32335,7 +32335,7 @@ MonoBehaviour:
         - Set Property_StrafeSpeed
         - Set Fsm Float_StaminaRecovery
         - Send Event_RecoverStamina
-        actionEnabled: 010101010101010101
+        actionEnabled: 010101010000000101
         actionIsOpen: 000000010000000001
         actionStartIndex: 0000000006000000080000001700000026000000280000002a0000002c00000031000000
         actionHashCodes: b8ee81005ac8520481bfb30481bfb3045ac852045ac852045ac85204876045025e69bb04
@@ -69505,8 +69505,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4413680239592874955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.9000243, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7115847, z: 0, w: 0.7026004}
+  m_LocalPosition: {x: 167.73817, y: 7.217025, z: -423.16278}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
