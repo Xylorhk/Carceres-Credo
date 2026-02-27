@@ -1458,7 +1458,7 @@ MonoBehaviour:
   ParentalReferenceBone: {fileID: 0}
   DestroyMomentTargetOnMaxDistance: 1
   OverrideRotations: 0
-  BackBonesCount: 5
+  BackBonesCount: 3
   _preBackBonesCount: 5
   LookBones:
   - Transform: {fileID: 6360857689647904951}
@@ -1499,7 +1499,7 @@ MonoBehaviour:
     targetDelayPosition: {x: 0, y: 0, z: 0}
     animatedDelayPosition: {x: 0, y: 0, z: 0}
     lookWeight: 0.23671874
-    lookWeightB: 1
+    lookWeightB: 0.09218751
     motionWeight: 0.23671874
   - Transform: {fileID: 7001068612173328054}
     animatedStaticRotation: {x: 0.41322163, y: 0.5854119, z: 0.40075862, w: 0.5709061}
@@ -1519,7 +1519,7 @@ MonoBehaviour:
     targetDelayPosition: {x: 0, y: 0, z: 0}
     animatedDelayPosition: {x: 0, y: 0, z: 0}
     lookWeight: 0.16046879
-    lookWeightB: 1
+    lookWeightB: 0.15968749
     motionWeight: 0.16046879
   - Transform: {fileID: 2939704218228010923}
     animatedStaticRotation: {x: 0.57207924, y: 0.43154246, z: 0.5557855, w: 0.42142513}
@@ -1539,48 +1539,8 @@ MonoBehaviour:
     targetDelayPosition: {x: 0, y: 0, z: 0}
     animatedDelayPosition: {x: 0, y: 0, z: 0}
     lookWeight: 0.106687516
-    lookWeightB: 1
+    lookWeightB: 0.228875
     motionWeight: 0.106687516
-  - Transform: {fileID: 1918691994890841163}
-    animatedStaticRotation: {x: 0.6759985, y: 0.2376586, z: 0.65748405, w: 0.23293626}
-    targetStaticRotation: {x: 0.6759985, y: 0.2376586, z: 0.65748405, w: 0.23293626}
-    localStaticRotation: {x: 0.000046045232, y: -0.00011512019, z: -0.075478286, w: 0.9971475}
-    animatedTargetRotation: {x: -0.009978007, y: -0.0103401905, z: -0.00038958195, w: 0.9998967}
-    targetRotation: {x: -0.009978007, y: -0.0103401905, z: -0.00038958195, w: 0.9998967}
-    correctionOffset: {x: 0, y: 0, z: 0}
-    finalRotation: {x: 0.6674364, y: 0.24180432, z: 0.6613798, w: 0.24214913}
-    lastKeyframeRotation: {x: 0.000036651552, y: -0.00009788982, z: -0.075479195, w: 0.99714744}
-    lastFinalLocalRotation: {x: -0.0057563414, y: 0.0072403587, z: -0.08534754, w: 0.9963083}
-    forward: {x: 0.7782007, y: 0.6274399, z: 0.026888788}
-    right: {x: -0.022448087, y: 0.01499778, z: 0.9996355}
-    up: {x: -0.62761444, y: -0.7785205, z: 0.0024134105}
-    initLocalPos: {x: -0.07843153, y: -0.0050522345, z: 0.00035587527}
-    initLocalRot: {x: -2.5902162e-26, y: -9.244047e-18, z: -0.075483374, w: 0.9971471}
-    targetDelayPosition: {x: 0, y: 0, z: 0}
-    animatedDelayPosition: {x: 0, y: 0, z: 0}
-    lookWeight: 0.265175
-    lookWeightB: 1
-    motionWeight: 0.265175
-  - Transform: {fileID: 7695327841278946240}
-    animatedStaticRotation: {x: 0.69192183, y: 0.18595402, z: 0.6732789, w: 0.1826498}
-    targetStaticRotation: {x: 0.69192183, y: 0.18595402, z: 0.6732789, w: 0.1826498}
-    localStaticRotation: {x: 0.000039493192, y: 0.000038551334, z: -0.000014387809, w: 1}
-    animatedTargetRotation: {x: -0.011234833, y: -0.011642638, z: -0.00043865354, w: 0.999869}
-    targetRotation: {x: -0.011234833, y: -0.011642638, z: -0.00043865354, w: 0.999869}
-    correctionOffset: {x: 0, y: 0, z: 0}
-    finalRotation: {x: 0.6818906, y: 0.19111167, z: 0.6791768, w: 0.19292596}
-    lastKeyframeRotation: {x: 0.000034867142, y: 0.00003405196, z: -0.000012734222, w: 1}
-    lastFinalLocalRotation: {x: -0.0063355207, y: 0.009884879, z: -0.011253063, w: 0.99986786}
-    forward: {x: 0.86378616, y: 0.50315154, z: 0.026686013}
-    right: {x: -0.024249224, y: 0.011389569, z: 0.9996412}
-    up: {x: -0.50327486, y: -0.8641233, z: 0.002362769}
-    initLocalPos: {x: -0.100769915, y: 0, z: -1.6653345e-18}
-    initLocalRot: {x: 0, y: -0, z: -0, w: 1}
-    targetDelayPosition: {x: 0, y: 0, z: 0}
-    animatedDelayPosition: {x: 0, y: 0, z: 0}
-    lookWeight: 0.29856998
-    lookWeightB: 1
-    motionWeight: 0.29856998
   NoTargetHeadStops: 0
   _editor_hideEyes: 0
   _editor_displayName: Look Animator 2
@@ -1593,7 +1553,7 @@ MonoBehaviour:
   BaseTransform: {fileID: 2607186332558427490}
   FaloffValue: 0.35
   FaloffValueB: 1.1
-  BigAngleAutomation: 0
+  BigAngleAutomation: 1
   BigAngleAutomationCompensation: 0
   AutoBackbonesWeights: 0
   CurveSpread: 0
@@ -8896,14 +8856,16 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetAnimatorBool
         - HutongGames.PlayMaker.Actions.TriggerEvent
         - HutongGames.PlayMaker.Actions.SendEvent
+        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000050000000a000000
-        actionHashCodes: 5f9135049c5124005e69bb04
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000050000000a0000000e000000
+        actionHashCodes: 5f9135049c5124005e69bb045ac85204
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -8965,7 +8927,139 @@ MonoBehaviour:
             networkSync: 0
             value: 0
           fsmComponent: {fileID: 0}
-        fsmPropertyParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 3773283280645733338}
+          TargetTypeName: FIMSpace.FLook.FLookAnimator
+          PropertyName: ObjectToFollow
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Transform
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          EnumParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            enumName: HutongGames.PlayMaker.None
+            intValue: 0
+          ArrayParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: UnityEngine.Object
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+          setProperty: 1
         layoutOptionParams: []
         fsmStringParams:
         - useVariable: 0
@@ -9007,12 +9101,12 @@ MonoBehaviour:
         stringParams:
         - Enemy / Unfold
         - Enemy / UnStretch
-        byteData: 00000000000000000000
+        byteData: 0000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001200000011000000010000000700000014000000070000001200000017000000130000001f000000170000000f00000001000000
+        paramDataType: 140000001200000011000000010000000700000014000000070000001200000017000000130000001f000000170000000f000000010000002400000001000000
         paramName:
         - gameObject
         - parameter
@@ -9028,8 +9122,10 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000001000000010000000500000001000000000000000000000000000000010000000000000009000000
-        paramByteDataSize: 0000000000000000000000000100000004000000000000000400000000000000000000000000000000000000000000000000000001000000
+        - targetProperty
+        - everyFrame
+        paramDataPos: 0000000000000000000000000000000001000000010000000500000001000000000000000000000000000000010000000000000009000000000000000a000000
+        paramByteDataSize: 00000000000000000000000001000000040000000000000004000000000000000000000000000000000000000000000000000000010000000000000001000000
     - name: Enemy Unfold
       description: 
       colorIndex: 0
@@ -9057,18 +9153,28 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetAnimatorBool
         - HutongGames.PlayMaker.Actions.TriggerEvent
         - HutongGames.PlayMaker.Actions.SendEvent
+        - HutongGames.PlayMaker.Actions.GetTransform
+        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000050000000a000000
-        actionHashCodes: 5f9135049c5124005e69bb04
+        - 
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0101010101
+        actionStartIndex: 00000000050000000a0000000e00000011000000
+        actionHashCodes: 5f9135049c5124005e69bb0443f014035ac85204
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
           name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: Player
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -9126,7 +9232,139 @@ MonoBehaviour:
             networkSync: 0
             value: 0
           fsmComponent: {fileID: 0}
-        fsmPropertyParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 3773283280645733338}
+          TargetTypeName: FIMSpace.FLook.FLookAnimator
+          PropertyName: ObjectToFollow
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 1
+            name: TargetTransform
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Transform
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          EnumParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            enumName: HutongGames.PlayMaker.None
+            intValue: 0
+          ArrayParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: UnityEngine.Object
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
+          setProperty: 1
         layoutOptionParams: []
         fsmStringParams:
         - useVariable: 0
@@ -9141,7 +9379,14 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: Player
-        fsmObjectParams: []
+        fsmObjectParams:
+        - useVariable: 1
+          name: TargetTransform
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Transform
+          value: {fileID: 0}
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
@@ -9168,12 +9413,12 @@ MonoBehaviour:
         stringParams:
         - Enemy / Fold
         - Enemy / Stretch
-        byteData: 00000000000200000000
+        byteData: 000000000002000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001200000011000000010000000700000014000000070000001200000017000000130000001f000000170000000f00000001000000
+        paramDataType: 140000001200000011000000010000000700000014000000070000001200000017000000130000001f000000170000000f000000010000001300000018000000010000002400000001000000
         paramName:
         - gameObject
         - parameter
@@ -9189,8 +9434,13 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        paramDataPos: 0000000000000000000000000000000001000000010000000500000001000000000000000000000000000000010000000000000009000000
-        paramByteDataSize: 0000000000000000000000000100000004000000000000000400000000000000000000000000000000000000000000000000000001000000
+        - gameObject
+        - storeTransform
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        paramDataPos: 000000000000000000000000000000000100000001000000050000000100000000000000000000000000000001000000000000000900000001000000000000000a000000000000000b000000
+        paramByteDataSize: 00000000000000000000000001000000040000000000000004000000000000000000000000000000000000000000000000000000010000000000000000000000010000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -9237,7 +9487,21 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 0}
-      objectVariables: []
+      objectVariables:
+      - useVariable: 1
+        name: LookTarget
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: FIMSpace.FLook.FLookAnimator
+        value: {fileID: 3773283280645733338}
+      - useVariable: 1
+        name: TargetTransform
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: UnityEngine.Transform
+        value: {fileID: 0}
       materialVariables: []
       textureVariables: []
       arrayVariables: []
@@ -9245,7 +9509,7 @@ MonoBehaviour:
       categories:
       - 
       - Idle Time
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
